@@ -14,7 +14,7 @@ function App() {
   }
   let content = '';
 
-  fetch(`https://glazatelega.xyz/bazar`)
+  fetch(`https://mate.academy/students-api/users`)
     .then( response => response.json() )
     .then( data => {content = data} )
 
