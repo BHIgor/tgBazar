@@ -15,8 +15,8 @@ function App() {
   let data;
 
   fetch(`https://glazatelega.xyz/bazar`)
-    .then(res => res.json())
-    .then(res => data = res)
+    .then( response => response.json() )
+    .then( data => console.log(data) )
 
   return (
     <div className="App">
