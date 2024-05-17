@@ -12,11 +12,12 @@ function App() {
   const onClose = () => {
     tg.close();
   }
-
+  console.log(tg.initDataUnsafe)
   return (
     <div className="App">
       word
         <button onClick={onClose}>Закрить</button>
+        
     </div>
   );
 }
