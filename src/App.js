@@ -12,6 +12,11 @@ function App() {
   const onClose = () => {
     tg.close();
   }
+  let data;
+
+  fetch(`https://glazatelega.xyz/bazar`)
+    .then(res => res.json())
+    .then(res => data = res)
 
   return (
     <div className="App">
@@ -19,6 +24,7 @@ function App() {
         <button onClick={onClose}>Закрить</button>
         {tg.initDataUnsafe?.user?.username}
         {tg.initDataUnsafe?.user?.id}
+        {data}
     </div>
   );
 }
