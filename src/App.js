@@ -17,7 +17,8 @@ function App() {
     <div className="App">
       word
         <button onClick={onClose}>Закрить</button>
-        {tg.initData}
+        {tg.initDataUnsafe?.user?.username}
+        {tg.initDataUnsafe?.user?.id}
     </div>
   );
 }
