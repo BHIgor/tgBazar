@@ -16,7 +16,7 @@ function App() {
 
   fetch(`https://mate.academy/students-api/users`)
     .then( response => response.json() )
-    .then( data => {content = data} )
+    .then( data => console.log(data) )
 
   return (
     <div className="App">
