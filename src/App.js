@@ -8,19 +8,20 @@ function App() {
 
   useEffect(() => {
     tg.ready();
+    fetch(`https://tgbazar.com.ua/products`)
+    .then((response) => {
+      return response.json();
+    })
+    .then((data) => {
+      setDataDB(data);
+    });
   }, [])
 
   const onClose = () => {
     tg.close();
   }
 
-  fetch(`https://tgbazar.com.ua/products`)
-  .then((response) => {
-    return response.json();
-  })
-  .then((data) => {
-    setDataDB(data);
-  });
+  
 
   return (
     <div className="App">
