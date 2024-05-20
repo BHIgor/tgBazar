@@ -19,17 +19,23 @@ function App() {
       return response.json();
     })
     .then((data) => {
-      setDataDB(data.message);
-      console.log(data.message);
-      
+      setDataDB(data);
     });
+
   return (
     <div className="App">
       word
         <button onClick={onClose}>Закрить</button>
         {tg.initDataUnsafe?.user?.username}
         {tg.initDataUnsafe?.user?.id}
-        {dataDB}
+        {dataDB.map(e => {
+          return (
+            <div>
+              {e.name}
+            </div>
+          )
+        })
+        }
     </div>
   );
 }
