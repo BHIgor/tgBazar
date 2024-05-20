@@ -23,7 +23,7 @@ function App() {
       console.log(data.message);
       
     });
-
+    console.log(content);
   return (
     <div className="App">
       word
