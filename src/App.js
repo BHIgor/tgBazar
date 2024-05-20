@@ -4,7 +4,7 @@ import './App.css';
 const tg = window.Telegram.WebApp;
 
 function App() {
-  const [dataDB, setDataDB] = useState('');
+  const [dataDB, setDataDB] = useState([]);
 
   useEffect(() => {
     tg.ready();
