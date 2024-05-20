@@ -12,15 +12,15 @@ function App() {
   const onClose = () => {
     tg.close();
   }
-  let content = {};
+  let content = '';
 
   fetch(`https://tgbazar.com.ua/products`)
     .then((response) => {
       return response.json();
     })
     .then((data) => {
-      content = data;
-      console.log(data);
+      content = data.message;
+      console.log(data.message);
       
     });
 
@@ -30,7 +30,7 @@ function App() {
         <button onClick={onClose}>Закрить</button>
         {tg.initDataUnsafe?.user?.username}
         {tg.initDataUnsafe?.user?.id}
-        {content.message}
+        {content}
     </div>
   );
 }
