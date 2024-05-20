@@ -14,7 +14,7 @@ function App() {
   }
   let content = '';
 
-  fetch(`https://mate.academy/students-api/users`)
+  fetch(`https://tgbazar.com.ua/products`)
     .then( response => response.json() )
     .then( data => console.log(data) )
 
