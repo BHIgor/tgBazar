@@ -15,7 +15,7 @@ export const Header = () =>{
           </div>
 
           <div className="header__cart">
-            ake the Streets
+            Пилипенко
           </div>
         </div>
       </div>
