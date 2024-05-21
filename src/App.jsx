@@ -17,9 +17,7 @@ function App() {
       headers: {
        'Content-type': 'application/x-www-form-urlencoded'
      },
-   body: {
-    nameShop: search.substring(1)
-   }
+   body: search.substring(1)
    })
     .then((response) => {
       return response.json();
