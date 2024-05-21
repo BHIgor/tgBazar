@@ -1,8 +1,13 @@
+import { useContext } from "react"
+import { ReactContext } from "../../context/reactContext"
+
 export const Homepage = ({
-  tg,
   onClose,
   dataDB
 }) =>{
+
+  const tg = useContext(ReactContext)
+
   return <>
      word
       <button onClick={onClose}>Закрить</button>

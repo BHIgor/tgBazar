@@ -4,6 +4,7 @@ import { Routes, Route, useParams } from 'react-router-dom';
 import './App.css';
 
 import { Homepage } from './Components/Homepage/Homepage';
+import { ReactContext } from './context/reactContext';
 
 const tg = window.Telegram.WebApp;
 
@@ -12,7 +13,7 @@ function App() {
   const [dataDB, setDataDB] = useState([]);
 
   useEffect(() => {
-    tg.ready();
+    tg.ready()
     fetch(`https://tgbazar.com.ua/products`)
     .then((response) => {
       return response.json();
@@ -30,10 +31,12 @@ function App() {
 
   return (
     <div className="App">
-      <Routes>
-        <Route path='/' element={<Homepage/>} tg={tg} onClose={onClose} shopName={shopName} >
-        </Route>
-      </Routes>  
+      <ReactContext.Provider value={tg}>
+        <Routes>
+          <Route path='/' element={<Homepage/>} onClose={onClose} shopName={shopName} >
+          </Route>
+        </Routes>
+      </ReactContext.Provider>
     </div>
   );
 }
