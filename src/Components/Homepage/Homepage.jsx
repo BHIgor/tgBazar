@@ -4,11 +4,13 @@ import { ReactContext } from "../../context/ReactContext"
 const tg = window.Telegram.WebApp;
 
 export const Homepage = () =>{
-  const dataDB = useContext(ReactContext)
+  const { products, users} = useContext(ReactContext)
 
   tg.ready()
 
-  console.log(dataDB.products)
+  console.log(products)
+
+  console.log(users)
   const onClose = () => {
     tg.close();
   }
@@ -17,7 +19,7 @@ export const Homepage = () =>{
     <button onClick={onClose}>Закрить</button>
     {tg.initDataUnsafe?.user?.username}
     {tg.initDataUnsafe?.user?.id}
-    {dataDB.products.map(e => {
+    {products.map(e => {
       return (
         <div key={e.id}>
           {e.name}
@@ -25,7 +27,7 @@ export const Homepage = () =>{
       )
     })
     }
-    {dataDB.users.map(e => {
+    {users.map(e => {
       return (
         <div key={e.id}>
           {e.name} lox
