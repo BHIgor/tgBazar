@@ -1,10 +1,11 @@
 import { useEffect, useState } from 'react';
 import { Routes, Route} from 'react-router-dom';
+import { ReactContext } from './context/ReactContext';
 
 import './App.scss';
 
 import { Homepage } from './Components/Homepage/Homepage';
-import { ReactContext } from './context/ReactContext';
+
 
 const search = window.location.search
 
@@ -31,8 +32,7 @@ function App() {
     <div className="App">
       <ReactContext.Provider value={dataDB}>
         <Routes>
-          <Route path='/' element={<Homepage/>}>
-          </Route>
+          <Route path='/' element={<Homepage/>}></Route>
         </Routes>
       </ReactContext.Provider>
     </div>
