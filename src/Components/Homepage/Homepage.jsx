@@ -4,7 +4,7 @@ import { ReactContext } from "../../context/ReactContext"
 const tg = window.Telegram.WebApp;
 
 export const Homepage = () =>{
-  const {dataDB} = useContext(ReactContext)
+  const dataDB = useContext(ReactContext)
 
   tg.ready()
   console.log(dataDB)
