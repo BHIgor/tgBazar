@@ -1,14 +1,15 @@
 import { useContext } from "react"
 import { ReactContext } from "../../context/ReactContext"
-import { useParams } from "react-router-dom";
+import { useSearchParams } from "react-router-dom";
 
 const tg = window.Telegram.WebApp;
 
 export const Homepage = () =>{
-  const dataDB = useContext(ReactContext)
-  const params = useParams();
+  const dataDB = useContext(ReactContext);
+  const searchParams = useSearchParams();
   tg.ready()
-  console.log(params)
+  console.log(searchParams)
+  console.log(searchParams.get('name'))
   const onClose = () => {
     tg.close();
   }
