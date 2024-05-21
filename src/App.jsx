@@ -15,7 +15,7 @@ function App() {
     fetch(`https://tgbazar.com.ua/products`, {
       method: 'POST',
       headers: {
-       'Content-type': 'application/x-www-form-urlencoded'
+        'Content-type': 'application/json; charset=UTF-8',
      },
    body: JSON.stringify({nameShop: search.substring(1)})
    })
