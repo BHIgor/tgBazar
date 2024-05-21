@@ -13,19 +13,23 @@ function App() {
   const [dataDB, setDataDB] = useState([]);
   
   useEffect(() => {
-    fetch(`https://tgbazar.com.ua/products`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json;charset=utf-8'
-      },
-      body: JSON.stringify({nameShop: search.substring(1)})
-   })
-    .then((response) => {
-      return response.json();
-    })
-    .then((data) => {
-      setDataDB(data);
-    });
+    try{
+      fetch(`https://tgbazar.com.ua/products`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json;charset=utf-8'
+        },
+        body: JSON.stringify({nameShop: search.substring(1)})
+      })
+      .then((response) => {
+        return response.json();
+      })
+      .then((data) => {
+        setDataDB(data);
+      });
+    } catch (e) {
+      return false;
+    }
   }, [])
 
   return (

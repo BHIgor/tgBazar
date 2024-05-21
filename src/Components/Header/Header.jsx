@@ -7,11 +7,7 @@ export const Header = () =>{
       <div className="container container--header">
         <div className="header__top">
           <button className="header__logo">
-            <img
-            src="./images/MyBiKE.png"
-            alt="logo"
-            className="header__logo--img"
-            />
+            OK
           </button>
 
           <div className="header__search">
