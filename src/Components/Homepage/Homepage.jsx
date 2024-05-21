@@ -1,13 +1,13 @@
 import { useContext } from "react"
 import { ReactContext } from "../../context/reactContext"
 
-export const Homepage = ({
-  onClose,
-  dataDB
-}) =>{
+export const Homepage = () =>{
 
-  const tg = useContext(ReactContext)
-
+  const tg = window.Telegram.WebApp;
+  const dataDB = useContext(ReactContext)
+  const onClose = () => {
+    tg.close();
+  }
   return <>
      word
       <button onClick={onClose}>Закрить</button>
