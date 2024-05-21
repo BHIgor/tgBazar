@@ -1,9 +1,14 @@
 import { useEffect, useState } from 'react';
+import { Routes, Route, useParams } from 'react-router-dom';
+
 import './App.css';
+
+import { Homepage } from './Components/Homepage/Homepage';
 
 const tg = window.Telegram.WebApp;
 
 function App() {
+  const { shopName } = useParams();
   const [dataDB, setDataDB] = useState([]);
 
   useEffect(() => {
@@ -25,18 +30,10 @@ function App() {
 
   return (
     <div className="App">
-      word
-        <button onClick={onClose}>Закрить</button>
-        {tg.initDataUnsafe?.user?.username}
-        {tg.initDataUnsafe?.user?.id}
-        {dataDB.map(e => {
-          return (
-            <div>
-              {e.name}
-            </div>
-          )
-        })
-        }
+      <Routes>
+        <Route path='/' element={<Homepage/>} tg={tg} onClose={onClose} shopName={shopName} >
+        </Route>
+      </Routes>  
     </div>
   );
 }
