@@ -4,7 +4,7 @@ import { Routes, Route, useParams } from 'react-router-dom';
 import './App.css';
 
 import { Homepage } from './Components/Homepage/Homepage';
-import { ReactContext } from './context/reactContext';
+import { ReactContext } from './context/ReactContext';
 
 
 
