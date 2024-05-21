@@ -6,11 +6,29 @@
 }
 
 .header{
-  background-color: gray;
-  height: 50px;
-
+  
   &__top{
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    height: 50px;
+  }
+
+  &__menu{
+    margin-left: 20px;
+  }
+
+  &__cart{
+    margin-right: 20px;
+  }
+
+  &__search{
+    width: 80%;
+    height: 30px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    cursor: pointer;
   }
 }
