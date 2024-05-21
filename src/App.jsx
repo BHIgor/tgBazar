@@ -13,7 +13,7 @@ function App() {
   
   useEffect(() => {
     fetch(`https://tgbazar.com.ua/products`, {
-      method: 'GET',
+      method: 'POST',
       headers: {
        'Content-type': 'application/x-www-form-urlencoded'
      },
