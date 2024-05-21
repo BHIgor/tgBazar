@@ -21,21 +21,6 @@ export const Homepage = () =>{
     <button onClick={onClose}>Закрить</button>
     {tg.initDataUnsafe?.user?.username}
     {tg.initDataUnsafe?.user?.id}
-    {product.map(e => {
-      return (
-        <div key={e.id}>
-          {e.name}
-        </div>
-      )
-    })
-    }
-    {user.map(e => {
-      return (
-        <div key={e.id}>
-          {e.name} lox
-        </div>
-      )
-    })
-    }
+  
   </>
 }
