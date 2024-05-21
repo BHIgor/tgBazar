@@ -16,7 +16,7 @@ export const Homepage = () =>{
     { id: 4, name: 'Сяоми' }
  ]
 
- dataDB.push({products: products})
+ //dataDB.push({products: products})
 
   tg.ready()
 
