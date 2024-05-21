@@ -6,13 +6,21 @@ import './App.css';
 import { Homepage } from './Components/Homepage/Homepage';
 import { ReactContext } from './context/ReactContext';
 
-
+const search = window.location.search
 
 function App() {
   const [dataDB, setDataDB] = useState([]);
-
+  
   useEffect(() => {
-    fetch(`https://tgbazar.com.ua/products`)
+    fetch(`https://tgbazar.com.ua/products`, {
+      method: 'GET',
+      headers: {
+       'Content-type': 'application/x-www-form-urlencoded'
+     },
+   body: {
+    nameShop: search.substring(1)
+   }
+   })
     .then((response) => {
       return response.json();
     })

@@ -5,9 +5,9 @@ const tg = window.Telegram.WebApp;
 
 export const Homepage = () =>{
   const dataDB = useContext(ReactContext)
-  let search = window.location.search
+
   tg.ready()
-  console.log(search)
+
 
   const onClose = () => {
     tg.close();
