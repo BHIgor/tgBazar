@@ -9,7 +9,6 @@ import { ReactContext } from './context/reactContext';
 
 
 function App() {
-  const { shopName } = useParams();
   const [dataDB, setDataDB] = useState([]);
 
   useEffect(() => {
@@ -21,10 +20,6 @@ function App() {
       setDataDB(data);
     });
   }, [])
-
-
-
-  
 
   return (
     <div className="App">

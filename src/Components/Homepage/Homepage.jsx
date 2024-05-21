@@ -1,10 +1,14 @@
 import { useContext } from "react"
 import { ReactContext } from "../../context/reactContext"
+import { useParams } from "react-router-dom";
+
+const tg = window.Telegram.WebApp;
 
 export const Homepage = () =>{
-
-  const tg = window.Telegram.WebApp;
   const dataDB = useContext(ReactContext)
+  const { shopName } = useParams();
+  tg.ready()
+  console.log(shopName)
   const onClose = () => {
     tg.close();
   }
