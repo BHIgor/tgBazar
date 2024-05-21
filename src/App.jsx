@@ -17,7 +17,7 @@ function App() {
       headers: {
         'Content-Type': 'application/json;charset=utf-8'
       },
-   body: JSON.stringify({nameShop: search.substring(1)})
+      body: JSON.stringify({nameShop: search.substring(1)})
    })
     .then((response) => {
       return response.json();
