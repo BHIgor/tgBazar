@@ -8,7 +8,7 @@ import { Header } from "../Header/Header";
 const tg = window.Telegram.WebApp;
 
 export const Homepage = () =>{
-  const dataDB = useContext(ReactContext);
+ const dataDB = useContext(ReactContext);
   const products =  [
     { id: 1, name: 'Сони ериксон' },
     { id: 2, name: 'Айфон' },
@@ -33,7 +33,7 @@ export const Homepage = () =>{
       {tg.initDataUnsafe?.user?.id}
       
       {
-        dataDB[0].products.map(e => {
+        products.map(e => {
           return (
             <div key={e.id} className="test">
               {e.name}
