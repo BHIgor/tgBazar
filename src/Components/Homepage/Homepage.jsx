@@ -17,7 +17,7 @@ export const Homepage = () =>{
     tg.close();
   }
   return <> 
-      { (dataDB === undefined) ? <div>Помилка</div> : <>
+      { (dataDB.length === 0) ? <div>Помилка</div> : <>
       
       word
     <button onClick={onClose}>Закрить</button>
