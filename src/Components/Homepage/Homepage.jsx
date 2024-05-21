@@ -6,9 +6,9 @@ const tg = window.Telegram.WebApp;
 
 export const Homepage = () =>{
   const dataDB = useContext(ReactContext)
-  const { shopName } = useParams();
+  const params = useParams();
   tg.ready()
-  console.log(shopName)
+  console.log(params)
   const onClose = () => {
     tg.close();
   }
