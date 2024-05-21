@@ -22,23 +22,21 @@ export const Homepage = () =>{
     {tg.initDataUnsafe?.user?.username}
     {tg.initDataUnsafe?.user?.id}
     
-    {product!==undefined ? product.map(e => {
+    {product.map(e => {
       return (
         <div key={e.id}>
           {e.name}
         </div>
       )
-    }) : ''
-    
+    })
     }
-     {user!==undefined ? user.map(e => {
+    {user.map(e => {
       return (
         <div key={e.id}>
-          {e.name}
+          {e.name} lox
         </div>
       )
-    }) : ''
-    
+    })
     }
   </>
 }
