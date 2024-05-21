@@ -6,7 +6,7 @@ const tg = window.Telegram.WebApp;
 
 export const Homepage = () =>{
   const dataDB = useContext(ReactContext);
-  const searchParams = useSearchParams();
+  const [searchParams, setSearchParams] = useSearchParams();
   tg.ready()
   console.log(searchParams)
   console.log(searchParams.get('name'))
