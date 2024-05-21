@@ -8,7 +8,7 @@ export const Homepage = () =>{
 
   tg.ready()
 
-
+  console.log(dataDB)
   const onClose = () => {
     tg.close();
   }
@@ -17,21 +17,6 @@ export const Homepage = () =>{
     <button onClick={onClose}>Закрить</button>
     {tg.initDataUnsafe?.user?.username}
     {tg.initDataUnsafe?.user?.id}
-    {dataDB.products.map(e => {
-      return (
-        <div key={e.id}>
-          {e.name}
-        </div>
-      )
-    })
-    }
-    {dataDB.users.map(e => {
-      return (
-        <div key={e.id}>
-          {e.name} lox
-        </div>
-      )
-    })
-    }
+  
   </>
 }
