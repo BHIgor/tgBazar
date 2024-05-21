@@ -16,8 +16,10 @@ export const Homepage = () =>{
   const onClose = () => {
     tg.close();
   }
-  return <>
-     word
+  return <> 
+      { (dataDB === undefined) ? <div>Помилка</div> : <>
+      
+      word
     <button onClick={onClose}>Закрить</button>
     {tg.initDataUnsafe?.user?.username}
     {tg.initDataUnsafe?.user?.id}
@@ -28,15 +30,19 @@ export const Homepage = () =>{
           {e.name}
         </div>
       )
-    })
+    }) 
     }
-    {user.map(e => {
+     { user.map(e => {
       return (
         <div key={e.id}>
-          {e.name} lox
+          {e.name}
         </div>
       )
     })
+    
     }
+    </>
+  }
+  
   </>
 }
