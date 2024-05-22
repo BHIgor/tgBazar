@@ -1,12 +1,15 @@
 .menu {
   height: 100vh;
+  background-color: #C2C2C2;
   position: fixed;
   top: 0;
   width: 60%;
-  background-color: rgba(213, 240, 253, 0);
+  opacity: 0;
   pointer-events: none;
   transition: all 0.3s;
   transform: translateX(-100%);
+  -webkit-transition: all 0.5s ease;
+  -webkit-transition-property: all 0.3s;
  
   &__close {
     opacity: 0;
@@ -21,7 +24,7 @@
   }
 
   &:target{
-    background-color: rgba(213, 240, 253, 1);
+    opacity: 1;
     transform: translateX(0%);
     pointer-events: all;
   }
