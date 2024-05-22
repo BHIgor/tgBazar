@@ -5,7 +5,7 @@ import { ReactContext } from './context/ReactContext';
 import './App.scss';
 
 import { Homepage } from './Components/Homepage/Homepage';
-
+import { Header } from "./Components/Header/Header";
 
 const search = window.location.search
 
@@ -35,8 +35,10 @@ function App() {
   return (
     <div className="App">
       <ReactContext.Provider value={dataDB}>
-        <Routes>
-          <Route path='/' element={<Homepage/>}></Route>
+        <Header/>
+
+        <Routes> 
+          <Route path='/' element={<Homepage/>}/>
         </Routes>
       </ReactContext.Provider>
     </div>

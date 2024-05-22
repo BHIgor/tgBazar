@@ -17,27 +17,36 @@
     height: 50px;
   }
 
+  &__icons{
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 30px;
+    width: 30px;
+    display: block;
+    cursor: pointer;
+    transition: transform 0.3s;
+
+    &:hover{
+      transform: scale(1.1);
+    }
+  }
+
   &__menu{
     margin-left: 15px;
-
-    &--img{
-      height: 30px;
-      display: block;
-    }
+    background-image: url(../../images/burger.svg);
   }
 
   &__cart{
     margin-right: 15px;
+    background-image: url(../../images/cart.svg);
 
-    &--img{
-      height: 30px;
-      display: block;
-    }
   }
 
   &__title{
     font-size: 25px;
     font-weight: bold;
+    padding-top: 2px;
 
     @include titleFont()
   }
