@@ -38,7 +38,6 @@ function App() {
       <ReactContext.Provider value={dataDB}>
         <Header/>
         <Menu/>
-
         <Routes> 
           <Route path='/' element={<Homepage/>}/>
         </Routes>

@@ -9,10 +9,11 @@ export const Menu = () =>{
   return <>
       { (dataDB.length === 0) ? <div>Помилка</div> : <>   
         <aside className="menu page__menu" id="menu" >
-            <div className='menu__title' style={{color:'orange',backgroundColor: 'black'}}>
-              {dataDB.listBot[0].name}
-            </div>
-            <div className="container menu__container">
+          <a href='#back' className='menu__close'> </a>
+          <div className='menu__title' style={{color:'orange',backgroundColor: 'black'}}>
+            {dataDB.listBot[0].name}
+          </div>
+          <div className="container menu__container">
               <ul className="menu__nav">
                 <li className="menu__item">
                   <a href="#About" className="menu__list">
@@ -61,7 +62,7 @@ export const Menu = () =>{
             </div>
           </div>
       
-          <a href='#back' className='menu__close'> </a>
+         
         </aside>
       </>
     }
