@@ -4,6 +4,7 @@
   height: 100vh;
   position: fixed;
   border-top-right-radius: 50px;
+  background-color: rgb(226, 226, 226);
   top: 0;
   width: 70%;
   opacity: 0;
@@ -32,7 +33,6 @@
   }
 
   &__title{
-    background-color: black;
     border-top-right-radius: 50px;
     height: 50px;
     line-height: 50px;
@@ -46,26 +46,28 @@
   }
 
   &__container {
-    padding: 24px 0;
+    padding: 15px 20px;
+    
   }
 
 
   &__nav {
     display: flex;
     flex-direction: column;
-    gap: 32px;
-    font-size: 22px;
-    line-height: 22px;
-    letter-spacing: 2px;
+    gap: 15px;
+    font-size: 16px;
+    line-height: 16px;
     list-style: none;
     padding: 0;
-    margin-top: 36px;
+
+    @include menuFont()
   }
 
   &__list {
     position: relative;
     text-decoration: none;
     font-weight: 600;
+    color: black;
 
     &--link {
       font-weight: 700;
@@ -73,11 +75,13 @@
       line-height: 27px;
       text-decoration: none;
     }
-
     &--link:last-child {
+      border-bottom: 1px solid black;
       display: block;
       width: fit-content;
     }
+
+   
   }
 }
 
