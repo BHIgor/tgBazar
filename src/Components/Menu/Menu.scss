@@ -8,7 +8,18 @@
   pointer-events: none;
   transition: all 0.3s;
   transform: translateX(-100%);
-
+  transition-duration: 300ms;
+  -moz-animation-duration: 300ms;
+  -webkit-animation-duration: 300ms;
+  transition-property: all;
+  -moz-transition-property: all;
+  -webkit-transition-property: all;
+  animation-duration: 300ms;
+  -moz-animation-duration: 300ms;
+  -webkit-animation-duration: 300ms;
+  animation-timing-function: ease-in-out;
+  -moz-animation-timing-function: ease-in-out;
+  -webkit-animation-timing-function: ease-in-out;
 
   &__close {
     opacity: 0;
