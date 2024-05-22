@@ -1,5 +1,6 @@
 @import '../../fonts/fonts.scss';
 
+
 .menu {
   height: 100vh;
   position: fixed;
@@ -23,6 +24,7 @@
     top: 0;
     right: -100%;
     -webkit-tap-highlight-color: transparent;
+
 
   }
 
@@ -62,6 +64,13 @@
   &__item {
     display: flex;
     gap: 10px;
+    width: 200px;
+    height: 35px;
+    padding-left: 5px;
+    border: none;
+    border-radius: 5px;
+    align-items: center;
+    cursor: pointer;
   }
 
   &__icon {
@@ -124,7 +133,7 @@
   &__nav {
     display: flex;
     flex-direction: column;
-    gap: 24px;
+    gap: 15px;
     font-size: 18px;
     line-height: 15px;
     list-style: none;

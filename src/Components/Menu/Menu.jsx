@@ -15,7 +15,7 @@ export const Menu = () =>{
           </div>
           <div className="container menu__container">
               <ul className="menu__nav">
-                <li className="menu__item">
+                <li className="menu__item" style={{backgroundColor:'orange'}}>
                   <div className='menu__icon menu__icon--main'></div>
                   <a href="#About" className="menu__list">
                     Головна
@@ -35,7 +35,7 @@ export const Menu = () =>{
                   </a>
                 </li>
 
-                <li className="menu__item">
+                <li className="menu__item ">
                   <div className='menu__icon menu__icon--checkout'></div>
                   <a href="#Contact" className="menu__list">
                     Мої замовлення
@@ -86,7 +86,7 @@ export const Menu = () =>{
                   </a>
                 </li>
 
-                <li className="menu__item">
+                <li className="menu__item ">
                   <div className='menu__icon menu__icon--obmin'></div>
                   <a href="#Contact" className="menu__list">
                     Обмін і повернення
