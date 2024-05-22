@@ -1,0 +1,9 @@
+@mixin titleFont() {
+  font-family: Poppins, sans-serif;
+  src: url(../fonts/Poppins-Bold.ttf);
+}
+
+@mixin titleFont1() {
+  font-family: Rubik, sans-serif;
+  src: url(../fonts/Rubik-BoldItalic.ttf);
+}
