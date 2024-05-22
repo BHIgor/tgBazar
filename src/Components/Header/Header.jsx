@@ -5,25 +5,28 @@ import '../Header/Header.scss';
 
 export const Header = () =>{
   const dataDB = useContext(ReactContext);
-  console.log(dataDB)
+  console.log(dataDB.listBot)
 
   return <> 
-    <header className="header" style={{backgroundColor: 'orange'}}>
-      <div className="container container--header">
-        <div className="header__top">
-          <a href='#menu' className="header__icons header__menu">
-          
-          </a>
+    { (dataDB.length === 0) ? <div>Помилка</div> : <>
+      <header className="header" style={{backgroundColor: 'orange'}}>
+        <div className="container container--header">
+          <div className="header__top">
+            <a href='#menu' className="header__icons header__menu">
+              {dataDB.listBot[0].name}
+            </a>
 
-          <div className="header__title" style={{color: 'black'}}>
+            <div className="header__title" style={{color: 'black'}}>
+              
+            </div>
+
+            <a href='#cart' className="header__icons header__cart">
             
+            </a>
           </div>
-
-          <a href='#cart' className="header__icons header__cart">
-           
-          </a>
         </div>
-      </div>
-    </header>
+      </header>
+    </>
+    }
   </>
 }
