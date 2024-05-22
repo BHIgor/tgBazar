@@ -9,7 +9,7 @@ export const Menu = () =>{
   return <>   
     <aside className="menu page__menu" id="menu" style={{backgroundColor: '#e9e9e9'}}>
         <div className='menu__title' style={{color:'orange'}}>
-          {dataDB.listBot[0].name}
+          {dataDB.listBot.name}
         </div>
         <div className="container menu__container">
         <ul className="menu__nav">

@@ -5,7 +5,7 @@ import '../Header/Header.scss';
 
 export const Header = () =>{
   const dataDB = useContext(ReactContext);
-  console.log(dataDB.listBot)
+  console.log(dataDB)
 
   return <> 
     <header className="header" style={{backgroundColor: 'orange'}}>
@@ -16,7 +16,7 @@ export const Header = () =>{
           </a>
 
           <div className="header__title" style={{color: 'black'}}>
-            {dataDB.listBot[0].name}
+            {dataDB.listBot.name}
           </div>
 
           <a href='#cart' className="header__icons header__cart">
