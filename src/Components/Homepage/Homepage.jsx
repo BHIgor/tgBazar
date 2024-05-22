@@ -23,7 +23,7 @@ export const Homepage = () =>{
     tg.close();
   }
   return <> 
-    { (dataDB.products.length === 0) ? <div>Помилка</div> : <>
+    { (dataDB.length === 0) ? <div>Помилка</div> : <>
       <Header/>
       wordіі
 
