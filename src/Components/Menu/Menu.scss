@@ -8,9 +8,12 @@
   pointer-events: none;
   transition: all 0.3s;
   transform: translateX(-100%);
-  -webkit-transform: rotate(15deg);
-  -o-transform:rotate(15deg);
-  -moz-transform: rotate(15deg);
+  -webkit-transform: translateX(-100%);
+  -o-transform:translateX(-100%);
+  -moz-transform: translateX(-100%);
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  -moz-transition: all 0.3s;
 
 
   &__close {
@@ -28,9 +31,9 @@
   &:target{
     opacity: 1;
     transform: translateX(0%);
-    -webkit-transform: rotate(-15deg);
-    -o-transform:rotate(-15deg);
-    -moz-transform: rotate(-15deg);
+    -webkit-transform: translateX(0%);
+    -o-transform:translateX(0%);
+    -moz-transform: translateX(0%);
     pointer-events: all;
   }
 
