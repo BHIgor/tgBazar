@@ -17,7 +17,7 @@ export const Header = () =>{
               />
           </a>
 
-          <div className="header__title" style={{color: 'dimgray'}}>
+          <div className="header__title" style={{color: 'black'}}>
             Мобилка
           </div>
 
