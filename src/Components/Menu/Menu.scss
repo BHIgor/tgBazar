@@ -8,7 +8,9 @@
   pointer-events: none;
   transition: all 0.3s;
   transform: translateX(-100%);
-  animation-duration: 0.3s;
+  -webkit-transform: translateX(-100%);
+  -o-transform: translateX(-100%);
+  -moz-transform: translateX(-100%);
 
 
   &__close {
@@ -26,6 +28,9 @@
   &:target{
     opacity: 1;
     transform: translateX(0%);
+    -webkit-transform: translateX(0%);
+    -o-transform: translateX(0%);
+    -moz-transform: translateX(0%);
     pointer-events: all;
   }
 
