@@ -16,53 +16,84 @@ export const Menu = () =>{
           <div className="container menu__container">
               <ul className="menu__nav">
                 <li className="menu__item">
+                  <div className='menu__icon menu__icon--main'></div>
                   <a href="#About" className="menu__list">
                     Головна
                   </a>
                 </li>
-
                 <li className="menu__item">
+                  <div className='menu__icon menu__icon--katalog'></div>
                   <a href="#Compare" className="menu__list">
                     Каталог
                   </a>
                 </li>
                 <hr className='menu__lineHorizont'></hr>
                 <li className="menu__item">
+                  <div className='menu__icon menu__icon--cart'></div>
                   <a href="#Details" className="menu__list">
                     Кошик
                   </a>
                 </li>
 
                 <li className="menu__item">
+                  <div className='menu__icon menu__icon--checkout'></div>
                   <a href="#Contact" className="menu__list">
                     Мої замовлення
                   </a>
                 </li>
+
+                <li className="menu__item">
+                  <div className='menu__icon menu__icon--contacts'></div>
+                  <a href="#Contact" className="menu__list">
+                    Контакти
+                  </a>
+                </li>
+                
+                <li className="menu__item">
+                  <div className='menu__icon menu__icon--help'></div>
+                  <a href="#Contact" className="menu__list">
+                    Допомога
+                  </a>
+                </li>
+
                 <hr className='menu__lineHorizont'></hr>
+                
+                <li className="menu__item">
+                  <div className='menu__icon menu__icon--about'></div>
+                  <a href="#Contact" className="menu__list">
+                    Про нас
+                  </a>
+                </li>
+
+                <li className="menu__item">
+                  <div className='menu__icon menu__icon--garant'></div>
+                  <a href="#Contact" className="menu__list">
+                    Гарантійні умови
+                  </a>
+                </li>
+
+                <li className="menu__item">
+                  <div className='menu__icon menu__icon--delivery'></div>
+                  <a href="#Contact" className="menu__list">
+                    Доставка
+                  </a>
+                </li>
+
+                <li className="menu__item">
+                  <div className='menu__icon menu__icon--obmin'></div>
+                  <a href="#Contact" className="menu__list">
+                    Обмін і повернення
+                  </a>
+                </li>
+
+                <li className="menu__item">
+                  <div className='menu__icon menu__icon--time'></div>
+                  <a href="#Contact" className="menu__list">
+                    Графік роботи
+                  </a>
+                </li>
               </ul>
-            <div className="menu__footer">
-              <a href="tel:+1 234 5555-55-55" className="menu__list--link">
-                Про нас
-              </a>
-              <a href="tel:+1 234 5555-55-55" className="menu__list--link">
-                Контакти
-              </a>
-              <a href="tel:+1 234 5555-55-55" className="menu__list--link">
-                Доставка
-              </a>
-              <a href="tel:+1 234 5555-55-55" className="menu__list--link">
-                Оплата
-              </a>
-              <a href="tel:+1 234 5555-55-55" className="menu__list--link">
-                Обмін і повернення
-              </a>
-              <a href="tel:+1 234 5555-55-55" className="menu__list--link">
-                Гарантійні умови
-              </a>
-            </div>
-          </div>
-      
-         
+          </div>       
         </aside>
       </>
     }

@@ -1,10 +1,4 @@
 @import '../../fonts/fonts.scss';
-@import '../../Components/Header/Header.scss';
-
-.header:has(.page__menu:target) {
- background-color: red !important;
-
-}
 
 .menu {
   height: 100vh;
@@ -59,10 +53,68 @@
   }
 
   &__lineHorizont {
-    width: 150px;
-    border: 1px solid grey;
+    width: 160px;
+    border: 1px solid rgb(45, 45, 45);
     border-radius: 2px;
 
+  }
+
+  &__item {
+    display: flex;
+    gap: 10px;
+  }
+
+  &__icon {
+    text-decoration: none;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 15px;
+    width: 15px;
+
+    &--main{
+      background-image: url(../../images/menu/main.svg);
+    }
+
+    &--katalog{
+      background-image: url(../../images/menu/katalog.svg);
+    }
+
+    &--cart{
+      background-image: url(../../images/menu/cart-menu.svg);
+    }
+
+    &--checkout{
+      background-image: url(../../images/menu/checkout.svg);
+    }
+
+    &--help{
+      background-image: url(../../images/menu/help.svg);
+    }
+
+    &--about{
+      background-image: url(../../images/menu/about.svg);
+    }
+
+    &--garant{
+      background-image: url(../../images/menu/garant.svg);
+    }
+
+    &--delivery{
+      background-image: url(../../images/menu/delivery.svg);
+    }
+
+    &--obmin{
+      background-image: url(../../images/menu/obmin.svg);
+    }
+    
+    &--contacts{
+      background-image: url(../../images/menu/contacts.svg);
+    }
+
+    &--time{
+      background-image: url(../../images/menu/time.svg);
+    }
   }
 
   &__nav {
@@ -78,22 +130,17 @@
   }
 
   &__list {
-    position: relative;
+
     text-decoration: none;
     color: black;
 
- 
-
     &--link {
       font-weight: 700;
-      font-size: 16px;
+      font-size: 10px;
       line-height: 27px;
       text-decoration: none;
     }
 
-    
-
-   
   }
 }
 
