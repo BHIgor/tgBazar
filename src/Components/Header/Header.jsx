@@ -16,7 +16,7 @@ export const Header = () =>{
           </a>
 
           <div className="header__title" style={{color: 'black'}}>
-            {dataDB.listBot.name}
+            
           </div>
 
           <a href='#cart' className="header__icons header__cart">
