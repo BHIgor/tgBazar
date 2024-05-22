@@ -9,14 +9,13 @@ const tg = window.Telegram.WebApp;
 
 export const Homepage = () =>{
  const dataDB = useContext(ReactContext);
-  const products =  [
+ /* const products =  [
     { id: 1, name: 'Сони ериксон' },
     { id: 2, name: 'Айфон' },
     { id: 3, name: 'Самсунг' },
     { id: 4, name: 'Сяоми' }
- ]
+ ]*/
 
-// dataDB.push({products: products})
 
   tg.ready()
 
@@ -24,7 +23,7 @@ export const Homepage = () =>{
     tg.close();
   }
   return <> 
-    { (products.length === 0) ? <div>Помилка</div> : <>
+    { (dataDB.products.length === 0) ? <div>Помилка</div> : <>
       <Header/>
       wordіі
 
@@ -33,7 +32,7 @@ export const Homepage = () =>{
       {tg.initDataUnsafe?.user?.id}
       
       {
-        products.map(e => {
+        dataDB.products.map(e => {
           return (
             <div key={e.id} className="test">
               {e.name}
