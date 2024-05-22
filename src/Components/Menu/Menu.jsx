@@ -80,6 +80,13 @@ export const Menu = () =>{
                 </li>
 
                 <li className="menu__item">
+                  <div className='menu__icon menu__icon--pay'></div>
+                  <a href="#Contact" className="menu__list">
+                    Оплата
+                  </a>
+                </li>
+
+                <li className="menu__item">
                   <div className='menu__icon menu__icon--obmin'></div>
                   <a href="#Contact" className="menu__list">
                     Обмін і повернення
