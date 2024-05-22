@@ -1,26 +1,13 @@
 .menu {
   height: 100vh;
-  background-color: #C2C2C2;
   position: fixed;
   top: 0;
   width: 60%;
-  opacity: 0;
+  background-color: rgba(213, 240, 253, 0);
   pointer-events: none;
   transition: all 0.3s;
   transform: translateX(-100%);
-  transition-duration: 300ms;
-  -moz-animation-duration: 300ms;
-  -webkit-animation-duration: 300ms;
-  transition-property: all;
-  -moz-transition-property: all;
-  -webkit-transition-property: all;
-  animation-duration: 300ms;
-  -moz-animation-duration: 300ms;
-  -webkit-animation-duration: 300ms;
-  animation-timing-function: ease-in-out;
-  -moz-animation-timing-function: ease-in-out;
-  -webkit-animation-timing-function: ease-in-out;
-
+ 
   &__close {
     opacity: 0;
     width: 100%;
@@ -34,7 +21,7 @@
   }
 
   &:target{
-    opacity: 1;
+    background-color: rgba(213, 240, 253, 1);
     transform: translateX(0%);
     pointer-events: all;
   }
