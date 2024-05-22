@@ -35,6 +35,11 @@
   &__menu{
     margin-left: 15px;
     background-image: url(../../images/burger.svg);
+    
+    &:hover{
+      background-image: url(../../images/burger-hover.svg);
+    
+    }
   }
 
   &__cart{

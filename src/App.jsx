@@ -5,7 +5,8 @@ import { ReactContext } from './context/ReactContext';
 import './App.scss';
 
 import { Homepage } from './Components/Homepage/Homepage';
-import { Header } from "./Components/Header/Header";
+import { Header } from './Components/Header/Header';
+import { Menu } from './Components/Menu/Menu';
 
 const search = window.location.search
 
@@ -36,6 +37,7 @@ function App() {
     <div className="App">
       <ReactContext.Provider value={dataDB}>
         <Header/>
+        <Menu/>
 
         <Routes> 
           <Route path='/' element={<Homepage/>}/>
