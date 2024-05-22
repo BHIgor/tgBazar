@@ -25,7 +25,7 @@ export const Menu = () =>{
                     Каталог
                   </a>
                 </li>
-
+                <hr className='menu__lineHorizont'></hr>
                 <li className="menu__item">
                   <a href="#Details" className="menu__list">
                     Кошик
@@ -37,6 +37,7 @@ export const Menu = () =>{
                     Мої замовлення
                   </a>
                 </li>
+                <hr className='menu__lineHorizont'></hr>
               </ul>
             <div className="menu__footer">
               <a href="tel:+1 234 5555-55-55" className="menu__list--link">

@@ -46,17 +46,23 @@
   }
 
   &__container {
-    padding: 15px 20px;
+    padding: 17px 20px;
     
   }
 
+  &__lineHorizont {
+    width: 150px;
+    border: 1px solid grey;
+    border-radius: 50%;
+
+  }
 
   &__nav {
     display: flex;
     flex-direction: column;
-    gap: 15px;
-    font-size: 16px;
-    line-height: 16px;
+    gap: 16px;
+    font-size: 18px;
+    line-height: 15px;
     list-style: none;
     padding: 0;
 
@@ -66,8 +72,9 @@
   &__list {
     position: relative;
     text-decoration: none;
-    font-weight: 600;
     color: black;
+
+ 
 
     &--link {
       font-weight: 700;
@@ -75,11 +82,8 @@
       line-height: 27px;
       text-decoration: none;
     }
-    &--link:last-child {
-      border-bottom: 1px solid black;
-      display: block;
-      width: fit-content;
-    }
+
+    
 
    
   }
