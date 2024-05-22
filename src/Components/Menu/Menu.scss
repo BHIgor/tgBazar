@@ -8,8 +8,8 @@
   pointer-events: none;
   transition: all 0.3s;
   transform: translateX(-100%);
-  -webkit-transition: all 0.5s ease;
-  -webkit-transition-property: all 0.3s;
+  -webkit-transition: all 0.3s ease;
+
  
   &__close {
     opacity: 0;
