@@ -7,7 +7,7 @@
   border-top-right-radius: 30px;
   background-color: white;
   top: 0;
-  width: 70%;
+  width: 60%;
   opacity: 0;
   pointer-events: none;
   transition: all 0.2s;
@@ -133,7 +133,7 @@
   &__nav {
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 6px;
     font-size: 18px;
     line-height: 15px;
     list-style: none;
