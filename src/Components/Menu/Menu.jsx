@@ -10,7 +10,7 @@ export const Menu = () =>{
       { (dataDB.length === 0) ? <div>Помилка</div> : <>   
         <aside className="menu page__menu" id="menu" style={{backgroundColor: '#e9e9e9'}}>
             <div className='menu__title' style={{color:'orange'}}>
-            
+              {dataDB.listBot[0].name}
             </div>
             <div className="container menu__container">
             <ul className="menu__nav">

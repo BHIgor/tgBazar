@@ -13,11 +13,11 @@ export const Header = () =>{
         <div className="container container--header">
           <div className="header__top">
             <a href='#menu' className="header__icons header__menu">
-              {dataDB.listBot[0].name}
+              
             </a>
 
             <div className="header__title" style={{color: 'black'}}>
-              
+              {dataDB.listBot[0].name}
             </div>
 
             <a href='#cart' className="header__icons header__cart">
