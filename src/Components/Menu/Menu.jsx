@@ -1,10 +1,10 @@
-import { useContext } from 'react';
-import { ReactContext } from "../../context/ReactContext"
+//import { useContext } from 'react';
+//import { ReactContext } from "../../context/ReactContext"
 
 import '../Menu/Menu.scss';
 
 export const Menu = () =>{
-  const dataDB = useContext(ReactContext);
+  //const dataDB = useContext(ReactContext);
 
   return <>   
     <aside className="menu page__menu" id="menu" style={{backgroundColor: '#e9e9e9'}}>
