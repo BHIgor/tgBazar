@@ -8,6 +8,8 @@
   pointer-events: none;
   transition: all 0.3s;
   transform: translateX(-100%);
+  animation-duration: 0.3s;
+
 
   &__close {
     opacity: 0;
