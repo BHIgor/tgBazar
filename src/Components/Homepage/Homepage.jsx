@@ -9,7 +9,7 @@ const tg = window.Telegram.WebApp;
 
 export const Homepage = () =>{
  const dataDB = useContext(ReactContext);
- /* const products =  [
+  /*const products =  [
     { id: 1, name: 'Сони ериксон' },
     { id: 2, name: 'Айфон' },
     { id: 3, name: 'Самсунг' },

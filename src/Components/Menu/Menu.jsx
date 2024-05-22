@@ -1,10 +1,17 @@
+import { useContext } from 'react';
+import { ReactContext } from "../../context/ReactContext"
+
 import '../Menu/Menu.scss';
 
 export const Menu = () =>{
+  const dataDB = useContext(ReactContext);
 
   return <>   
-    <aside className="menu page__menu" id="menu">
-      <div className="container menu__container">
+    <aside className="menu page__menu" id="menu" style={{backgroundColor: '#e9e9e9'}}>
+        <div className='menu__title' style={{color:'orange'}}>
+          {dataDB.listBot[0].name}
+        </div>
+        <div className="container menu__container">
         <ul className="menu__nav">
           <li className="menu__item">
           </li>
@@ -41,9 +48,8 @@ export const Menu = () =>{
 
         </div>
       </div>
-      <a href='#back' className='menu__close'>
-
-      </a>
+  
+      <a href='#back' className='menu__close'> </a>
     </aside>
   </>
 }

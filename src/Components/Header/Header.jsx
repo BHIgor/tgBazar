@@ -1,6 +1,11 @@
+import { useContext } from 'react';
+import { ReactContext } from "../../context/ReactContext"
+
 import '../Header/Header.scss';
 
 export const Header = () =>{
+  const dataDB = useContext(ReactContext);
+  console.log(dataDB.listBot)
 
   return <> 
     <header className="header" style={{backgroundColor: 'orange'}}>
@@ -11,7 +16,7 @@ export const Header = () =>{
           </a>
 
           <div className="header__title" style={{color: 'black'}}>
-            Мобилка
+            {dataDB.listBot[0].name}
           </div>
 
           <a href='#cart' className="header__icons header__cart">
