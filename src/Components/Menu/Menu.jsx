@@ -7,9 +7,6 @@ export const Menu = () =>{
       <div className="container menu__container">
         <ul className="menu__nav">
           <li className="menu__item">
-            <a href="#" className="menu__list">
-              Home
-            </a>
           </li>
 
           <li className="menu__item">
@@ -41,12 +38,10 @@ export const Menu = () =>{
             +1 234 5555-55-55
           </a>
 
-          <a href="#" className="menu__list--link">
-            Book a test ride
-          </a>
+
         </div>
       </div>
-      <a href='#' className='menu__close'>
+      <a href='#back' className='menu__close'>
 
       </a>
     </aside>
