@@ -1,0 +1,40 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  justify-content: center;
+
+  &__search{
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    text-align: center;
+    margin-top: 20px;
+    position: relative;
+
+    &--icon{
+      background-image: url(../../images/search.svg);
+      opacity: 0.5;
+      height: 30px;
+      width: 30px;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      position: absolute;
+      top: 4px;
+      left: 70px;
+    }
+
+    &--input{
+      width: 300px;
+      outline: none;
+      height: 36px;
+      border: 1px solid gray;
+      border-radius: 5px;
+  
+      padding-left: 40px;
+      font-size: 15px;
+
+    }
+  }
+}

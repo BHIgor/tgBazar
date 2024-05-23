@@ -25,22 +25,33 @@ export const Homepage = () =>{
   }
   return <> 
     { (dataDB.length === 0) ? <div>Помилка</div> : <>
+      <div className="main">
+          <div className="main__search"> 
+             <div className="main__search--icon"></div>
+             <input 
+              className="main__search--input"
+              placeholder="Введіть назву або id товару ..."
+            />
+          </div>
 
-      wordіі
+         
 
-      <button onClick={onClose}>Закрить</button>
-      {tg.initDataUnsafe?.user?.username}
-      {tg.initDataUnsafe?.user?.id}
+<button onClick={onClose}>Закрить</button>
+{tg.initDataUnsafe?.user?.username}
+{tg.initDataUnsafe?.user?.id}
+
+{
+  dataDB.products.map(e => {
+    return (
+      <div key={e.id} className="test">
+        {e.name}
+      </div>
+    )
+  }) 
+}
+      </div>
       
-      {
-        dataDB.products.map(e => {
-          return (
-            <div key={e.id} className="test">
-              {e.name}
-            </div>
-          )
-        }) 
-      }
+     
       </>
     }
   </>
