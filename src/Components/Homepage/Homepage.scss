@@ -15,14 +15,14 @@
     &--icon{
       background-image: url(../../images/search.svg);
       opacity: 0.5;
-      height: 30px;
-      width: 30px;
+      height: 28px;
+      width: 28px;
       background-repeat: no-repeat;
       background-size: cover;
       background-position: center;
       position: absolute;
-      top: 4px;
-      left: 70px;
+      margin-right: 260px;
+      margin-top: 5px;
     }
 
     &--input{
@@ -32,7 +32,7 @@
       border: 1px solid gray;
       border-radius: 5px;
   
-      padding-left: 40px;
+      padding-left: 38px;
       font-size: 15px;
 
     }
