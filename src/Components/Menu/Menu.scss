@@ -15,9 +15,7 @@
   -webkit-transition: all 0.3s ease;
   -webkit-transition-property: all 0.2s;
 
-
   &__close {
-
     opacity: 0;
     width: 100%;
     height: 100vh;
@@ -54,6 +52,7 @@
   &__container {
     padding: 18px 22px;
     overflow-y: scroll;
+    height: 100%;
 
   }
 
@@ -141,6 +140,7 @@
     line-height: 15px;
     list-style: none;
     padding: 0;
+      
 
     @include menuFont()
   }
