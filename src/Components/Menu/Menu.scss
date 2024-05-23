@@ -18,12 +18,12 @@
 
   &__close {
     opacity: 0;
-    width: 100%;
+    width: 300%;
     height: 100vh;
     display: block;
     position: fixed;
     top: 0;
-    right: -100%;
+    right: -300%;
     -webkit-tap-highlight-color: transparent;
 
 
@@ -33,7 +33,7 @@
     opacity: 1;
     transform: translateX(0%);
     pointer-events: all;
-    box-shadow: 0 0 0 100vh rgba(0, 0, 0, .5);
+    box-shadow: 0 0 0 200vh rgba(0, 0, 0, .5);
   }
 
   &__title{
