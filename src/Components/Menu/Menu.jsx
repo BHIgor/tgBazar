@@ -18,7 +18,7 @@ export const Menu = () =>{
           </div>
           <div className="container menu__container">
               <ul className="menu__nav">
-                <NavLink to="/" className='menu__link' style={getLinkStyle}>
+                <NavLink to="/#1" className='menu__link' style={getLinkStyle}>
                   <li className="menu__item">
                     <div className='menu__icon menu__icon--main'></div>
                       <div className='menu__list' >
@@ -27,7 +27,7 @@ export const Menu = () =>{
                   </li>
                 </NavLink>
 
-                <NavLink to="/Compare" className='menu__link' style={getLinkStyle}>
+                <NavLink to="/Compare#1" className='menu__link' style={getLinkStyle}>
                   <li className="menu__item">
                     <div className='menu__icon menu__icon--katalog'></div>
                     <div className="menu__list">
@@ -38,7 +38,7 @@ export const Menu = () =>{
 
                 <hr className='menu__lineHorizont'></hr>
 
-                <NavLink to="/Cart" className='menu__link' style={getLinkStyle}>
+                <NavLink to="/Cart#1" className='menu__link' style={getLinkStyle}>
                   <li className="menu__item">
                     <div className='menu__icon menu__icon--cart'></div>
                     <div className="menu__list">
@@ -47,7 +47,7 @@ export const Menu = () =>{
                   </li>
                 </NavLink>
 
-                <NavLink to="/Orders" className='menu__link' style={getLinkStyle}>
+                <NavLink to="/Orders#1" className='menu__link' style={getLinkStyle}>
                   <li className="menu__item ">
                     <div className='menu__icon menu__icon--checkout'></div>
                     <div className="menu__list">
@@ -58,7 +58,7 @@ export const Menu = () =>{
 
                 { 
                   (dataDB.settings[0].contacts === '') ? null : (
-                    <NavLink to="/Contact" className='menu__link' style={getLinkStyle}>
+                    <NavLink to="/Contact#1" className='menu__link' style={getLinkStyle}>
                       <li className="menu__item">
                         <div className='menu__icon menu__icon--contacts'></div>
                         <div className="menu__list">
@@ -70,7 +70,7 @@ export const Menu = () =>{
                 }
                 { 
                   (dataDB.settings[0].help === '') ? null : (
-                    <NavLink to="/Help" className='menu__link' style={getLinkStyle}>
+                    <NavLink to="/Help#1" className='menu__link' style={getLinkStyle}>
                       <li className="menu__item">
                         <div className='menu__icon menu__icon--help'></div>
                         <div className="menu__list">
@@ -85,7 +85,7 @@ export const Menu = () =>{
                 
                 { 
                   (dataDB.settings[0].about === '') ? null : (
-                    <NavLink to="/About" className='menu__link' style={getLinkStyle}>
+                    <NavLink to="/About#1" className='menu__link' style={getLinkStyle}>
                       <li className="menu__item">
                         <div className='menu__icon menu__icon--about'></div>
                         <div className="menu__list">
@@ -98,7 +98,7 @@ export const Menu = () =>{
                 
                 { 
                   (dataDB.settings[0].garant === '') ? null : (
-                    <NavLink to="/Garant" className='menu__link' style={getLinkStyle}>
+                    <NavLink to="/Garant#1" className='menu__link' style={getLinkStyle}>
                       <li className="menu__item">
                         <div className='menu__icon menu__icon--garant'></div>
                         <div className="menu__list">
@@ -111,7 +111,7 @@ export const Menu = () =>{
 
                 { 
                   (dataDB.settings[0].delivery === '') ? null : (
-                    <NavLink to="/Delivery" className='menu__link' style={getLinkStyle}>
+                    <NavLink to="/Delivery#1" className='menu__link' style={getLinkStyle}>
                       <li className="menu__item">
                         <div className='menu__icon menu__icon--delivery'></div>
                         <div  className="menu__list">
@@ -124,7 +124,7 @@ export const Menu = () =>{
                
                 { 
                   (dataDB.settings[0].pay === '') ? null : (
-                    <NavLink to="/Pay" className='menu__link' style={getLinkStyle}>
+                    <NavLink to="/Pay#1" className='menu__link' style={getLinkStyle}>
                       <li className="menu__item">
                         <div className='menu__icon menu__icon--pay'></div>
                         <div className="menu__list">
@@ -137,7 +137,7 @@ export const Menu = () =>{
                 
                 { 
                   (dataDB.settings[0].obmin === '') ? null : (
-                    <NavLink to="/Obmin" className='menu__link' style={getLinkStyle}>
+                    <NavLink to="/Obmin#1" className='menu__link' style={getLinkStyle}>
                       <li className="menu__item ">
                         <div className='menu__icon menu__icon--obmin'></div>
                         <div className="menu__list">
@@ -150,7 +150,7 @@ export const Menu = () =>{
 
                 { 
                   (dataDB.settings[0].grafik === '') ? null : (
-                    <NavLink to="/Grafik" className='menu__link' style={getLinkStyle}>
+                    <NavLink to="/Grafik#1" className='menu__link' style={getLinkStyle}>
                       <li className="menu__item">
                         <div className='menu__icon menu__icon--time'></div>
                         <div className="menu__list">
