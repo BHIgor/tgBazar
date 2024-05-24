@@ -11,6 +11,8 @@ import './Slider.scss';
 // import required modules
 import { Autoplay, Pagination } from 'swiper/modules';
 
+const imgas = ['https://i.work.ua/article/579b.jpg', 'https://www.interfax.ru/ftproot/photos/photostory/2019/07/09/week4_700.jpg', 'https://lifehacker.ru/special/fujifilm/dist/static/img/5.2410a2d.jpg', 'https://tengrinews.kz/userdata/news/2021/news_454230/thumb_m/photo_380266.jpeg']
+
 export const Slider = () => {
   return (
     <>
@@ -23,13 +25,14 @@ export const Slider = () => {
         }}
         className="mySwiper"
       >
-             <SwiperSlide>Slide 3</SwiperSlide>
-        <SwiperSlide>Slide 4</SwiperSlide>
-        <SwiperSlide>Slide 5</SwiperSlide>
-        <SwiperSlide>Slide 6</SwiperSlide>
-        <SwiperSlide>Slide 7</SwiperSlide>
-        <SwiperSlide>Slide 8</SwiperSlide>
-        <SwiperSlide>Slide 9</SwiperSlide>
+
+        {
+          imgas.map(e => {
+            return (
+              <SwiperSlide><img src={e} /></SwiperSlide>
+            )
+          })
+        }
       </Swiper>
     </>
   );
