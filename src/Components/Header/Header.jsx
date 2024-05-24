@@ -2,6 +2,7 @@ import { useContext } from 'react';
 import { ReactContext } from "../../context/ReactContext"
 
 import '../Header/Header.scss';
+import { Link } from 'react-router-dom';
 
 export const Header = ({ setMenu }) =>{
   const dataDB = useContext(ReactContext);
@@ -17,9 +18,9 @@ export const Header = ({ setMenu }) =>{
               {dataDB.listBot[0].name}
             </div>
 
-            <a href='#cart' className="header__icons header__cart">
+            <Link to='/Cart' className="header__icons header__cart">
             
-            </a>
+            </Link>
           </div>
         </div>
       </header>

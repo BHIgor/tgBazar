@@ -4,7 +4,6 @@ import { NavLink } from 'react-router-dom';
 
 import '../Menu/Menu.scss';
 
-
 export const Menu = ({ 
   menu,
   setMenu
@@ -31,7 +30,7 @@ export const Menu = ({
                   </li>
                 </NavLink>
                 
-                <NavLink to={`/Compare?${dataDB.listBot[0].nameShop}`} onClick={() => setMenu(false)} className='menu__link' style={getLinkStyle}>
+                <NavLink to={`/Katalog?${dataDB.listBot[0].nameShop}`} onClick={() => setMenu(false)} className='menu__link' style={getLinkStyle}>
                   <li className="menu__item">
                     <div className='menu__icon menu__icon--katalog'></div>
                     <div className="menu__list">
