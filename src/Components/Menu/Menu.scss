@@ -1,6 +1,7 @@
 @import '../../fonts/fonts.scss';
 
 
+
 .menu {
   height: 100vh;
   position: fixed;
@@ -24,16 +25,9 @@
     position: fixed;
     top: 0;
     right: -300%;
+    cursor: pointer;
     -webkit-tap-highlight-color: transparent;
 
-
-  }
-
-  &:target{
-    opacity: 1;
-    transform: translateX(0%);
-    pointer-events: all;
-    box-shadow: 0 0 0 200vh rgba(0, 0, 0, .5);
   }
 
   &__title{
@@ -166,6 +160,11 @@
   }
 }
 
-
+.active-menu{
+  opacity: 1;
+  transform: translateX(0%);
+  pointer-events: all;
+  box-shadow: 0 0 0 200vh rgba(0, 0, 0, .5);
+}
 
  

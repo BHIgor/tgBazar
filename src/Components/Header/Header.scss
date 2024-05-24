@@ -32,7 +32,10 @@
   &__menu{
     margin-left: 15px;
     background-image: url(../../images/burger.svg);
-    
+    border: none;
+    outline: none;
+
+
     &:hover{
       background-image: url(../../images/burger-hover.svg);
     

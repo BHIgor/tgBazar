@@ -12,7 +12,8 @@ const search = window.location.search
 
 function App() {
   const [dataDB, setDataDB] = useState([]);
-  
+  const [menu, setMenu] = useState(false)
+  console.log(menu)
   useEffect(() => {
     try{
       fetch(`https://tgbazar.com.ua/products`, {
@@ -36,9 +37,10 @@ function App() {
   return (
     <div className="app">
       <ReactContext.Provider value={dataDB}>
-        <Header/>
-        <Menu/>
+        <Header setMenu={setMenu}/>
+        <Menu setMenu={setMenu} menu={menu}/>
         <Routes> 
+          
           <Route path='/' element={<Homepage/>}/>
         </Routes>
       </ReactContext.Provider>
