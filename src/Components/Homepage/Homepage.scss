@@ -1,3 +1,5 @@
+@import '../../fonts/fonts.scss';
+
 .main {
   display: flex;
   flex-direction: column;
@@ -37,4 +39,44 @@
 
     }
   }
+
+  &__center{
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+  }
+
+  &__katalog{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #808080;
+    height: 60px;
+    width: 180px;
+    border-radius: 5px;
+    gap: 10px;
+
+    &--icon{
+      height: 30px;
+      width: 30px;
+      opacity: 0.5;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      background-image: url(../../images/menu/katalog.svg);
+    }
+
+    &--text{
+  
+      color: black;
+      opacity: 0.8;
+      font-size: 20px;
+      letter-spacing: 2px;
+      @include titleFont()
+    }
+  }
+ 
 }
+
+
+
