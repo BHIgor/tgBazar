@@ -13,7 +13,10 @@ export const Product = ({products}) =>{
     { (dataDB.length === 0) ? <div>Помилка</div> : <>
       <div className="product">
         <div className='product__block'>
-          <div className='product__title'>Топ продажу</div>
+          <div className='product__title--flex'>
+            <div className="product__title--icon"></div>
+            <div className='product__title'>Топ продажу</div>
+          </div>
           <div className="product__container">
             {products.map(e => {
               return (

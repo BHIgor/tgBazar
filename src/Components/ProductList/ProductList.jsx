@@ -12,7 +12,7 @@ export const ProductList = () =>{
   const visibleProduct = []
 
   if(window.location.pathname === '/'){
-    allProducts.map(e => e.main === 'yes' ? visibleProduct.push(e) : null)
+    allProducts.map(e => e.top === 'yes' ? visibleProduct.push(e) : null)
   } 
 
   return <> 
