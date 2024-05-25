@@ -30,15 +30,30 @@ export const Product = ({products}) =>{
                   </div>
                   
                   <div className='product__page--title'>
-                    {e.title}
+                    {e.title} 
                   </div>  
                   
-                  <div className='product__page--nalBlock'>
-                    <div className='product__page--nayavno'></div>
-                    <div className='product__page--nal'>
-                      Є в наявності
+                  {(e.nayavno === 'yes') ? (<>
+                    <div className='product__page--nalRegion product__page--nalBlock'>
+                      <div className='product__page--nayavno'></div>
+                      <div className='product__page--nal'>
+                        Є в наявності
+                      </div>
+                    </div></>
+                  ): (<>
+                    <div className='product__page--nalRegion product__page--noNalBlock'>
+                      <div className='product__page--noNayavno'></div>
+                      <div className='product__page--noNal'>
+                        Немає в наявності
+                      </div>
                     </div>
+                  </>)}
+                <div className='product__page--buy' >
+                  <div className="product__page--buyBlock" style={{backgroundColor: 'orange'}}>
+                    <div className="product__page--buyIcon"></div>
                   </div>
+                </div>      
+              
                   
 
                 </div>

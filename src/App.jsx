@@ -52,20 +52,22 @@ function App() {
       <ReactContext.Provider value={dataDB}>
         <Header setMenu={setMenu}/>
         <Menu setMenu={setMenu} menu={menu}/>
-        <Routes>      
-          <Route path='/' element={<Homepage/>}/>
-          <Route path='/About' element={<About/>}/>
-          <Route path='/Cart' element={<Cart/>}/>
-          <Route path='/Contacts' element={<Contacts/>}/>
-          <Route path='/Delivery' element={<Delivery/>}/>
-          <Route path='/Garant' element={<Garant/>}/>
-          <Route path='/Grafik' element={<Grafik/>}/>
-          <Route path='/Help' element={<Help/>}/>
-          <Route path='/Katalog' element={<Katalog/>}/>
-          <Route path='/Obmin' element={<Obmin/>}/>
-          <Route path='/Orders' element={<Orders/>}/>
-          <Route path='/Pay' element={<Pay/>}/>
-        </Routes>
+        <div className='headerTop'>
+          <Routes>      
+            <Route path='/' element={<Homepage/>}/>
+            <Route path='/About' element={<About/>}/>
+            <Route path='/Cart' element={<Cart/>}/>
+            <Route path='/Contacts' element={<Contacts/>}/>
+            <Route path='/Delivery' element={<Delivery/>}/>
+            <Route path='/Garant' element={<Garant/>}/>
+            <Route path='/Grafik' element={<Grafik/>}/>
+            <Route path='/Help' element={<Help/>}/>
+            <Route path='/Katalog' element={<Katalog/>}/>
+            <Route path='/Obmin' element={<Obmin/>}/>
+            <Route path='/Orders' element={<Orders/>}/>
+            <Route path='/Pay' element={<Pay/>}/>
+          </Routes>
+        </div>
       </ReactContext.Provider>
     </div>
   );
