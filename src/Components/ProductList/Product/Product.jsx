@@ -30,8 +30,16 @@ export const Product = ({products}) =>{
                   </div>
                   
                   <div className='product__page--title'>
-                    {e.title} паврав онраорп парап  о
+                    {e.title}
                   </div>  
+                  
+                  <div className='product__page--nalBlock'>
+                    <div className='product__page--nayavno'></div>
+                    <div className='product__page--nal'>
+                      Є в наявності
+                    </div>
+                  </div>
+                  
 
                 </div>
               )
