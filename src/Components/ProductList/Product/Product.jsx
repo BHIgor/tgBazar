@@ -21,11 +21,17 @@ export const Product = ({products}) =>{
             {products.map(e => {
               return (
                 <div key={e.id} className='product__page'>
-                  <img 
-                    src={e.image} 
-                    alt='photo_product' 
-                    className='product__image'
-                    />
+                  <div className='product__page--imgBlock'>
+                    <img 
+                      src={e.image} 
+                      alt='Нема фото' 
+                      className='product__page--image'
+                      />
+                  </div>
+                  
+                  <div className='product__page--title'>
+                    {e.title} паврав онраорп парап  о
+                  </div>  
 
                 </div>
               )

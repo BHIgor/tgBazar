@@ -38,13 +38,6 @@ export const Homepage = () =>{
 
       <ProductList />
       
-
-         
-
-<button onClick={onClose}>Закрить</button>
-{tg.initDataUnsafe?.user?.username}
-{tg.initDataUnsafe?.user?.id}
-
       </main>
       
      
