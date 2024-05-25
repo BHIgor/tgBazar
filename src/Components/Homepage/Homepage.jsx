@@ -13,9 +13,6 @@ export const Homepage = () =>{
  const dataDB = useContext(ReactContext);
   tg.ready()
 
-  const onClose = () => {
-    tg.close();
-  }
   return <> 
     { (dataDB.length === 0) ? <div>Помилка</div> : <>
       <main className="main">
