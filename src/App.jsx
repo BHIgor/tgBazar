@@ -46,14 +46,14 @@ function App() {
       return false;
     }
   }, [])
-
+  
   return (
     <div className="app">
       <ReactContext.Provider value={dataDB}>
         <Header setMenu={setMenu}/>
         <Menu setMenu={setMenu} menu={menu}/>
         <Routes>      
-          <Route path='/main' element={<Homepage/>}/>
+          <Route path='/' element={<Homepage/>}/>
           <Route path='/About' element={<About/>}/>
           <Route path='/Cart' element={<Cart/>}/>
           <Route path='/Contacts' element={<Contacts/>}/>

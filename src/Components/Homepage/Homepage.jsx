@@ -29,12 +29,12 @@ export const Homepage = () =>{
 
       <Slider/>
 
-      <Link to='/Katalog' className="main__center">
-        <div className="main__katalog">
+      <div className="main__center">
+        <Link to='/Katalog'className="main__katalog">
           <div className="main__katalog--icon"></div>  
           <div  className="main__katalog--text">Каталог</div>
-        </div>
-      </Link>
+        </Link>
+      </div>
 
       <ProductList />
       

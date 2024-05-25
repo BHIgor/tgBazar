@@ -21,7 +21,7 @@ export const Menu = ({
           </div>
           <div className="container menu__container">
               <ul className="menu__nav">
-                <NavLink to={`/main?${dataDB.listBot[0].nameShop}#back`} onClick={() => setMenu(false)} className='menu__link' style={getLinkStyle}>
+                <NavLink to={`/?${dataDB.listBot[0].nameShop}#back`} onClick={() => setMenu(false)} className='menu__link' style={getLinkStyle}>
                   <li className="menu__item">
                     <div className='menu__icon menu__icon--main'></div>
                       <div className='menu__list' >
