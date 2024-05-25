@@ -15,7 +15,7 @@ export const Product = ({products}) =>{
         <div className='product__block'>
           <div className='product__title--flex'>
             <div className="product__title--icon"></div>
-            <div className='product__title'>Топ продажу</div>
+            <div className='product__title'>Топ продаж</div>
           </div>
           <div className="product__container">
             {products.map(e => {
