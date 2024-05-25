@@ -53,7 +53,7 @@ function App() {
         <Header setMenu={setMenu}/>
         <Menu setMenu={setMenu} menu={menu}/>
         <Routes>      
-          <Route path='/' element={<Homepage/>}/>
+          <Route path='/main' element={<Homepage/>}/>
           <Route path='/About' element={<About/>}/>
           <Route path='/Cart' element={<Cart/>}/>
           <Route path='/Contacts' element={<Contacts/>}/>

@@ -1,10 +1,11 @@
 import { useContext } from "react"
 import { ReactContext } from "../../context/ReactContext"
+import { Link } from "react-router-dom";
 
 import './Homepage.scss';
 
 import { Slider } from "./Slider/Slider";
-import { Link } from "react-router-dom";
+import { ProductList } from '../ProductList/ProductList'
 
 const tg = window.Telegram.WebApp;
 
@@ -17,7 +18,7 @@ export const Homepage = () =>{
   }
   return <> 
     { (dataDB.length === 0) ? <div>Помилка</div> : <>
-      <div className="main">
+      <main className="main">
         <div className="main__search"> 
             <div className="main__search--icon"></div>
             <input 
@@ -34,6 +35,8 @@ export const Homepage = () =>{
           <div  className="main__katalog--text">Каталог</div>
         </div>
       </Link>
+
+      <ProductList />
       
 
          
@@ -42,16 +45,7 @@ export const Homepage = () =>{
 {tg.initDataUnsafe?.user?.username}
 {tg.initDataUnsafe?.user?.id}
 
-{
-  dataDB.products.map(e => {
-    return (
-      <div key={e.id} className="test">
-        {e.name}
-      </div>
-    )
-  }) 
-}
-      </div>
+      </main>
       
      
       </>
