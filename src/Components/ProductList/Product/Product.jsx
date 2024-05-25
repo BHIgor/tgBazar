@@ -17,7 +17,7 @@ export const Product = ({products}) =>{
         <div className="product__container">
           {products.map(e => {
             return (
-              <div key={e} className='product__page'>
+              <div key={e.id} className='product__page'>
                 <img 
                   src={e.image} 
                   alt='photo_product' 
