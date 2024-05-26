@@ -48,13 +48,16 @@ export const Product = ({products}) =>{
                       </div>
                     </div>
                   </>)}
-
-                <div className="product__page--description">
+                {
+                  (e.description !=='')?(
+                  <div className="product__page--description">
                     <div className="product__page--description-text">
-                     {e.description}
+                      {e.description}
                     </div>
-                </div>
-
+                  </div>
+                  ):null
+                }
+              
                 <div className="product__page--footer">
                   {
                     (e.price_discount===0) ? (
