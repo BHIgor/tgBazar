@@ -161,7 +161,7 @@ $widthProduct: 180px;
       font-size: 14px;
       margin-left: 20px;
       font-weight: bold;
-      text-decoration: line-through;
+
       padding: 3px;
       border-radius: 20px;
       color: gray;
@@ -170,6 +170,20 @@ $widthProduct: 180px;
 
       &--simvol{
         font-size: 15px
+      }
+
+      &--procent{
+        margin-left: 5px;
+        background-color: red;
+        color: white;
+        padding: 0 2px;
+        font-size: 11px;
+        border-radius: 8px;
+        text-align: center;
+      }
+
+      &--line{
+        text-decoration: line-through;
       }
     }
     

@@ -64,12 +64,22 @@ export const Product = ({products}) =>{
                       <span className="product__page--priceDiscount">
                       {e.price} <span className="product__page--price--simvol">₴</span>
                       </span>
+
                     ) : (<>
                       <span className="product__page--priceDiscount" style={{color: 'red'}}> 
-                        {e.price_discount} <span className="product__page--priceDiscount--simvol">₴</span>
+                        {e.price_discount} 
+                        <span className="product__page--priceDiscount--simvol">
+                          ₴
+                        </span>
                       </span>
                       <span className="product__page--price" >
-                      {e.price} <span className="product__page--price--simvol">₴</span>
+                      <span className="product__page--price--line"> 
+                        {e.price} 
+                      </span>
+                      <span className="product__page--price--simvol">
+                        ₴
+                      </span>
+                      <span  className="product__page--price--procent">-{100 - ((e.price_discount * 100) / e.price)}%</span>
                       </span>
 
                   </>)
