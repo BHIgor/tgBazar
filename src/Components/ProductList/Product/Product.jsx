@@ -48,12 +48,35 @@ export const Product = ({products}) =>{
                       </div>
                     </div>
                   </>)}
+
+                <div className="product__page--description">
+                    <div className="product__page--description-text">
+                     {e.description}
+                    </div>
+                </div>
+
                 <div className="product__page--footer">
-                  <span className="product__page--price">
-                    {e.price} <span className="product__page--price--simvol">₴</span>
-                  </span>
+                  {
+                    (e.price_discount===0) ? (
+                      <span className="product__page--priceDiscount">
+                      {e.price} <span className="product__page--price--simvol">₴</span>
+                      </span>
+                    ) : (<>
+                      <span className="product__page--priceDiscount" style={{color: 'red'}}> 
+                        {e.price_discount} <span className="product__page--priceDiscount--simvol">₴</span>
+                      </span>
+                      <span className="product__page--price" >
+                      {e.price} <span className="product__page--price--simvol">₴</span>
+                      </span>
+
+                  </>)
+                  }
+                 
+
+                 
+
                   <div className='product__page--buy' >
-                  <div className="product__page--buyBlock" style={{backgroundColor: 'orange'}}>
+                  <div className="product__page--buyBlock" style={{backgroundColor: `${dataDB.settings[0].clButtonProduct}`}}>
                     <div className="product__page--buyIcon"></div>
                   </div>
                 </div>  

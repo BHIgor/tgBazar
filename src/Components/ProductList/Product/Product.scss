@@ -152,9 +152,28 @@ $widthProduct: 180px;
       bottom: 0;
       width: $widthProduct;
       align-items: center;
+
     }
 
     &--price{
+      position: absolute;
+      bottom: 25px;
+      font-size: 14px;
+      margin-left: 20px;
+      font-weight: bold;
+      text-decoration: line-through;
+      padding: 3px;
+      border-radius: 20px;
+      color: gray;
+
+      @include productFont(); 
+
+      &--simvol{
+        font-size: 15px
+      }
+    }
+    
+    &--priceDiscount{
       font-size: 20px;
       margin-left: 20px;
       font-weight: bold;
@@ -163,6 +182,29 @@ $widthProduct: 180px;
 
       &--simvol{
         font-size: 15px
+      }
+    }
+
+    &--description{
+      margin-bottom: 10px;
+      margin-top: 10px;
+      height: 60px;
+
+
+
+      &-text{
+     
+  
+        overflow: hidden;
+        text-overflow: ellipsis;
+        -webkit-line-clamp: 4; 
+        display: -webkit-box;
+        -webkit-box-orient: vertical; 
+        line-height: 16px;
+        color: rgb(52, 51, 51);
+        font-size: 14px;
+
+        @include productFont() 
       }
     }
 
