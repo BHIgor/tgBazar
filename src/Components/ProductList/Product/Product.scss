@@ -127,16 +127,11 @@ $widthProduct: 180px;
       cursor: pointer;
     }
     &--buy{
-      position: absolute;
-      bottom: 0;
       height: 35px;
-    
       display: flex;
       gap: 10px;
-
       justify-content: end;
       border-radius: 20px;
-      width: $widthProduct;
     }
 
     &--buyIcon{
@@ -148,6 +143,27 @@ $widthProduct: 180px;
       
       @include iconPosition();
     
+    }
+
+    &--footer{
+      display: flex;
+      justify-content: space-between;
+      position: absolute;
+      bottom: 0;
+      width: $widthProduct;
+      align-items: center;
+    }
+
+    &--price{
+      font-size: 20px;
+      margin-left: 20px;
+      font-weight: bold;
+
+      @include productFont(); 
+
+      &--simvol{
+        font-size: 15px
+      }
     }
 
   }
