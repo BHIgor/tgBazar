@@ -48,6 +48,19 @@ export const Product = ({products}) =>{
                       </div>
                     </div>
                   </>)}
+
+                  <div className="product__info">
+                    <div className="product__stars product__stars">
+                      <div className={`product__stars product__stars--star product__stars product__stars--star--${e.stars}`}></div>
+                      <div className={`product__stars product__stars--star product__stars product__stars--star--${e.stars}`}></div>
+                      <div className={`product__stars product__stars--star product__stars product__stars--star--${e.stars}`}></div>
+                      <div className={`product__stars product__stars--star product__stars product__stars--star--${e.stars}`}></div>
+                      <div className={`product__stars product__stars--star product__stars product__stars--star--${e.stars}`}></div>
+                    </div> 
+                    <div className='product__review'>
+                      {(e.review !== '')?e.review.split(',').length:'0'} відгуків
+                    </div>     
+                  </div>  
                 {
                   (e.description !=='')?(
                   <div className="product__page--description">
