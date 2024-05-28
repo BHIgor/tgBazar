@@ -10,12 +10,16 @@ export const ProductPage = () =>{
 
   let { productId } = useParams();
 
-  console.log(productId)
+  const selectedProduct = dataDB.products.filter(e => e.id === Number(productId))
 
   return <> 
     { (dataDB.length === 0) ? <div>Помилка</div> : <>
-      <div>
-       afsas
+      <div className='productPage'>
+        {
+          selectedProduct.map(e => (
+            <div>{e.title}</div>
+          ))
+        }
       </div>
     </>
     }

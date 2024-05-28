@@ -67,11 +67,11 @@ export const Product = ({products}) =>{
                   </div>  
                 {
                   (e.description !=='')?(
-                  <div className="product__page--description">
+                  <Link to={`/Product/${e.id}`} className="product__page--description">
                     <div className="product__page--description-text">
                       {e.description}
                     </div>
-                  </div>
+                  </Link>
                   ):null
                 }
               
