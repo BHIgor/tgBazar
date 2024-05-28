@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Routes, Route} from 'react-router-dom';
+import { Routes, Route, useNavigate} from 'react-router-dom';
 import { ReactContext } from './context/ReactContext';
 
 import './App.scss';
@@ -30,7 +30,7 @@ const search = window.location.search
 function App() {
   const [dataDB, setDataDB] = useState([]);
   const [menu, setMenu] = useState(false)
-
+  const navigate = useNavigate();
   useEffect(() => {
     try{
       fetch(`https://tgbazar.com.ua/products`, {
@@ -54,6 +54,9 @@ function App() {
   const backButton = window.Telegram.WebApp.BackButton;;
 
   backButton.show();
+  backButton.onClick(() => {
+    navigate(-1);
+  });
 
   return (
     <div className="app">
