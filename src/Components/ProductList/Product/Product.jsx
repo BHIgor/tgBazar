@@ -1,12 +1,16 @@
 import { useContext } from 'react';
 import { ReactContext } from "../../../context/ReactContext"
+import { animateScroll as scroll } from 'react-scroll';
 
 import './Product.scss';
 import { Link } from 'react-router-dom';
 
 export const Product = ({products}) =>{
   const dataDB = useContext(ReactContext);
+  const scrollToTop = () => {
 
+    scroll.scrollToTop({duration:20});
+  };
   return <> 
     { (dataDB.length === 0) ? <div>Помилка</div> : <>
       <div className="product">
@@ -33,7 +37,10 @@ export const Product = ({products}) =>{
                     </div>
                   </div>
 
-                  <Link to={`/Product/${e.id}`} className='product__page--title'>
+                  <Link 
+                    to={`/Product/${e.id}`}   
+                    onClick={() =>scrollToTop()} 
+                    className='product__page--title'>
                     {e.title} 
                   </Link>  
                   
@@ -67,7 +74,10 @@ export const Product = ({products}) =>{
                   </div>  
                 {
                   (e.description !=='')?(
-                  <Link to={`/Product/${e.id}`} className="product__page--description">
+                  <Link 
+                    to={`/Product/${e.id}`}  
+                    onClick={() =>scrollToTop()}  
+                    className="product__page--description">
                     <div className="product__page--description-text">
                       {e.description}
                     </div>

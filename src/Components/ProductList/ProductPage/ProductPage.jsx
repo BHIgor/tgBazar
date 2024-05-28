@@ -2,6 +2,7 @@ import { useContext } from 'react';
 import { ReactContext } from "../../../context/ReactContext"
 import { useParams } from 'react-router-dom';
 
+
 import './ProductPage.scss';
 
 
