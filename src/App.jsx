@@ -52,9 +52,10 @@ function App() {
   return (
     <div className="app">
       <ReactContext.Provider value={dataDB}>
+       <div className='footerTop'>
         <Header setMenu={setMenu}/>
         <Menu setMenu={setMenu} menu={menu}/>
-        <div className='headerTop'>
+    
           <Routes>      
             <Route path='/' element={<Homepage/>}/>
             <Route path='/About' element={<About/>}/>
@@ -69,9 +70,10 @@ function App() {
             <Route path='/Orders' element={<Orders/>}/>
             <Route path='/Pay' element={<Pay/>}/>
           </Routes>
+          <Footer />
         </div>
         <FooterLine />
-        <Footer />
+      
         
       </ReactContext.Provider>
     </div>
