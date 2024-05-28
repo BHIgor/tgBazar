@@ -55,6 +55,8 @@ function App() {
 
   if(window.location.pathname !== '/'){
     backButton.show();
+  } else {
+    backButton.hide()
   }
 
   backButton.onClick(() => {
