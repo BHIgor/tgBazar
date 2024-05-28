@@ -53,11 +53,14 @@ function App() {
   
   const backButton = window.Telegram.WebApp.BackButton;;
 
-  backButton.show();
-  backButton.onClick(() => {
-    navigate(-1);
-  });
+  if(window.location.pathname !== '/'){
+    backButton.show();
+  }
 
+  backButton.onClick(() => {
+    navigate(1);
+  });
+  console.log()
   return (
     <div className="app">
       <ReactContext.Provider value={dataDB}>
