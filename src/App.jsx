@@ -20,6 +20,7 @@ import { Orders } from './Components/Menu/Orders/Orders'
 import { Pay } from './Components/Menu/Pay/Pay'
 import { Footer } from './Components/Footer/Footer';
 import { FooterLine } from './Components/FooterLine/FooterLine';
+import { Like } from './Components/Menu/Like/Like';
 
 
 
@@ -66,13 +67,14 @@ function App() {
             <Route path='/Grafik' element={<Grafik/>}/>
             <Route path='/Help' element={<Help/>}/>
             <Route path='/Katalog' element={<Katalog/>}/>
+            <Route path='/Like' element={<Like/>}/>
             <Route path='/Obmin' element={<Obmin/>}/>
             <Route path='/Orders' element={<Orders/>}/>
             <Route path='/Pay' element={<Pay/>}/>
           </Routes>
           <Footer />
         </div>
-        <FooterLine />
+        <FooterLine setMenu={setMenu}/>
       
         
       </ReactContext.Provider>

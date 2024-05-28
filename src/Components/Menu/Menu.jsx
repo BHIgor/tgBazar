@@ -61,6 +61,15 @@ export const Menu = ({
                   </li>
                 </NavLink>
 
+                <NavLink  to={`/Like?${dataDB.listBot[0].nameShop}`} onClick={() =>scrollToTop()} className='menu__link' style={getLinkStyle}>
+                  <li className="menu__item">
+                    <div className='menu__icon menu__icon--like'></div>
+                    <div className="menu__list">
+                      Обрані
+                    </div>
+                  </li>
+                </NavLink>
+
                 <NavLink to={`/Orders?${dataDB.listBot[0].nameShop}`} onClick={() =>scrollToTop()} className='menu__link' style={getLinkStyle}>
                   <li className="menu__item ">
                     <div className='menu__icon menu__icon--checkout'></div>
