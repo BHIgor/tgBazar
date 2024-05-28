@@ -14,7 +14,7 @@ export const Slider = () => {
   const dataDB = useContext(ReactContext);
 
   const images = dataDB.settings[0].slider.split(',')
-  console.log(images)
+
   return  <>
     { (dataDB.length === 0) ? <div>Помилка</div> :
         (dataDB.settings[0].obmin === '') ? null : (

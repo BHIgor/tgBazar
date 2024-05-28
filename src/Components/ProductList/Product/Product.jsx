@@ -2,12 +2,10 @@ import { useContext } from 'react';
 import { ReactContext } from "../../../context/ReactContext"
 
 import './Product.scss';
+import { Link } from 'react-router-dom';
 
 export const Product = ({products}) =>{
   const dataDB = useContext(ReactContext);
-
-
-  console.log(products)
 
   return <> 
     { (dataDB.length === 0) ? <div>Помилка</div> : <>
@@ -35,9 +33,9 @@ export const Product = ({products}) =>{
                     </div>
                   </div>
 
-                  <div className='product__page--title'>
+                  <Link to={`/Product/${e.id}`} className='product__page--title'>
                     {e.title} 
-                  </div>  
+                  </Link>  
                   
                   {(e.nayavno === 'yes') ? (<>
                     <div className='product__page--nalRegion product__page--nalBlock'>

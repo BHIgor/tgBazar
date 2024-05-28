@@ -76,7 +76,8 @@ $widthProduct: 180px;
     &--title{
       padding-top: 10px;
       font-size: 17px;
-  
+      text-decoration: none;
+      color: black;
       overflow: hidden;
       text-overflow: ellipsis;
       -webkit-line-clamp: 2; 

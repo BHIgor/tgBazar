@@ -21,6 +21,7 @@ import { Pay } from './Components/Menu/Pay/Pay'
 import { Footer } from './Components/Footer/Footer';
 import { FooterLine } from './Components/FooterLine/FooterLine';
 import { Like } from './Components/Menu/Like/Like';
+import { ProductPage } from './Components/ProductList/ProductPage/ProductPage';
 
 
 
@@ -50,6 +51,10 @@ function App() {
     }
   }, [])
   
+  const backButton = window.Telegram.WebApp.BackButton;;
+
+  backButton.show();
+
   return (
     <div className="app">
       <ReactContext.Provider value={dataDB}>
@@ -59,6 +64,7 @@ function App() {
     
           <Routes>      
             <Route path='/' element={<Homepage/>}/>
+            <Route path="/Product/:productId" element={<ProductPage />} />
             <Route path='/About' element={<About/>}/>
             <Route path='/Cart' element={<Cart/>}/>
             <Route path='/Contacts' element={<Contacts/>}/>

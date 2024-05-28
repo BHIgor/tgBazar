@@ -13,6 +13,7 @@ export const Homepage = () =>{
  const dataDB = useContext(ReactContext);
   tg.ready()
 
+
   return <> 
     { (dataDB.length === 0) ? <div>Помилка</div> : <>
       <main className="main">
