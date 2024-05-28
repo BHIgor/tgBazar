@@ -19,6 +19,7 @@ import { Obmin } from './Components/Menu/Obmin/Obmin'
 import { Orders } from './Components/Menu/Orders/Orders'
 import { Pay } from './Components/Menu/Pay/Pay'
 import { Footer } from './Components/Footer/Footer';
+import { FooterLine } from './Components/FooterLine/FooterLine';
 
 
 
@@ -69,6 +70,7 @@ function App() {
             <Route path='/Pay' element={<Pay/>}/>
           </Routes>
         </div>
+        <FooterLine />
         <Footer />
         
       </ReactContext.Provider>

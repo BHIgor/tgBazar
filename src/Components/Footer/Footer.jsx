@@ -13,7 +13,7 @@ export const Footer = ({ setMenu }) =>{
           {
             (dataDB.settings[0].viber !== '' || dataDB.settings[0].telegram !== '' || dataDB.settings[0].instagram !== '' || dataDB.settings[0].facebook !== '' || dataDB.settings[0].tiktok !== '')? 
             <>
-              <div className='footer__title' style={{color: `${dataDB.settings[0].clFooterTitle}`}}>Мы в соц. мережах:</div>
+              <div className='footer__title' style={{color: `${dataDB.settings[0].clFooterTitle}`}}>Ми в соц. мережах:</div>
               <div className='footer__icons'>
                 {
                   (dataDB.settings[0].viber !== '') ? <a 
