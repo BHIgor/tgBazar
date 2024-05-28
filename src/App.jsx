@@ -58,9 +58,9 @@ function App() {
   }
 
   backButton.onClick(() => {
-    navigate(1);
+    navigate(-1);
   });
-  console.log()
+  console.log(window.location.pathname)
   return (
     <div className="app">
       <ReactContext.Provider value={dataDB}>
