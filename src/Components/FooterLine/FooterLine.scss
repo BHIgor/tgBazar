@@ -11,13 +11,13 @@
     z-index: 1;
     background-color: white;
     opacity: 0.9;
-    height: 65px;
+    height: 60px;
     align-items: center;
     justify-content: space-around;
   }
   &--size{
-    height: 35px;
-    width: 35px;
+    height: 30px;
+    width: 30px;
     @include iconPosition();
   }
 
