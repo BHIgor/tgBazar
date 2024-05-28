@@ -6,7 +6,7 @@ export const About = () =>{
 
   return <> 
     { (dataDB.length === 0) ? <div>Помилка</div> : <>
-      <div>
+      <div id={'top'}>
           Про нас
       </div>
     </>

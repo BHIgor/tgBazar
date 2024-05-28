@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import { ReactContext } from "../../context/ReactContext"
 
-import './Header.scss';
+import './Footer.scss';
 import { Link } from 'react-router-dom';
 
 export const Header = ({ setMenu }) =>{
