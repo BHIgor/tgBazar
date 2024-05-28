@@ -45,6 +45,26 @@ $widthProduct: 180px;
     width: $widthProduct; 
     position: relative;
     padding-bottom: 50px;
+
+    &--blockIcon{
+      position: absolute;
+      top: 4px;
+      right: 4px;
+      cursor: pointer;
+      background-color: white;
+      border: 1px solid gray;
+      padding: 2px;
+      border-radius: 5px;
+    }
+    &--icon{
+  
+      height: 25px;
+      width: 25px;
+      background-image: url(../../../images/like.svg);
+
+      @include iconPosition();
+    }
+
     &--image{
       display: block;
       border-radius: 10px;

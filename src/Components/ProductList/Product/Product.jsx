@@ -29,6 +29,12 @@ export const Product = ({products}) =>{
                       />
                   </div>
                   
+                  <div className="product__page--blockIcon">
+                    <div className="product__page--icon">
+                      
+                    </div>
+                  </div>
+
                   <div className='product__page--title'>
                     {e.title} 
                   </div>  
