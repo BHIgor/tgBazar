@@ -1,0 +1,65 @@
+@import '../mixin/mixins.scss';
+@import '../../fonts/fonts.scss';
+
+
+.footer{
+  margin-top: 50px;
+
+  &__ads{
+    font-size: 11px;
+    background-color: black;
+    color: white;
+    text-align: center;
+
+    @include productFont();
+  }
+  &__title{
+    font-size: 15px;
+
+     @include productFont();
+    text-align: center;
+  }
+
+  &--container{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 10px 0;
+  }
+
+  &__icons{
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+
+    @include iconPosition();
+
+    &--size{
+      height: 30px;
+      width: 30px;
+
+      text-overflow: hidden;
+      cursor: pointer;
+    }
+
+    &--viber{
+      background-image: url(../../images/footer/viber.svg);
+    }
+
+    &--telegram{
+      background-image: url(../../images/footer/telegram.svg);
+    }
+
+    &--tiktok{
+      background-image: url(../../images/footer/tiktok.svg);
+    }
+
+    &--instagram{
+      background-image: url(../../images/footer/instagram.svg);
+    }
+
+    &--facebook{
+      background-image: url(../../images/footer/facebook.svg);
+    }
+  }
+}
