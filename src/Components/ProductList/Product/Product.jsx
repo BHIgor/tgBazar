@@ -71,7 +71,7 @@ export const Product = ({products}) =>{
                       <div className={`product__stars product__stars--star product__stars product__stars--star--${e.stars}`}></div>
                     </div> 
                     <div className='product__review'>
-                      {(e.review !== '')?e.review.split(',').length:'0'} відгуків
+                       Код: {e.id} 
                     </div>     
                   </div>  
                 {
@@ -113,11 +113,8 @@ export const Product = ({products}) =>{
 
                   </>)
                   }
-                 
 
-                 
-
-                  <div className='product__page--buy' >
+                <div className='product__page--buy' >
                   <div className="product__page--buyBlock" style={{backgroundColor: `${dataDB.settings[0].clButtonProduct}`}}>
                     <div className="product__page--buyIcon"></div>
                   </div>

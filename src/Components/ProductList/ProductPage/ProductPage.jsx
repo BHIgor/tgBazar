@@ -9,6 +9,7 @@ import './ProductPage.scss';
 export const ProductPage = () =>{
   const dataDB = useContext(ReactContext);
   const [desck, setDesck] = useState('opis')
+  const [copy, setCopy] = useState(false)
 
   let { productId } = useParams();
 
@@ -97,13 +98,28 @@ export const ProductPage = () =>{
 
                 </>)
                 }
-              </div>  
+              </div> 
 
-              <div className="productPage__buy" style={{backgroundColor: `${dataDB.settings[0].clButtonProduct}`}}>
-                <div className="productPage__buy--icon"></div>
-                <div className="productPage__buy--text">Купити</div>
+              <div className="productPage__buyBlock">
+                <div className="productPage__buy" style={{backgroundColor: `${dataDB.settings[0].clButtonProduct}`}}>
+                  <div className="productPage__buy--icon"></div>
+                  <div className="productPage__buy--text">Купити</div>
+                </div>
+                {
+                  (dataDB.listBot[0].linkShop !== '') ? 
+                  <div onClick={() => copy ? setCopy(false) : setCopy(true) } className={`productPage__share ${copy ? 'productPage__shareActive' : null}`}>
+                    <div className={`productPage__share--${copy ? 'iconActive' :'icon'} `}></div>
+                  </div> 
+                :null
+                }
+                
               </div>
+              
             </div>  
+
+            {
+              (copy) ? <div className='productPage__copy'> Посилання на товар: <a href={`${dataDB.listBot[0].linkShop}?start=/Product/${e.id}?${dataDB.listBot[0].nameShop}`}>{dataDB.listBot[0].linkShop}?start=/Product/{e.id}?{dataDB.listBot[0].nameShop}</a></div>:null
+            }
 
             <div className="productPage__description">
                 <div className="productPage__description--titleBlock">

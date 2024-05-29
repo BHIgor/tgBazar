@@ -71,7 +71,7 @@ function App() {
         <Menu setMenu={setMenu} menu={menu}/>
     
           <Routes>      
-            <Route path='/'exact  element={<Homepage/>}/>
+            <Route path='/' element={<Homepage/>}/>
             <Route path="/Product/:productId" element={<ProductPage />} />
             <Route path='/About' element={<About/>}/>
             <Route path='/Cart' element={<Cart/>}/>
