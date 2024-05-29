@@ -120,7 +120,7 @@ export const ProductPage = () =>{
             </div>  
 
             {
-              (copy) ? <div className='productPage__copy'> Посилання на товар: <a href={`${dataDB.listBot[0].linkShop}?start=/Product/${e.id}?${dataDB.listBot[0].nameShop}`}>{dataDB.listBot[0].linkShop}?start=/Product/{e.id}?{dataDB.listBot[0].nameShop}</a></div>:null
+              (copy) ? <div className='productPage__copy'> Посилання на товар: <a href={`${dataDB.listBot[0].linkShop}?start=/Product/${e.id}?${dataDB.listBot[0].nameShop}`}>{dataDB.listBot[0].linkShop}?start={e.id}-{dataDB.listBot[0].nameShop}</a></div>:null
             }
 
             <div className="productPage__description">
