@@ -1,15 +1,14 @@
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import { ReactContext } from "../../../context/ReactContext"
 import { useParams } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination } from 'swiper/modules';
 
-
 import './ProductPage.scss';
-
 
 export const ProductPage = () =>{
   const dataDB = useContext(ReactContext);
+  const [desck, setDesck] = useState('opis')
 
   let { productId } = useParams();
 
@@ -107,12 +106,34 @@ export const ProductPage = () =>{
             </div>  
 
             <div className="productPage__description">
-                <div 
-                className="productPage__description--title" style={{borderBottom: `4px solid ${dataDB.settings[0].clHeader}`}}>
-                  Опис
+                <div className="productPage__description--titleBlock">
+                  <div onClick={() => setDesck('opis')}
+                  className="productPage__description--title"  style={(desck === 'opis') ?{borderBottom: `4px solid ${dataDB.settings[0].clHeader}`}:null}>
+                    Опис
+                  </div>
+
+                  <div onClick={() => setDesck('dostavka')}
+                  className="productPage__description--title"  style={(desck === 'dostavka') ?{borderBottom: `4px solid ${dataDB.settings[0].clHeader}`}:null}>
+                    Доставка
+                  </div>
+
+                  <div onClick={() => setDesck('oplata')}
+                  className="productPage__description--title" style={(desck === 'oplata') ?{borderBottom: `4px solid ${dataDB.settings[0].clHeader}`}:null}>
+                    Оплата
+                  </div>
                 </div>
+                
                 <div className="productPage__description--text">
-                  {e.description}
+                  {
+                    (desck === 'opis') ? <>
+                    {e.description}
+                    </> : (desck === 'dostavka') ? <>
+                      Доставка
+                    </> : (desck === 'oplata') ? <>
+                      Оплата
+                    </> : null
+                  }
+                 
                 </div>
             </div>   
 

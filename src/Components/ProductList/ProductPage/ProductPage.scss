@@ -50,6 +50,7 @@ $padRight: 25px;
 
   &__image{
     margin-top: 20px;
+
   }
 
   &__price {
@@ -142,10 +143,18 @@ $padRight: 25px;
       padding-top: 10px;
     }
 
+    &--titleBlock{
+      display: flex;
+      justify-content: space-around;
+    }
+
     &--title{
       font-size: 18px;
       padding: 10px;
-      width: 70px;
+      text-decoration: none;
+      color: black;
+      cursor: pointer;
+
     }
   }
 
