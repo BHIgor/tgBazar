@@ -11,6 +11,7 @@ export const Product = ({products}) =>{
 
     scroll.scrollToTop({duration:20});
   };
+
   return <> 
     { (dataDB.length === 0) ? <div>Помилка</div> : <>
       <div className="product">
@@ -21,11 +22,12 @@ export const Product = ({products}) =>{
           </div>
           <div className="product__container">
             {products.map(e => {
+              const images = e.image.split(',')
               return (
                 <div key={e.id} className='product__page'>
                   <div className='product__page--imgBlock'>
                     <img 
-                      src={e.image} 
+                      src={images[0]} 
                       alt='Нема фото' 
                       className='product__page--image'
                       />

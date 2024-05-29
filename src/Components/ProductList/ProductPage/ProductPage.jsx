@@ -1,6 +1,8 @@
 import { useContext } from 'react';
 import { ReactContext } from "../../../context/ReactContext"
 import { useParams } from 'react-router-dom';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Pagination } from 'swiper/modules';
 
 
 import './ProductPage.scss';
@@ -12,6 +14,8 @@ export const ProductPage = () =>{
   let { productId } = useParams();
 
   const selectedProduct = (dataDB.length === 0)? null :dataDB.products.filter(e => e.id === Number(productId))
+
+  const images = (selectedProduct !== null)? selectedProduct[0].image.split(',') :[]
 
   return <> 
     { (dataDB.length === 0) ? <div>Помилка</div> : <>
@@ -52,6 +56,21 @@ export const ProductPage = () =>{
                 <div className="product__page--icon"></div>
               </div>
             </div>
+
+            <div className="productPage__image">
+              <Swiper
+                className='productPage__mySwipers' 
+                pagination={true} 
+                modules={[Pagination]} 
+                >
+                {images.map(e => {
+                  return (
+                      <SwiperSlide key={e}><img src={e} alt='img-slider' style={{height: '400px'}} /></SwiperSlide>
+                    )
+                  })
+                }
+              </Swiper>
+            </div>    
           </div>))
         }
       </div>
