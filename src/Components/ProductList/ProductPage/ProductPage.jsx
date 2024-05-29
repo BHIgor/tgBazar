@@ -95,7 +95,7 @@ export const ProductPage = () =>{
                     <span className="productPage--price--simvol">
                       ₴
                     </span>
-                    <span  className="productPage--price--procent">-{100 - ((e.price_discount * 100) / e.price)}%</span>
+                    <span  className="productPage--price--procent">-{Math.floor(100 - ((e.price_discount * 100) / e.price))}%</span>
                     </span>
 
                 </>)
