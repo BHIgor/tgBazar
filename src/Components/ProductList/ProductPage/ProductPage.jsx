@@ -109,7 +109,10 @@ export const ProductPage = () =>{
                 </div>
                 {
                   (dataDB.listBot[0].linkShop !== '') ? 
-                  <div onClick={window.Telegram.WebApp.switchInlineQuery()} className={`productPage__share ${copy ? 'productPage__shareActive' : null}`}>
+                  <div onClick={() => window.Telegram.WebApp.switchInlineQuery('fsafas',[{allow_user_chats: true,
+                    allow_bot_chats: false,
+                    allow_group_chats: true,
+                    allow_channel_chats: false}])} className={`productPage__share ${copy ? 'productPage__shareActive' : null}`}>
                     <div className={`productPage__share--${copy ? 'iconActive' :'icon'} `}></div>
                   </div> 
                 :null
