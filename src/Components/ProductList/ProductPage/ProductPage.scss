@@ -1,4 +1,5 @@
 @import '../../../fonts/fonts.scss';
+@import '../../mixin/mixins.scss';
 
 .productPage {
   height: 100vh;
@@ -68,7 +69,7 @@
     @include productFont(); 
 
     &--simvol{
-      font-size: 18px
+      font-size: 15px
     }
 
     &--procent{
@@ -100,8 +101,33 @@
     }
   }
 
+  &__blockPrice{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 
+  &__buy{
+    display: flex;
+    align-items: center;  
+    gap: 7px;
+    margin-right: 25px;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
 
+    &--text{
+      font-size: 22px;
+      @include productFont(); 
+    }
+
+    &--icon{
+      height: 27px;
+      width: 27px;
+      background-image: url(../../../images/menu/cart-menu.svg);
+      @include iconPosition();
+    }
+  }
 
  
 }

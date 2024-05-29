@@ -71,34 +71,40 @@ export const ProductPage = () =>{
                 }
               </Swiper>
             </div>
+            <div className="productPage__blockPrice">
+              <div className="productPage__price">
+              {
+                (e.price_discount===0) ? (
+                  <span className="productPage--priceDiscount">
+                  {e.price} <span className="productPage--price--simvol">₴</span>
+                  </span>
 
-            <div className="productPage__price">
-            {
-              (e.price_discount===0) ? (
-                <span className="productPage--priceDiscount">
-                {e.price} <span className="productPage--price--simvol">₴</span>
-                </span>
-
-              ) : (<>
-                  <span className="productPage--priceDiscount" style={{color: 'red'}}> 
-                    {e.price_discount} 
-                    <span className="productPage--priceDiscount--simvol">
+                ) : (<>
+                    <span className="productPage--priceDiscount" style={{color: 'red'}}> 
+                      {e.price_discount} 
+                      <span className="productPage--priceDiscount--simvol">
+                        ₴
+                      </span>
+                    </span>
+                    <span className="productPage--price" >
+                    <span className="productPage--price--line"> 
+                      {e.price} 
+                    </span>
+                    <span className="productPage--price--simvol">
                       ₴
                     </span>
-                  </span>
-                  <span className="productPage--price" >
-                  <span className="productPage--price--line"> 
-                    {e.price} 
-                  </span>
-                  <span className="productPage--price--simvol">
-                    ₴
-                  </span>
-                  <span  className="productPage--price--procent">-{100 - ((e.price_discount * 100) / e.price)}%</span>
-                  </span>
+                    <span  className="productPage--price--procent">-{100 - ((e.price_discount * 100) / e.price)}%</span>
+                    </span>
 
-              </>)
-              }
-            </div>    
+                </>)
+                }
+              </div>  
+
+              <div className="productPage__buy" style={{backgroundColor: `${dataDB.settings[0].clButtonProduct}`}}>
+                <div className="productPage__buy--icon"></div>
+                <div className="productPage__buy--text">Купити</div>
+              </div>
+            </div>  
           </div>))
         }
       </div>
