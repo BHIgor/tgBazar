@@ -48,10 +48,10 @@ function App() {
       return false;
     }
   }, [])
-  
+  console.log(window.location)
   const backButton = window.Telegram.WebApp.BackButton;;
 
-  if(window.location.pathname !== '/'){
+  if(window.location.pathname !== '#/?'){
     backButton.show();
   } else {
     backButton.hide()
