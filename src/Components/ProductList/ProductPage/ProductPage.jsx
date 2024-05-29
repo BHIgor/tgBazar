@@ -13,6 +13,13 @@ export const ProductPage = () =>{
 
  
   console.log(setCopy(false))
+  const tel = () =>{
+    window.Telegram.WebApp.switchInlineQuery('fsafas',[{allow_user_chats: true,
+      allow_bot_chats: false,
+      allow_group_chats: true,
+      allow_channel_chats: false}])
+  }
+  
   let { productId } = useParams();
 
   const selectedProduct = (dataDB.length === 0)? null :dataDB.products.filter(e => e.id === Number(productId))
@@ -109,10 +116,7 @@ export const ProductPage = () =>{
                 </div>
                 {
                   (dataDB.listBot[0].linkShop !== '') ? 
-                  <div onClick={() => window.Telegram.WebApp.switchInlineQuery('fsafas',[{allow_user_chats: true,
-                    allow_bot_chats: false,
-                    allow_group_chats: true,
-                    allow_channel_chats: false}])} className={`productPage__share ${copy ? 'productPage__shareActive' : null}`}>
+                  <div onClick={tel} className={`productPage__share ${copy ? 'productPage__shareActive' : null}`}>
                     <div className={`productPage__share--${copy ? 'iconActive' :'icon'} `}></div>
                   </div> 
                 :null
