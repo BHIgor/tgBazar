@@ -48,7 +48,7 @@ function App() {
       return false;
     }
   }, [])
-  console.log(search)
+  
   const backButton = window.Telegram.WebApp.BackButton;;
 
   if(window.location.pathname !== '/'){
@@ -69,7 +69,7 @@ function App() {
         <Menu setMenu={setMenu} menu={menu}/>
     
           <Routes>      
-            <Route path='/' element={<Homepage/>}/>
+            <Route path='/' exact element={<Homepage/>}/>
             <Route path="/Product/:productId" element={<ProductPage />} />
             <Route path='/About' element={<About/>}/>
             <Route path='/Cart' element={<Cart/>}/>
