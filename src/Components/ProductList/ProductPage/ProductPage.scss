@@ -50,6 +50,57 @@
     margin-top: 20px;
   }
 
+  &__price {
+    position: relative;
+  }
+
+  &--price{
+    position: absolute;
+    bottom: 30px;
+    font-size: 14px;
+    margin-left: -70px;
+    font-weight: bold;
+
+    padding: 3px;
+    border-radius: 20px;
+    color: gray;
+
+    @include productFont(); 
+
+    &--simvol{
+      font-size: 15px
+    }
+
+    &--procent{
+      margin-left: 5px;
+      background-color: red;
+      color: white;
+      padding: 0 2px;
+      font-size: 11px;
+      border-radius: 8px;
+      text-align: center;
+    }
+
+    &--line{
+      text-decoration: line-through;
+    }
+  }
+  
+  &--priceDiscount{
+    position: relative;
+    font-size: 25px;
+    margin-left: 40px;
+    font-weight: bold;
+    margin-top: 30px;
+
+    @include productFont(); 
+
+    &--simvol{
+      font-size: 15px
+    }
+  }
+
+
 
 
  

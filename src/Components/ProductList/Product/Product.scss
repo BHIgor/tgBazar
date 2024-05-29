@@ -180,7 +180,6 @@ $widthProduct: 180px;
       position: absolute;
       bottom: 25px;
       font-size: 14px;
-      margin-left: 20px;
       font-weight: bold;
 
       padding: 3px;
@@ -210,9 +209,9 @@ $widthProduct: 180px;
     
     &--priceDiscount{
       font-size: 20px;
-      margin-left: 20px;
       font-weight: bold;
-
+      margin-top: 5px;
+      margin-left: 5px;
       @include productFont(); 
 
       &--simvol{
