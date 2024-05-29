@@ -5,22 +5,13 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination } from 'swiper/modules';
 
 import './ProductPage.scss';
-const tg = window.Telegram.WebApp;
 
 export const ProductPage = () =>{
   const dataDB = useContext(ReactContext);
   const [desck, setDesck] = useState('opis')
   const [copy, setCopy] = useState(false)
 
-  const inlineQueryOptions = {
-    query: 'asfsa', // Початковий текст інлайн-запиту
-    choose_chat_types: {
-        allow_user_chats: true,
-        allow_bot_chats: false,
-        allow_group_chats: true,
-        allow_channel_chats: false
-    }
-};
+ 
   console.log(setCopy(false))
   let { productId } = useParams();
 
@@ -118,7 +109,7 @@ export const ProductPage = () =>{
                 </div>
                 {
                   (dataDB.listBot[0].linkShop !== '') ? 
-                  <div onClick={() => tg.switchInlineQuery(inlineQueryOptions)} className={`productPage__share ${copy ? 'productPage__shareActive' : null}`}>
+                  <div onClick={() => window.Telegram.WebApp.switchInlineQuery('ssfaf')} className={`productPage__share ${copy ? 'productPage__shareActive' : null}`}>
                     <div className={`productPage__share--${copy ? 'iconActive' :'icon'} `}></div>
                   </div> 
                 :null
