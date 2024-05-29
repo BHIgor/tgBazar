@@ -65,7 +65,7 @@ export const ProductPage = () =>{
                 >
                 {images.map(e => {
                   return (
-                      <SwiperSlide key={e}><img src={e} alt='img-slider' style={{height: '400px'}} /></SwiperSlide>
+                      <SwiperSlide key={e}><img src={e} alt='img-slider' style={{height: '100%',width:'auto'}} /></SwiperSlide>
                     )
                   })
                 }
