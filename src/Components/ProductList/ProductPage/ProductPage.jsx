@@ -11,6 +11,8 @@ export const ProductPage = () =>{
   const [desck, setDesck] = useState('opis')
   const [copy, setCopy] = useState(false)
 
+
+
   let { productId } = useParams();
 
   const selectedProduct = (dataDB.length === 0)? null :dataDB.products.filter(e => e.id === Number(productId))

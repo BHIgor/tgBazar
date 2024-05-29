@@ -23,8 +23,6 @@ import { FooterLine } from './Components/FooterLine/FooterLine';
 import { Like } from './Components/Menu/Like/Like';
 import { ProductPage } from './Components/ProductList/ProductPage/ProductPage';
 
-
-
 const search = window.location.search
 
 function App() {
@@ -50,7 +48,7 @@ function App() {
       return false;
     }
   }, [])
-  
+  console.log(search)
   const backButton = window.Telegram.WebApp.BackButton;;
 
   if(window.location.pathname !== '/'){
