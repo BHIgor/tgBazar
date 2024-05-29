@@ -105,7 +105,19 @@ export const ProductPage = () =>{
                 <div className="productPage__buy--text">Купити</div>
               </div>
             </div>  
-          </div>))
+
+            <div className="productPage__description">
+                <div 
+                className="productPage__description--title" style={{borderBottom: `4px solid ${dataDB.settings[0].clHeader}`}}>
+                  Опис
+                </div>
+                <div className="productPage__description--text">
+                  {e.description}
+                </div>
+            </div>   
+
+          </div>
+          ))
         }
       </div>
     </>

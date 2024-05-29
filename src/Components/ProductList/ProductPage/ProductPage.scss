@@ -1,13 +1,14 @@
 @import '../../../fonts/fonts.scss';
 @import '../../mixin/mixins.scss';
 
-.productPage {
-  height: 100vh;
+$padLeft: 15px;
+$padRight: 25px;
 
+.productPage {
 
   &__title{
     font-size: 20px;
-    padding: 20px 25px 5px 15px;
+    padding: 20px $padRight 5px $padLeft;
     @include productFont() 
   }
 
@@ -15,8 +16,8 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    padding-left: 15px;
-    padding-right: 25px;
+    padding-left: $padLeft;
+    padding-right: $padRight;
     margin-top: 8px;
     justify-content: space-between;
   }
@@ -36,8 +37,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-left: 15px;
-    padding-right: 25px;
+    padding-left: $padLeft;
+    padding-right: $padRight;
     margin-top: 10px;
     margin-left: -10px;
   }
@@ -111,7 +112,7 @@
     display: flex;
     align-items: center;  
     gap: 7px;
-    margin-right: 25px;
+    margin-right: $padRight;
     padding: 10px;
     border-radius: 5px;
     cursor: pointer;
@@ -126,6 +127,25 @@
       width: 27px;
       background-image: url(../../../images/menu/cart-menu.svg);
       @include iconPosition();
+    }
+  }
+
+  &__description{
+    margin-top: 20px;
+    padding-left: $padLeft;
+    padding-right: $padRight;
+
+    @include productFont();
+
+    &--text{
+      font-size: 15px;
+      padding-top: 10px;
+    }
+
+    &--title{
+      font-size: 18px;
+      padding: 10px;
+      width: 70px;
     }
   }
 
