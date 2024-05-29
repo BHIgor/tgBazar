@@ -51,7 +51,7 @@ function App() {
   console.log(window.location)
   const backButton = window.Telegram.WebApp.BackButton;;
 
-  if(window.location.pathname.includes('#/?')){
+  if(window.location.hash.includes('#/?')){
     backButton.hide();
   } else {
     backButton.show()
