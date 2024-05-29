@@ -38,7 +38,7 @@ export const Product = ({products}) =>{
                   </div>
 
                   <Link 
-                    to={`/Product/${e.id}`}   
+                    to={`/Product/${e.id}?${dataDB.listBot[0].nameShop}`}   
                     onClick={() =>scrollToTop()} 
                     className='product__page--title'>
                     {e.title} 
@@ -75,7 +75,7 @@ export const Product = ({products}) =>{
                 {
                   (e.description !=='')?(
                   <Link 
-                    to={`/Product/${e.id}`}  
+                    to={`/Product/${e.id}?${dataDB.listBot[0].nameShop}`}  
                     onClick={() =>scrollToTop()}  
                     className="product__page--description">
                     <div className="product__page--description-text">

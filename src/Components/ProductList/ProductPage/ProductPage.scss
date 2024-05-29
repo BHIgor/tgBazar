@@ -1,3 +1,38 @@
+@import '../../../fonts/fonts.scss';
+
 .productPage {
   height: 100vh;
+  padding: 20px 25px 20px 15px;
+
+  &__title{
+    font-size: 20px;
+    @include productFont() 
+  }
+
+  &__titleInfo{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 17px;
+    justify-content: space-between;
+  }
+
+  &__stars{
+    display: flex;
+    gap: 5px;
+  }
+
+  &__id{
+    font-size: 12px;
+    color: gray;
+    @include productFont() 
+  }
+
+  &__nal{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    margin-left: -10px;
+  }
 }
