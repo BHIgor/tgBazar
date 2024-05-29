@@ -116,7 +116,7 @@ export const ProductPage = () =>{
                 </div>
                 {
                   (dataDB.listBot[0].linkShop !== '') ? 
-                  <div onClick={tel} className={`productPage__share ${copy ? 'productPage__shareActive' : null}`}>
+                  <div onClick={() => tel()} className={`productPage__share ${copy ? 'productPage__shareActive' : null}`}>
                     <div className={`productPage__share--${copy ? 'iconActive' :'icon'} `}></div>
                   </div> 
                 :null
