@@ -76,7 +76,7 @@ export const ProductPage = () =>{
               {
                 (e.price_discount===0) ? (
                   <span className="productPage--priceDiscount">
-                  {e.price} <span className="productPage--price--simvol">₴</span>
+                  {e.price}<span className="productPage--price--simvol">₴</span>
                   </span>
 
                 ) : (<>
