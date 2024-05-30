@@ -5,13 +5,15 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination } from 'swiper/modules';
 
 import './ProductPage.scss';
+const tg = window.Telegram.WebApp;
 
 export const ProductPage = () =>{
   const dataDB = useContext(ReactContext);
   const [desck, setDesck] = useState('opis')
   const [copy, setCopy] = useState(false)
 
- 
+  tg.ready()
+
   console.log(setCopy(false))
 
   
@@ -111,7 +113,7 @@ export const ProductPage = () =>{
                 </div>
                 {
                   (dataDB.listBot[0].linkShop !== '') ? 
-                  <div className={`productPage__share ${copy ? 'productPage__shareActive' : null}`}>
+                  <div  className={`productPage__share ${copy ? 'productPage__shareActive' : null}`}>
                     <div className={`productPage__share--${copy ? 'iconActive' :'icon'} `}></div>
                   </div> 
                 :null
