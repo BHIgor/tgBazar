@@ -110,7 +110,7 @@ export const ProductPage = () =>{
                 </div>
                 { // onClick={() => (copy) ? setCopy(false) : setCopy(true)}
                   (dataDB.listBot[0].linkShop !== '') ? 
-                  <a href='https://t.me/share/url?text=hnj'  className={`productPage__share ${copy ? 'productPage__shareActive' : null}`}>
+                  <a href={`https://t.me/share/url?url=${`${dataDB.listBot[0].linkShop}?start=${e.id}-${dataDB.listBot[0].nameShop}&text=${`fafasf`}`}`} className={`productPage__share ${copy ? 'productPage__shareActive' : null}`}>
                     <div className={`productPage__share--${copy ? 'iconActive' :'icon'} `}></div>
                   </a> 
                 :null
