@@ -10,8 +10,7 @@ const tg = window.Telegram.WebApp;
 export const ProductPage = () =>{
   const dataDB = useContext(ReactContext);
   const [desck, setDesck] = useState('opis')
-  //const [copy, setCopy] = useState(false)
-  const copy = false
+
   tg.ready()
 
   let { productId } = useParams();
@@ -110,8 +109,8 @@ export const ProductPage = () =>{
                 </div>
                 { // onClick={() => (copy) ? setCopy(false) : setCopy(true)}
                   (dataDB.listBot[0].linkShop !== '') ? 
-                  <a href={`https://t.me/share/url?url=${`${dataDB.listBot[0].linkShop}?start=${e.id}-${dataDB.listBot[0].nameShop}&text=${`fafasf`}`}`} className={`productPage__share ${copy ? 'productPage__shareActive' : null}`}>
-                    <div className={`productPage__share--${copy ? 'iconActive' :'icon'} `}></div>
+                  <a href={`https://t.me/share/url?url=${`${dataDB.listBot[0].linkShop}?start=${e.id}-${dataDB.listBot[0].nameShop}&text=${`Посилання на товар`}`}`} className={`productPage__share`}>
+                    <div className='productPage__share--icon'></div>
                   </a> 
                 :null
                 }
@@ -119,10 +118,6 @@ export const ProductPage = () =>{
               </div>
               
             </div>  
-
-            {
-              (copy) ? <div className='productPage__copy'> Посилання на товар: <a href={`${dataDB.listBot[0].linkShop}?start=/Product/${e.id}?${dataDB.listBot[0].nameShop}`}>{dataDB.listBot[0].linkShop}?start={e.id}-{dataDB.listBot[0].nameShop}</a></div>:null
-            }
 
             <div className="productPage__description">
                 <div className="productPage__description--titleBlock">

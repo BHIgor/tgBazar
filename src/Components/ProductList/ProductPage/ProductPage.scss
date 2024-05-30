@@ -182,28 +182,11 @@ $padRight: 25px;
       
     }
 
-    &--iconActive{
-      height: 30px;
-      width: 30px;
-  
-      background-image: url(../../../images/icons/send-active.svg);
-
-      @include iconPosition();
-      
-    }
-    
-  }
-  &__shareActive{
-    background-color: rgb(45, 45, 45);
-
+   
   }
 
-  &__copy{
-    text-align: center;
-    margin-top: 20px;
 
-    @include productFont();
-  }
+
 
  
 }
