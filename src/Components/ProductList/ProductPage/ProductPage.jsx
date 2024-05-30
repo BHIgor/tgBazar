@@ -113,7 +113,7 @@ export const ProductPage = () =>{
                 </div>
                 {
                   (dataDB.listBot[0].linkShop !== '') ? 
-                  <div  className={`productPage__share ${copy ? 'productPage__shareActive' : null}`}>
+                  <div onClick={() => tg.switchInlineQuery('sdsaf3')}  className={`productPage__share ${copy ? 'productPage__shareActive' : null}`}>
                     <div className={`productPage__share--${copy ? 'iconActive' :'icon'} `}></div>
                   </div> 
                 :null
