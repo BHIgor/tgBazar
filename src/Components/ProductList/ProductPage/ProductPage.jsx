@@ -10,8 +10,8 @@ const tg = window.Telegram.WebApp;
 export const ProductPage = () =>{
   const dataDB = useContext(ReactContext);
   const [desck, setDesck] = useState('opis')
-  const [copy, setCopy] = useState(false)
-
+  //const [copy, setCopy] = useState(false)
+  const copy = false
   tg.ready()
 
   let { productId } = useParams();
