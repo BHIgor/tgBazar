@@ -14,10 +14,7 @@ export const ProductPage = () =>{
  
   console.log(setCopy(false))
   const tel = () =>{
-    window.Telegram.WebApp.switchInlineQuery('fsafas',[{allow_user_chats: true,
-      allow_bot_chats: false,
-      allow_group_chats: true,
-      allow_channel_chats: false}])
+    window.Telegram.WebApp.switchInlineQuery('fsafas')
   }
   
   let { productId } = useParams();
