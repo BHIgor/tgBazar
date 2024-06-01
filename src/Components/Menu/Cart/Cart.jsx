@@ -21,7 +21,31 @@ export const Cart = () =>{
                 />
               </div>
               <div className='cart__info'>
-                <div className="cart__title">{e.title}</div>
+                <div className="cart__title">
+                  {e.title}
+                </div>
+                <div className="cart__countProduct">
+                  <div className="cart__buttonCount">
+                    <div 
+                      className="cart__button " 
+                      style={{backgroundColor: `${dataDB.settings[0].clButtonProduct}`}}>
+                        –
+                      </div>
+                    <input 
+                      type="text" 
+                      defaultValue='1'
+                      className="cart__input" 
+                       />
+                    <div 
+                      className="cart__button"
+                      style={{backgroundColor: `${dataDB.settings[0].clButtonProduct}`}}
+                    >+</div>
+                  </div>
+                  <div className="cart__blockDelete">
+                    <div className="cart__delete">
+                    </div>
+                  </div>  
+                </div>
               </div>
             </div>
           )})}
