@@ -32,6 +32,7 @@
 
   &--cart{
     background-image: url(../../images/menu/cart-menu.svg);
+    position: relative;
   }
 
   &--menu{
@@ -40,6 +41,19 @@
 
   &--like{
     background-image: url(../../images/like.svg);
+  }
+
+  &--count {
+    color: white;
+    background-color: red;
+    position: absolute;
+    text-align: center;
+    height: 16px;
+    border-radius: 5px;
+    line-height: 16px;
+    width: 17px;
+    right: -16px;
+    top: -5px;
   }
 
 }

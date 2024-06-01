@@ -6,9 +6,9 @@ import './Product.scss';
 import { Link } from 'react-router-dom';
 
 export const Product = ({products}) =>{
-  const dataDB = useContext(ReactContext);
-  const scrollToTop = () => {
+  const { dataDB } = useContext(ReactContext);
 
+  const scrollToTop = () => {
     scroll.scrollToTop({duration:20});
   };
 

@@ -5,7 +5,7 @@ import './Header.scss';
 import { Link } from 'react-router-dom';
 
 export const Header = ({ setMenu }) =>{
-  const dataDB = useContext(ReactContext);
+  const { dataDB } = useContext(ReactContext);
 
   return <> 
     { (dataDB.length === 0) ? <div>Помилка</div> : <>
@@ -19,7 +19,7 @@ export const Header = ({ setMenu }) =>{
             </div>
 
             <Link to='/Cart' className="header__icons header__cart">
-            
+              {(dataDB.allCartCount > 0)? <span className='header__cart--count'>{dataDB.allCartCount}</span> :null}
             </Link>
           </div>
         </div>

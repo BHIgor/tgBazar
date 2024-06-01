@@ -6,7 +6,7 @@ import './ProductList.scss';
 import { Product } from './Product/Product'
 
 export const ProductList = () =>{
-  const dataDB = useContext(ReactContext);
+  const { dataDB } = useContext(ReactContext);
   const allProducts = dataDB.products
 
   const visibleProduct = []

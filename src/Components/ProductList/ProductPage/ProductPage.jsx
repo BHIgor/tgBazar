@@ -8,7 +8,7 @@ import './ProductPage.scss';
 const tg = window.Telegram.WebApp;
 
 export const ProductPage = () =>{
-  const dataDB = useContext(ReactContext);
+  const { dataDB, setDataDB } = useContext(ReactContext);
   const [desck, setDesck] = useState('opis')
 
   tg.ready()
@@ -16,8 +16,21 @@ export const ProductPage = () =>{
   let { productId } = useParams();
 
   const selectedProduct = (dataDB.length === 0)? null :dataDB.products.filter(e => e.id === Number(productId))
-
   const images = (selectedProduct !== null)? selectedProduct[0].image.split(',') :[]
+
+  const addToCart = (x, count = 1) => {
+    const product = dataDB.cart
+    dataDB.allCartCount +=  count
+    let foundObject = product.find(e => e.id === x.id);
+  
+    if (foundObject) {
+      foundObject.count++;
+    } else {
+      product.push({ ...x, count: 1 });
+    }
+  
+    setDataDB({...dataDB, cart: product} )
+  }
 
   return <> 
     { (dataDB.length === 0) ? <div>Помилка</div> : <>
@@ -103,7 +116,11 @@ export const ProductPage = () =>{
               </div> 
 
               <div className="productPage__buyBlock">
-                <div className="productPage__buy" style={{backgroundColor: `${dataDB.settings[0].clButtonProduct}`}}>
+                <div 
+                className="productPage__buy" 
+                style={{backgroundColor: `${dataDB.settings[0].clButtonProduct}`}}
+                onClick={() => addToCart(e)}
+                >
                   <div className="productPage__buy--icon"></div>
                   <div className="productPage__buy--text">Купити</div>
                 </div>

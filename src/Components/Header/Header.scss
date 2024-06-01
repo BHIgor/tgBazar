@@ -47,7 +47,20 @@
   &__cart{
     margin-right: 15px;
     background-image: url(../../images/cart.svg);
+    position: relative;
 
+    &--count{
+      color: white;
+      background-color: red;
+      position: absolute;
+      text-align: center;
+      height: 16px;
+      border-radius: 5px;
+      line-height: 16px;
+      width: 20px;
+      right: -5px;
+      top: -3px;
+    }
   }
 
   &__title{

@@ -6,7 +6,8 @@ import { Link } from 'react-router-dom';
 import { animateScroll as scroll } from 'react-scroll';
 
 export const FooterLine = ({ setMenu }) =>{
-  const dataDB = useContext(ReactContext);
+  const { dataDB } = useContext(ReactContext);
+
 
   const scrollToTop = () => {
     scroll.scrollToTop({duration:20});
@@ -18,7 +19,7 @@ export const FooterLine = ({ setMenu }) =>{
         <div className="footerLine--container">
          <div onClick={() => setMenu(true)} className="footerLine--menu footerLine--size"></div>
          <Link to={`/Katalog?${dataDB.listBot[0].nameShop}`} onClick={() => scrollToTop()} className="footerLine--catalog footerLine--size"></Link>
-         <Link to={`/Cart?${dataDB.listBot[0].nameShop}`} onClick={() => scrollToTop()} className="footerLine--cart footerLine--size"></Link>
+         <Link to={`/Cart?${dataDB.listBot[0].nameShop}`} onClick={() => scrollToTop()} className="footerLine--cart footerLine--size">{(dataDB.allCartCount > 0) ? <span className='footerLine--count'>{dataDB.allCartCount}</span> :null}</Link>
          <Link to={`/Like?${dataDB.listBot[0].nameShop}`} onClick={() => scrollToTop()} className="footerLine--like footerLine--size"></Link>
          <Link to={`/?${dataDB.listBot[0].nameShop}`} onClick={() => scrollToTop()} className="footerLine--home footerLine--size"></Link>
         </div>

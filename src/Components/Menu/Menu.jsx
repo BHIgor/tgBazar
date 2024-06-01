@@ -9,7 +9,7 @@ export const Menu = ({
   menu,
   setMenu
 }) =>{
-  const dataDB = useContext(ReactContext);
+  const { dataDB } = useContext(ReactContext);
 
   const getLinkStyle = ({ isActive }) => ({backgroundColor: isActive ? `${dataDB.settings[0].clHeader}`: null}) 
   const scrollToTop = () => {

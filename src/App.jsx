@@ -27,8 +27,10 @@ const search = window.location.search
 
 function App() {
   const [dataDB, setDataDB] = useState([]);
-  const [menu, setMenu] = useState(false)
+  const [menu, setMenu] = useState(false);
+
   const navigate = useNavigate();
+
   useEffect(() => {
     try{
       fetch(`https://tgbazar.com.ua/products`, {
@@ -48,7 +50,7 @@ function App() {
       return false;
     }
   }, [])
-  console.log(window.location)
+  
   const backButton = window.Telegram.WebApp.BackButton;;
 
   if(window.location.hash.includes('#/?')){
@@ -61,13 +63,15 @@ function App() {
     navigate(-1);
   });
 
+  console.log(dataDB)
+
   return (
     <div className="app">
-      <ReactContext.Provider value={dataDB}>
+      <ReactContext.Provider value={{ dataDB, setDataDB }}>
        <div className='footerTop'>
         <Header setMenu={setMenu}/>
         <Menu setMenu={setMenu} menu={menu}/>
-    
+  
           <Routes>      
             <Route path='/' exact element={<Homepage/>}/>
             <Route path="/Product/:productId" element={<ProductPage />} />

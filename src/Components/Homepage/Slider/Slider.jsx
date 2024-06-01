@@ -11,7 +11,7 @@ import { Autoplay, Pagination } from 'swiper/modules';
 
 
 export const Slider = () => {
-  const dataDB = useContext(ReactContext);
+  const { dataDB } = useContext(ReactContext);
 
   const images = dataDB.settings[0].slider.split(',')
 

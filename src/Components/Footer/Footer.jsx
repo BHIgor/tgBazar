@@ -4,7 +4,7 @@ import { ReactContext } from "../../context/ReactContext"
 import './Footer.scss';
 
 export const Footer = ({ setMenu }) =>{
-  const dataDB = useContext(ReactContext);
+  const { dataDB } = useContext(ReactContext);
 
   return <> 
     { (dataDB.length === 0) ? <div>Помилка</div> : <>

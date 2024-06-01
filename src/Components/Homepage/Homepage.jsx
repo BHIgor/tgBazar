@@ -10,7 +10,7 @@ import { ProductList } from '../ProductList/ProductList'
 const tg = window.Telegram.WebApp;
 
 export const Homepage = () =>{
- const dataDB = useContext(ReactContext);
+ const {dataDB} = useContext(ReactContext);
   tg.ready()
 
 
