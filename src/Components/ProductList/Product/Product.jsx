@@ -6,11 +6,26 @@ import './Product.scss';
 import { Link } from 'react-router-dom';
 
 export const Product = ({products}) =>{
-  const { dataDB } = useContext(ReactContext);
+  const { dataDB, setDataDB } = useContext(ReactContext);
 
   const scrollToTop = () => {
     scroll.scrollToTop({duration:20});
   };
+
+  
+  const addToCart = (x, count = 1) => {
+    const product = dataDB.cart
+    dataDB.allCartCount +=  count
+    let foundObject = product.find(e => e.id === x.id);
+  
+    if (foundObject) {
+      foundObject.count++;
+    } else {
+      product.push({ ...x, count: 1 });
+    }
+  
+    setDataDB({...dataDB, cart: product} )
+  }
 
   return <> 
     { (dataDB.length === 0) ? <div>Помилка</div> : <>
@@ -114,7 +129,7 @@ export const Product = ({products}) =>{
                   </>)
                   }
 
-                <div className='product__page--buy' >
+                <div className='product__page--buy' onClick={() => addToCart(e)} >
                   <div className="product__page--buyBlock" style={{backgroundColor: `${dataDB.settings[0].clButtonProduct}`}}>
                     <div className="product__page--buyIcon"></div>
                   </div>

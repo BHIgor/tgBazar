@@ -5,13 +5,20 @@
   box-sizing: border-box;
 
 }
+
+body {
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: column;
+
+
+
+}
 .app{
-  height: 100%;
-  
+ 
 
 }
 
 .footerTop {
-  padding-bottom: 65px;
+  min-height: 100vh; 
 }
-

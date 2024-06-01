@@ -88,8 +88,8 @@ function App() {
             <Route path='/Orders' element={<Orders/>}/>
             <Route path='/Pay' element={<Pay/>}/>
           </Routes>
-          <Footer />
         </div>
+        <Footer />
         <FooterLine setMenu={setMenu}/>
       
         
