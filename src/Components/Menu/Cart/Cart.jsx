@@ -2,6 +2,9 @@ import { useContext } from 'react';
 import { ReactContext } from "../../../context/ReactContext"
 
 import './Cart.scss'
+import { Link } from 'react-router-dom';
+import { animateScroll as scroll } from 'react-scroll';
+
 
 export const Cart = () =>{
   const { dataDB, setDataDB} = useContext(ReactContext);
@@ -22,6 +25,10 @@ const fullPrice = (dataDB.cart) ? dataDB.cart.reduce((accumulator, currentValue)
 
     setDataDB(copyData)
   }
+
+  const scrollToTop = () => {
+    scroll.scrollToTop({duration:20});
+  };
 
   const plus = (product) => {
     const copyData = { ...dataDB }
@@ -61,9 +68,12 @@ const fullPrice = (dataDB.cart) ? dataDB.cart.reduce((accumulator, currentValue)
                   />
                 </div>
                 <div className='cart__info'>
-                  <div className="cart__title">
+                  <Link 
+                   to={`/Product/${e.id}?${dataDB.listBot[0].nameShop}`}   
+                   onClick={() =>scrollToTop()} 
+                   className="cart__title">
                     {e.title}
-                  </div>
+                  </Link>
     
                   <div className="cart__footer">
                     <div className="cart__price">
