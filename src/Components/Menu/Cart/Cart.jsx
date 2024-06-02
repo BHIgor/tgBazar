@@ -24,28 +24,36 @@ export const Cart = () =>{
                 <div className="cart__title">
                   {e.title}
                 </div>
-                <div className="cart__countProduct">
-                  <div className="cart__buttonCount">
-                    <div 
-                      className="cart__button " 
-                      style={{backgroundColor: `${dataDB.settings[0].clButtonProduct}`}}>
-                        –
-                      </div>
-                    <input 
-                      type="text" 
-                      defaultValue='1'
-                      className="cart__input" 
-                       />
-                    <div 
-                      className="cart__button"
-                      style={{backgroundColor: `${dataDB.settings[0].clButtonProduct}`}}
-                    >+</div>
+
+                <div className="cart__footer">
+                  <div className="cart__price">
+                    {(e.price_discount === 0)? e.price: e.price_discount}<span className='cart__simvol'>₴</span>
                   </div>
-                  <div className="cart__blockDelete">
-                    <div className="cart__delete">
+
+                  <div className="cart__countProduct">
+                    <div className="cart__buttonCount">
+                      <div 
+                        className="cart__button " 
+                        style={{backgroundColor: `${dataDB.settings[0].clButtonProduct}`}}>
+                          –
+                        </div>
+                      <input 
+                        type="text" 
+                        defaultValue='1'
+                        className="cart__input" 
+                        />
+                      <div 
+                        className="cart__button"
+                        style={{backgroundColor: `${dataDB.settings[0].clButtonProduct}`}}
+                      >+</div>
                     </div>
-                  </div>  
+                    <div className="cart__blockDelete">
+                      <div className="cart__delete">
+                      </div>
+                    </div>  
+                  </div>
                 </div>
+                
               </div>
             </div>
           )})}
