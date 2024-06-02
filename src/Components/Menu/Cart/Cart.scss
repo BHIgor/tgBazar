@@ -97,10 +97,11 @@
   }
 
   &__price{
+    font-size: 18px;
     @include productFont();
   }
 
   &__simvol{
-    font-size: 14px;
+    font-size: 13px;
   }
 }
