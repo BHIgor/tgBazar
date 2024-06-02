@@ -36,7 +36,7 @@ export const Product = ({products}) =>{
         headers: {
           'Content-Type': 'application/json;charset=utf-8'
         },
-        body: JSON.stringify({nameShop: dataDB.listBot[0].nameShop,id: id, idUser: tg })
+        body: JSON.stringify({nameShop: dataDB.listBot[0].nameShop,id: id, idUser: tg.initDataUnsafe.user.id })
       })
       .then((response) => {
         return response.json();
