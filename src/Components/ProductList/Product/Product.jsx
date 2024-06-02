@@ -14,6 +14,11 @@ export const Product = ({products}) =>{
     scroll.scrollToTop({duration:20});
   };
 
+  const liked = []
+
+  dataDB.users.map(e => (Number(e.idUser) === tg?.initDataUnsafe?.user?.id) ? liked.push(e.liked.split(',')) : null
+  )
+
   
   const addToCart = (x, count = 1) => {
     const product = dataDB.cart
@@ -70,7 +75,11 @@ export const Product = ({products}) =>{
                       />
                   </div>
                   
-                  <div className="product__page--blockIcon" onClick={() => addLike(e.id)}>
+                  <div 
+                    className={liked.includes(e.id) ? "product__page--blockIcon" : ''}
+                    onClick={() => addLike(e.id)}
+                    
+                  >
                     <div className="product__page--icon">
                       
                     </div>
