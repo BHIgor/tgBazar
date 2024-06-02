@@ -88,6 +88,9 @@
     width: 30px;
     height: 30px;
     text-align: center;
+    line-height: 30px;
+    border: 1px solid gray;
+    @include productFont();
   }
 
   &__footer{
@@ -104,4 +107,75 @@
   &__simvol{
     font-size: 13px;
   }
+
+  &__orderBlock{
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    position: relative;
+    padding: 10px;
+  }
+  &__order{
+    position: absolute;
+    top: 0;
+    width: 250px;
+    height: 100%;
+    opacity: 0.2; 
+    border-radius: 5px;
+
+  }
+
+  &__blockPrice{
+    display: flex;
+    justify-content: space-between;
+ 
+  }
+
+  &__fullPrice{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    position: relative;
+    z-index: 1;
+
+    @include productFont();
+
+    &--price{
+      font-size: 19px;
+    }
+
+    &--text{
+      font-size: 17px;
+    }
+  }
+
+  &__orderButton{
+    font-size: 17px;
+    border-radius: 5px;
+    padding: 8px;
+    cursor: pointer;
+  }
+
+  &__empty{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap:20px;
+
+    @include productFont();
+
+    &--center{
+      display: flex;
+      justify-content: center;
+    }
+
+    &--icon{
+      height: 250px;
+      width: 250px;
+      background-image: url(../../../images/icons/emptyCart.svg);
+  
+      @include iconPosition();
+    }
+  }
+ 
 }
