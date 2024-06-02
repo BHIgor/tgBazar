@@ -5,6 +5,8 @@ import { animateScroll as scroll } from 'react-scroll';
 import './Product.scss';
 import { Link } from 'react-router-dom';
 
+const tg = window.Telegram.WebApp;
+
 export const Product = ({products}) =>{
   const { dataDB, setDataDB } = useContext(ReactContext);
 
@@ -25,6 +27,26 @@ export const Product = ({products}) =>{
     }
   
     setDataDB({...dataDB, cart: product} )
+  }
+
+  const addLike = (id) => {
+    try{
+      fetch(`https://tgbazar.com.ua/liked`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json;charset=utf-8'
+        },
+        body: JSON.stringify({nameShop: dataDB.listBot[0].nameShop,id: id, idUser: tg })
+      })
+      .then((response) => {
+        return response.json();
+      })
+      .then(() => {
+        setDataDB(...dataDB);
+      });
+    } catch (e) {
+      return false;
+    }
   }
 
   return <> 
@@ -48,7 +70,7 @@ export const Product = ({products}) =>{
                       />
                   </div>
                   
-                  <div className="product__page--blockIcon">
+                  <div className="product__page--blockIcon" onClick={() => addLike(e.id)}>
                     <div className="product__page--icon">
                       
                     </div>
