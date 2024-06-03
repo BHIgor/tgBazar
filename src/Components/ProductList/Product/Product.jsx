@@ -47,7 +47,7 @@ export const Product = ({products}) =>{
         return response.json();
       })
       .then(() => {
-        setDataDB(...dataDB);
+        setDataDB({...dataDB, ss: 2});
       });
     } catch (e) {
       return false;
