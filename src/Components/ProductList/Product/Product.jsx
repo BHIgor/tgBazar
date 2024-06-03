@@ -11,8 +11,11 @@ export const Product = ({products}) =>{
   const { dataDB, setDataDB } = useContext(ReactContext);
   const [liked, setLiked ] = useState([])
 
+  if(dataDB.length > 0) {
+    
   dataDB.users.map(e => (Number(e.idUser) === tg?.initDataUnsafe?.user?.id) ? setLiked(prev => [...prev, ['1','2','3']]) : setLiked(prev => [...prev, ['12','22','32']])
 )
+}
 
   const scrollToTop = () => {
     scroll.scrollToTop({duration:20});
