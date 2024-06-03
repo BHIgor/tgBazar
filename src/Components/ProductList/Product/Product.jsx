@@ -16,9 +16,9 @@ export const Product = ({products}) =>{
 
   const liked = []
 
-  dataDB.users.map(e => (Number(e.idUser) === tg?.initDataUnsafe?.user?.id) ? liked.push(e.liked.split(',')) : null
+  dataDB.users.map(e => (Number(e.idUser) === 7112483679) ? liked.push(e.liked.split(',')) : null
   )
-  console.log(liked)
+  //tg?.initDataUnsafe?.user?.id
   
   const addToCart = (x, count = 1) => {
     const product = dataDB.cart
@@ -80,7 +80,7 @@ export const Product = ({products}) =>{
                     onClick={() => addLike(e.id)}
                     
                   >
-                    <div className={liked.includes(String(e.id)) ?"product__page--iconActive" :"product__page--icon"}>
+                    <div className={liked[0].includes(String(2)) ?"product__page--iconActive" :"product__page--icon"}>
                       
                     </div>
                   </div>
