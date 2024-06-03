@@ -1,0 +1,13 @@
+@import '../../../fonts/fonts.scss';
+
+.like{
+  padding: 20px;
+
+  &__title{
+    text-align: center;
+    font-size: 19px;
+    margin-bottom: 20px;
+
+    @include menuFont() 
+  }
+}

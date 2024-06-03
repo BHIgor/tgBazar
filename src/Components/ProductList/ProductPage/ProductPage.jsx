@@ -32,6 +32,38 @@ export const ProductPage = () =>{
     setDataDB({...dataDB, cart: product} )
   }
 
+  const addLike = (id) => {
+    try{
+      fetch(`https://tgbazar.com.ua/liked`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json;charset=utf-8'
+        },
+        body: JSON.stringify({nameShop: dataDB.listBot[0].nameShop,id: id, idUser: tg?.initDataUnsafe?.user?.id})
+      })
+      .then((response) => {
+        return response.json();
+      })
+  
+      const copyData = { ...dataDB }
+
+      if(copyData.liked.includes(String(id))) {
+        const newArr = copyData.liked.filter(item => item !== String(id));
+        copyData.liked.splice(0)
+
+        newArr.map(e => copyData.liked.push(e))
+        setDataDB(copyData)
+
+      } else {
+        copyData.liked.push(String(id))
+        setDataDB(copyData)
+      }
+
+    } catch (e) {
+      return false;
+    }
+  }
+
   return <> 
     { (dataDB.length === 0) ? <div>Помилка</div> : <>
       <div className='productPage'>
@@ -67,8 +99,10 @@ export const ProductPage = () =>{
                 </div>
               </>)}
 
-              <div className="productPage__titleInfo--blockIcon">
-                <div className="product__page--icon"></div>
+              <div className="productPage__titleInfo--blockIcon"  onClick={() => addLike(e.id)} >
+                <div className={dataDB.liked?.includes(String(e.id)) ?"product__page--iconActive" :"product__page--icon"}>
+                      
+                </div>
               </div>
             </div>
 

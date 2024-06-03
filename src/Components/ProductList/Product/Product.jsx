@@ -41,21 +41,19 @@ export const Product = ({products}) =>{
         return response.json();
       })
   
-  const copyData = { ...dataDB }
+      const copyData = { ...dataDB }
 
-  if(copyData.liked.includes(String(id))) {
-    const newArr = copyData.liked.filter(item => item !== String(id));
-    copyData.liked.splice(0)
+      if(copyData.liked.includes(String(id))) {
+        const newArr = copyData.liked.filter(item => item !== String(id));
+        copyData.liked.splice(0)
 
-    newArr.map(e => copyData.liked.push(e))
-   
-    setDataDB(copyData)
+        newArr.map(e => copyData.liked.push(e))
+        setDataDB(copyData)
 
-  } else {
-    copyData.liked.push(String(id))
-    setDataDB(copyData)
-
-  }
+      } else {
+        copyData.liked.push(String(id))
+        setDataDB(copyData)
+      }
 
     } catch (e) {
       return false;
