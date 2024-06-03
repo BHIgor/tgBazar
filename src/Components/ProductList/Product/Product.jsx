@@ -18,7 +18,7 @@ export const Product = ({products}) =>{
 
   dataDB.users.map(e => (Number(e.idUser) === tg?.initDataUnsafe?.user?.id) ? liked.push(e.liked.split(',')) : null
   )
-
+  console.log(liked)
   
   const addToCart = (x, count = 1) => {
     const product = dataDB.cart
