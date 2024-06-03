@@ -24,6 +24,7 @@ import { Like } from './Components/Menu/Like/Like';
 import { ProductPage } from './Components/ProductList/ProductPage/ProductPage';
 
 const search = window.location.search
+const tg = window.Telegram.WebApp;
 
 function App() {
   const [dataDB, setDataDB] = useState([]);
@@ -38,7 +39,7 @@ function App() {
         headers: {
           'Content-Type': 'application/json;charset=utf-8'
         },
-        body: JSON.stringify({nameShop: search.substring(1)})
+        body: JSON.stringify({nameShop: search.substring(1), idUser: tg.initDataUnsafe.user.id })
       })
       .then((response) => {
         return response.json();

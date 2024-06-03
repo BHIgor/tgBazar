@@ -80,7 +80,7 @@ export const Product = ({products}) =>{
                     onClick={() => addLike(e.id)}
                     
                   >
-                    <div className={liked[0].includes(String(e.id)) ?"product__page--iconActive" :"product__page--icon"}>
+                    <div className={(dataDB.users[0]?.liked?.split(',')?.includes(String(e.id)) ) ?"product__page--iconActive" :"product__page--icon"}>
                       
                     </div>
                   </div>
