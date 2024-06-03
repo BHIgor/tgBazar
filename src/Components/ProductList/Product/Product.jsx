@@ -89,7 +89,7 @@ export const Product = ({products}) =>{
                     onClick={() => addLike(e.id)}
                     
                   >
-                    <div className={liked[0].includes(String(e.id)) ?"product__page--iconActive" :"product__page--icon"}>
+                    <div className={liked.includes(String(e.id)) ?"product__page--iconActive" :"product__page--icon"}>
                       
                     </div>
                   </div>
