@@ -14,12 +14,6 @@ export const Product = ({products}) =>{
     scroll.scrollToTop({duration:20});
   };
 
-  const liked = []
-
-  dataDB.users.map(e => (Number(e.idUser) === tg?.initDataUnsafe?.user?.id) ? liked.push(e.liked.split(',')) : null
-  )
-
-  
   const addToCart = (x, count = 1) => {
     const product = dataDB.cart
     dataDB.allCartCount +=  count
@@ -47,7 +41,7 @@ export const Product = ({products}) =>{
         return response.json();
       })
       .then(() => {
-        setDataDB({...dataDB, ss: 2});
+        setDataDB(...dataDB);
       });
     } catch (e) {
       return false;
