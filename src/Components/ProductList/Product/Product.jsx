@@ -11,7 +11,7 @@ export const Product = ({products}) =>{
   const { dataDB, setDataDB } = useContext(ReactContext);
   const [liked, setLiked ] = useState([])
 
-  dataDB.users.map(e => (Number(e.idUser) === tg?.initDataUnsafe?.user?.id) ? setLiked(liked.push(e.liked.split(','))) : null
+  dataDB.users.map(e => (Number(e.idUser) === tg?.initDataUnsafe?.user?.id) ? setLiked(e.liked.split(',')) : null
 )
 
   const scrollToTop = () => {
