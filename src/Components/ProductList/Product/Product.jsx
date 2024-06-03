@@ -1,4 +1,4 @@
-import { useContext, useState } from 'react';
+import { useContext } from 'react';
 import { ReactContext } from "../../../context/ReactContext"
 import { animateScroll as scroll } from 'react-scroll';
 
@@ -9,18 +9,17 @@ const tg = window.Telegram.WebApp;
 
 export const Product = ({products}) =>{
   const { dataDB, setDataDB } = useContext(ReactContext);
-  const [liked, setLiked ] = useState([])
-
-  if(dataDB.length > 0) {
-
-    dataDB.users.map(e => (Number(e.idUser) === tg?.initDataUnsafe?.user?.id) ? setLiked(e.liked.split(',')) : null
-    )
-  }
 
   const scrollToTop = () => {
     scroll.scrollToTop({duration:20});
   };
-  console.log(liked)
+
+  const liked = []
+
+  dataDB.users.map(e => (Number(e.idUser) === tg?.initDataUnsafe?.user?.id) ? liked.push(e.liked.split(',')) : null
+  )
+
+  
   const addToCart = (x, count = 1) => {
     const product = dataDB.cart
     dataDB.allCartCount +=  count
@@ -53,14 +52,6 @@ export const Product = ({products}) =>{
     } catch (e) {
       return false;
     }
-        
-    if(liked.includes(String(id))) {
-      setLiked(liked.splice(liked.indexOf(String(id)), 1))
-      
-    } else {
-      setLiked(liked.push(id))
-
-    }
   }
 
   return <> 
@@ -89,7 +80,7 @@ export const Product = ({products}) =>{
                     onClick={() => addLike(e.id)}
                     
                   >
-                    <div className={liked.includes(String(e.id)) ?"product__page--iconActive" :"product__page--icon"}>
+                    <div className={liked[0].includes(String(e.id)) ?"product__page--iconActive" :"product__page--icon"}>
                       
                     </div>
                   </div>
