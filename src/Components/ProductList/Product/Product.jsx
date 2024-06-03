@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { useContext, } from 'react';
 import { ReactContext } from "../../../context/ReactContext"
 import { animateScroll as scroll } from 'react-scroll';
 
@@ -29,21 +29,33 @@ export const Product = ({products}) =>{
   }
 
   const addLike = (id) => {
-  
-    setDataDB({...dataDB});
     try{
       fetch(`https://tgbazar.com.ua/liked`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json;charset=utf-8'
         },
-        body: JSON.stringify({nameShop: dataDB.listBot[0].nameShop,id: id, idUser: tg.initDataUnsafe.user.id })
+        body: JSON.stringify({nameShop: dataDB.listBot[0].nameShop,id: id, idUser: tg?.initDataUnsafe?.user?.id})
       })
       .then((response) => {
         return response.json();
       })
-      
+  
+  const copyData = { ...dataDB }
+
+  if(copyData.liked.includes(String(id))) {
+    const newArr = copyData.liked.filter(item => item !== String(id));
+    copyData.liked.splice(0)
+
+    newArr.map(e => copyData.liked.push(e))
    
+    setDataDB(copyData)
+
+  } else {
+    copyData.liked.push(String(id))
+    setDataDB(copyData)
+
+  }
 
     } catch (e) {
       return false;
@@ -54,10 +66,7 @@ export const Product = ({products}) =>{
     { (dataDB.length === 0) ? <div>Помилка</div> : <>
       <div className="product">
         <div className='product__block'>
-          <div className='product__title--flex'>
-            <div className="product__title--icon"></div>
-            <div className='product__title'>Топ продаж</div>
-          </div>
+         
           <div className="product__container">
             {products.map(e => {
               const images = e.image.split(',')
@@ -75,7 +84,7 @@ export const Product = ({products}) =>{
                     className="product__page--blockIcon"
                     onClick={() => addLike(e.id)}          
                   >
-                    <div className={(dataDB.users[0]?.liked?.split(',')?.includes(String(e.id)) ) ?"product__page--iconActive" :"product__page--icon"}>
+                    <div className={dataDB.liked?.includes(String(e.id)) ?"product__page--iconActive" :"product__page--icon"}>
                       
                     </div>
                   </div>
