@@ -39,7 +39,7 @@ function App() {
         headers: {
           'Content-Type': 'application/json;charset=utf-8'
         },
-        body: JSON.stringify({nameShop: search.substring(1), idUser: tg.initDataUnsafe.user.id })
+        body: JSON.stringify({nameShop: search.substring(1), idUser: tg?.initDataUnsafe?.user?.id })
       })
       .then((response) => {
         return response.json();

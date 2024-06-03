@@ -29,6 +29,8 @@ export const Product = ({products}) =>{
   }
 
   const addLike = (id) => {
+  
+    setDataDB({...dataDB});
     try{
       fetch(`https://tgbazar.com.ua/liked`, {
         method: 'POST',
@@ -40,9 +42,9 @@ export const Product = ({products}) =>{
       .then((response) => {
         return response.json();
       })
-      .then(() => {
-        setDataDB(...dataDB);
-      });
+      
+   
+
     } catch (e) {
       return false;
     }
@@ -71,8 +73,7 @@ export const Product = ({products}) =>{
                 
                   <div 
                     className="product__page--blockIcon"
-                    onClick={() => addLike(e.id)}
-                    
+                    onClick={() => addLike(e.id)}          
                   >
                     <div className={(dataDB.users[0]?.liked?.split(',')?.includes(String(e.id)) ) ?"product__page--iconActive" :"product__page--icon"}>
                       
