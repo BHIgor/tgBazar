@@ -9,7 +9,7 @@ const tg = window.Telegram.WebApp;
 
 export const Product = ({products}) =>{
   const { dataDB, setDataDB } = useContext(ReactContext);
-  const [liked, setLiked ] = useState(dataDB.users.map(e => (Number(e.idUser) === tg?.initDataUnsafe?.user?.id) ? liked.push(e.liked.split(',')) : null
+  const [liked, setLiked ] = useState(dataDB.users.map(e => (Number(e.idUser) === tg?.initDataUnsafe?.user?.id) ? liked.push(e.liked.split(',')) : []
 ))
 
   const scrollToTop = () => {
