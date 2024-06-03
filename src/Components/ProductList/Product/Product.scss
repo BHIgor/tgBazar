@@ -64,6 +64,14 @@ $widthProduct: 180px;
 
       @include iconPosition();
     }
+    &--iconActive{
+  
+      height: 25px;
+      width: 25px;
+      background-image: url(../../../images/icons/likeActive.svg);
+
+      @include iconPosition();
+    }
 
     &--image{
       display: block;

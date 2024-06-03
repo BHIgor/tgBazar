@@ -74,13 +74,13 @@ export const Product = ({products}) =>{
                       className='product__page--image'
                       />
                   </div>
-                  
+                
                   <div 
-                    className={liked.includes(e.id) ? "product__page--blockIcon" : ''}
+                    className="product__page--blockIcon"
                     onClick={() => addLike(e.id)}
                     
                   >
-                    <div className="product__page--icon">
+                    <div className={liked.includes(String(e.id)) ?"product__page--iconActive" :"product__page--icon"}>
                       
                     </div>
                   </div>
