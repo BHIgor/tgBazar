@@ -9,7 +9,10 @@ const tg = window.Telegram.WebApp;
 
 export const Product = ({products}) =>{
   const { dataDB, setDataDB } = useContext(ReactContext);
-  const [liked, setLiked ] = useState([])
+  const [liked, setLiked ] = useState(['4'])
+
+  dataDB.users.map(e => (Number(e.idUser) === tg?.initDataUnsafe?.user?.id) ? setLiked(prev => [...prev, ['1','2','3']]) : null
+)
 
   const scrollToTop = () => {
     scroll.scrollToTop({duration:20});
@@ -83,7 +86,7 @@ export const Product = ({products}) =>{
                     onClick={() => addLike(e.id)}
                     
                   >
-                    <div className={liked.includes(String(e.id)) ?"product__page--iconActive" :"product__page--icon"}>
+                    <div className={"product__page--icon"}>
                       
                     </div>
                   </div>
