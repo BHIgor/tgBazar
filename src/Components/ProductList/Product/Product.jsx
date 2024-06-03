@@ -51,13 +51,13 @@ export const Product = ({products}) =>{
       return false;
     }
         
-    if(liked.includes(String(id))) {
+   /* if(liked.includes(String(id))) {
       setLiked(liked.splice(liked.indexOf(String(id)), 1))
       
     } else {
       setLiked(liked.push(id))
 
-    }
+    }*/
   }
 
   return <> 
