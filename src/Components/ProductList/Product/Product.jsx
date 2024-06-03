@@ -11,13 +11,13 @@ export const Product = ({products}) =>{
   const { dataDB, setDataDB } = useContext(ReactContext);
   const [liked, setLiked ] = useState([])
 
-  dataDB.users.map(e => (Number(e.idUser) === tg?.initDataUnsafe?.user?.id) ? setLiked(liked.push(e.liked.split(','))) : []
+  dataDB.users.map(e => (Number(e.idUser) === tg?.initDataUnsafe?.user?.id) ? setLiked(liked.push(e.liked.split(','))) : null
 )
 
   const scrollToTop = () => {
     scroll.scrollToTop({duration:20});
   };
-  
+  console.log(liked)
   const addToCart = (x, count = 1) => {
     const product = dataDB.cart
     dataDB.allCartCount +=  count
