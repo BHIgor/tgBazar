@@ -12,10 +12,10 @@ export const Product = ({products}) =>{
   const [liked, setLiked ] = useState([])
 
   if(dataDB.length > 0) {
-    
-  dataDB.users.map(e => (Number(e.idUser) === tg?.initDataUnsafe?.user?.id) ? setLiked(prev => [...prev, ['1','2','3']]) : setLiked(prev => [...prev, ['12','22','32']])
-)
-}
+
+  dataDB.users.map(e => (Number(e.idUser) === tg?.initDataUnsafe?.user?.id) ? setLiked(e.liked.split(',')) : null
+  )
+  }
 
   const scrollToTop = () => {
     scroll.scrollToTop({duration:20});
@@ -89,7 +89,7 @@ export const Product = ({products}) =>{
                     onClick={() => addLike(e.id)}
                     
                   >
-                    <div className={liked.includes(String(e.id)) ?"product__page--iconActive" :"product__page--icon"}>
+                    <div className={liked[0].includes(String(e.id)) ?"product__page--iconActive" :"product__page--icon"}>
                       
                     </div>
                   </div>
