@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import { ReactContext } from "../../../context/ReactContext"
 import { animateScroll as scroll } from 'react-scroll';
 
@@ -9,16 +9,12 @@ const tg = window.Telegram.WebApp;
 
 export const Product = ({products}) =>{
   const { dataDB, setDataDB } = useContext(ReactContext);
+  const [liked, setLiked ] = useState(dataDB.users.map(e => (Number(e.idUser) === tg?.initDataUnsafe?.user?.id) ? liked.push(e.liked.split(',')) : null
+))
 
   const scrollToTop = () => {
     scroll.scrollToTop({duration:20});
   };
-
-  const liked = []
-
-  dataDB.users.map(e => (Number(e.idUser) === tg?.initDataUnsafe?.user?.id) ? liked.push(e.liked.split(',')) : null
-  )
-
   
   const addToCart = (x, count = 1) => {
     const product = dataDB.cart
@@ -51,6 +47,14 @@ export const Product = ({products}) =>{
       });
     } catch (e) {
       return false;
+    }
+        
+    if(liked.includes(String(id))) {
+      setLiked(liked.splice(liked.indexOf(String(id)), 1))
+      
+    } else {
+      setLiked(liked.push(id))
+
     }
   }
 
