@@ -13,8 +13,8 @@ export const Product = ({products}) =>{
 
   if(dataDB.length > 0) {
 
-  dataDB.users.map(e => (Number(e.idUser) === tg?.initDataUnsafe?.user?.id) ? setLiked(e.liked.split(',')) : null
-  )
+    dataDB.users.map(e => (Number(e.idUser) === tg?.initDataUnsafe?.user?.id) ? setLiked(e.liked.split(',')) : null
+    )
   }
 
   const scrollToTop = () => {
@@ -54,13 +54,13 @@ export const Product = ({products}) =>{
       return false;
     }
         
-   /* if(liked.includes(String(id))) {
+    if(liked.includes(String(id))) {
       setLiked(liked.splice(liked.indexOf(String(id)), 1))
       
     } else {
       setLiked(liked.push(id))
 
-    }*/
+    }
   }
 
   return <> 
