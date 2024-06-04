@@ -123,9 +123,9 @@ const fullPrice = (dataDB.cart) ? dataDB.cart.reduce((accumulator, currentValue)
                   </div>
                 </div>
     
-                <div className="cart__orderButton" style={{backgroundColor: `${dataDB.settings[0].clButtonProduct}`}}>
+                <Link to={`/Checkout?${dataDB.listBot[0].nameShop}`}  className="cart__orderButton" style={{backgroundColor: `${dataDB.settings[0].clButtonProduct}`}}>
                   Оформити замовлення
-                </div>
+                </Link>
               </div>
     
             </div>

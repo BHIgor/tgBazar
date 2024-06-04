@@ -1,0 +1,83 @@
+@import '../../../../fonts/fonts.scss';
+@import '../../../mixin/mixins.scss';
+
+$width: 40px;
+$height: 40px;
+
+.checkout{
+  padding: 20px;
+
+  &__container{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    gap: 15px;
+
+    @include productFont();
+  }
+
+  &__icons{
+    padding-bottom: 10px;
+    border-bottom: 2px solid rgb(224, 224, 224);
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+    &--contacts{
+      width: $width;
+      height: $height;
+      background-image: url(../../../../images/icons/checkout/contactData.svg);
+
+      @include iconPosition();
+    }
+
+    &--contactsActiv{
+      width: $width;
+      height: $height;
+      background-image: url(../../../../images/icons/checkout/contactDataActiv.svg);
+
+      @include iconPosition();
+    }
+
+    &--dostavka{
+      width: $width;
+      height: $height;
+      background-image: url(../../../../images/icons/checkout/dostavka.svg);
+
+      @include iconPosition();
+    }
+
+    &--dostavkaActiv{
+      width: $width;
+      height: $height;
+      background-image: url(../../../../images/icons/checkout/dostavkaActiv.svg);
+
+      @include iconPosition();
+    }
+
+    &--oplata{
+      width: $width;
+      height: $height;
+      background-image: url(../../../../images/icons/checkout/oplata.svg);
+
+      @include iconPosition();
+    }
+
+    &--oplataActiv{
+      width: $width;
+      height: $height;
+      background-image: url(../../../../images/icons/checkout/oplataActiv.svg);
+
+      @include iconPosition();
+    }
+    &--line{
+      width:60px;
+      height: 1px;
+    }
+
+  }
+}

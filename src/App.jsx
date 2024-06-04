@@ -22,6 +22,7 @@ import { Footer } from './Components/Footer/Footer';
 import { FooterLine } from './Components/FooterLine/FooterLine';
 import { Like } from './Components/Menu/Like/Like';
 import { ProductPage } from './Components/ProductList/ProductPage/ProductPage';
+import { Checkout } from './Components/Menu/Cart/Checkout/Checkout';
 
 const search = window.location.search
 const tg = window.Telegram.WebApp;
@@ -88,6 +89,7 @@ function App() {
             <Route path='/Obmin' element={<Obmin/>}/>
             <Route path='/Orders' element={<Orders/>}/>
             <Route path='/Pay' element={<Pay/>}/>
+            <Route path='/Checkout' element={<Checkout/>}/>
           </Routes>
         </div>
         <Footer />
