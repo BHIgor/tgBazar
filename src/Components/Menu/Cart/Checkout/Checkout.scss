@@ -10,7 +10,6 @@ $height: 40px;
   &__container{
     display: flex;
     flex-direction: column;
-    text-align: center;
     align-items: center;
     gap: 15px;
 
@@ -79,5 +78,50 @@ $height: 40px;
       height: 1px;
     }
 
+  }
+
+  &__contact{
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+
+    &--title{
+      margin-bottom: 10px;
+    }
+
+    &--input{
+      width: 250px;
+      height: 35px;
+      padding-left: 8px;
+      border-radius: 3px;
+      outline: none;
+      border: 1px solid rgb(174, 174, 174);
+
+      @include productFont();
+    }
+
+    &--next{
+      text-transform: uppercase;
+      color: white;
+      cursor: pointer;
+      height: 30px;
+      border: none;
+      text-align: center;
+      line-height: 30px;
+      border-radius: 5px;
+
+      &:disabled{
+        opacity: 0.5;
+        cursor: default;
+      }
+    }
+  }
+
+  &__body{
+    margin-bottom: 30px;
+  }
+
+  &__enter{
+    font-size: 16px;
   }
 }
