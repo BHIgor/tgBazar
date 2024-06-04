@@ -124,4 +124,72 @@ $height: 40px;
   &__enter{
     font-size: 16px;
   }
+
+  &__dostavka{
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    width: 250px;
+
+    &--flex{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    &--back{
+      padding: 5px;
+      border-radius: 5px;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    &--title{
+      margin-bottom: 10px;
+    } 
+
+    &--delivery{
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+    }
+
+    &--item{
+      font-size: 13px;
+      padding: 5px;
+      border-radius: 5px;
+      border: 1px solid rgb(211, 211, 211);
+      cursor: pointer;
+    }
+
+    &--deliveryTitle{
+      text-align: center;
+      margin-top: 5px;
+      margin-bottom: 10px;
+    }
+
+    &--list{
+      border: 1px solid gray;
+      height: 200px;
+      overflow-y: scroll;
+
+    }
+
+    &--list  li{
+      list-style: none;
+      cursor: pointer;
+      padding: 5px;
+      border-bottom: 1px solid rgb(223, 221, 221);
+    }
+
+    &--other{
+      height: 80px;
+      resize: none;
+      border-radius: 5px;
+      padding-left: 7px;
+      padding-top: 2px;
+      letter-spacing: 1px;
+    }
+   
+  }
 }
