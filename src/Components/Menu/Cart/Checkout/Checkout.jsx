@@ -7,7 +7,7 @@ import './Checkout.scss'
 import { Link } from 'react-router-dom';
 
 export const Checkout = () =>{
-  const { dataDB } = useContext(ReactContext);
+  const { dataDB, setDataDB } = useContext(ReactContext);
   const [ status, setStatus ] = useState('contact')
   const [cities, setCities] = useState([]);
   const [statusSearch, setStatusSearch] = useState(false)
@@ -96,6 +96,12 @@ export const Checkout = () =>{
 
   const sendOrder = () => {
     setSuccsess(true)
+    scrollToTop()
+
+    dataDB.allCartCount = 0 
+  
+    setDataDB({...dataDB, cart: []} )
+
     try{
       fetch(`https://tgbazar.com.ua/order`, {
         method: 'POST',
