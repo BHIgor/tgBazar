@@ -5,6 +5,7 @@ import { animateScroll as scroll } from 'react-scroll';
 
 import './Checkout.scss'
 import { Link } from 'react-router-dom';
+const tg = window.Telegram.WebApp;
 
 export const Checkout = () =>{
   const { dataDB, setDataDB } = useContext(ReactContext);
@@ -119,6 +120,7 @@ export const Checkout = () =>{
           oplata: oplata,
           phone: phone,
           coment: coment,
+          idUser: tg?.initDataUnsafe?.user
         })
       })
       .then((response) => {
