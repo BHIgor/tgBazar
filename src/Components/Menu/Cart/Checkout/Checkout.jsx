@@ -1,5 +1,7 @@
 import { useContext, useState } from 'react';
 import { ReactContext } from '../../../../context/ReactContext';
+import { animateScroll as scroll } from 'react-scroll';
+
 
 import './Checkout.scss'
 import { Link } from 'react-router-dom';
@@ -126,6 +128,11 @@ export const Checkout = () =>{
    return accumulator + (((currentValue.price_discount === 0)? currentValue.price : currentValue.price_discount) * currentValue.count);
   }, 0) : 0
 
+  const scrollToTop = () => {
+    scroll.scrollToTop({duration:20});
+  };
+
+
   return <> 
     { (dataDB.length === 0) ? <div>Помилка</div> : <>
       <div id={'top'} className="checkout">
@@ -145,6 +152,7 @@ export const Checkout = () =>{
               <div className="checkout__succsess--blockButton">
                 <Link to={`/?${dataDB.listBot[0].nameShop}`} className="checkout__succsess--button"
                 style={{backgroundColor: `${dataDB.settings[0].clButtonProduct}`}}
+                onClick={() => scrollToTop()}
                 >
                   На головну
                 </Link>
