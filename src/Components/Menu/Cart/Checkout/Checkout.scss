@@ -3,6 +3,7 @@
 
 $width: 40px;
 $height: 40px;
+$titleTopMargin: 15px;
 
 .checkout{
   padding: 20px;
@@ -11,7 +12,6 @@ $height: 40px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 15px;
 
     @include productFont();
   }
@@ -29,6 +29,7 @@ $height: 40px;
     &--contacts{
       width: $width;
       height: $height;
+
       background-image: url(../../../../images/icons/checkout/contactData.svg);
 
       @include iconPosition();
@@ -84,6 +85,7 @@ $height: 40px;
     display: flex;
     flex-direction: column;
     gap: 6px;
+    margin-top: $titleTopMargin;
 
     &--title{
       margin-bottom: 10px;
@@ -122,7 +124,13 @@ $height: 40px;
   }
 
   &__enter{
-    font-size: 16px;
+    font-size: 15px;
+    border: none;
+
+    &:disabled{
+      opacity: 0.3;
+      cursor: default;
+    }
   }
 
   &__dostavka{
@@ -130,6 +138,7 @@ $height: 40px;
     flex-direction: column;
     gap: 7px;
     width: 250px;
+    margin-top: $titleTopMargin;
 
     &--flex{
       display: flex;
@@ -192,4 +201,133 @@ $height: 40px;
     }
    
   }
+
+  &__oplata{
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    width: 250px;
+    margin-top: $titleTopMargin;
+
+    &--flex{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    &--back{
+      padding: 5px;
+      border-radius: 5px;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    &--title{
+      margin-bottom: 10px;
+    } 
+
+    &--main{
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    &--mainTitle{
+      text-align: center;
+      margin-top: 15px;
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+
+    &--item{
+      border: 1px solid rgb(214, 214, 214);
+      padding: 7px;
+      border-radius: 10px;
+      font-size: 15px;
+      cursor: pointer;
+    }
+
+    &--blockPhone{
+      display: flex;
+      gap: 5px;
+      justify-content: center;
+      margin-top: 10px;
+
+    }
+
+    &--kub{
+      height: 20px;
+      width: 20px;
+      border: 1px solid gray;
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+    }
+
+    &--kub1{
+      height: 15px;
+      border: 1px solid gray;
+      width: 15px;
+      margin-left: 1px;
+      border-radius: 50%;
+    }
+
+    &--phone{
+      font-size: 15px;
+    }
+
+    &--coment{
+      margin-top: 10px;
+      margin-bottom: 2px;
+    }
+
+    &--comentText{
+      height: 50px;
+      resize: none;
+      padding: 5px;
+      letter-spacing: 1px;
+    }
+    
+  }
+
+  &__succsess{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-items: center;
+    gap: 20px;
+
+    @include productFont();
+
+    &--blockButton{
+      display: flex;
+      justify-content: center;
+    }
+
+    &--blockIcon{
+      display: flex;
+      justify-content: center;
+    }
+
+    &--icon{
+      height: 120px;
+      width: 120px;
+      background-image: url(../../../../images/icons/checkout/uspeh.svg);
+    
+      @include iconPosition();
+    }
+  
+    &--button{
+      width: 200px;
+      color: black;
+      text-decoration: none;
+      height: 40px;
+      line-height: 40px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  }
+
 }

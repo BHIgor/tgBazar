@@ -6,9 +6,10 @@ import { Link } from 'react-router-dom';
 import { animateScroll as scroll } from 'react-scroll';
 
 
+
 export const Cart = () =>{
   const { dataDB, setDataDB} = useContext(ReactContext);
-
+  
 const fullPrice = (dataDB.cart) ? dataDB.cart.reduce((accumulator, currentValue) => {
   return accumulator + (((currentValue.price_discount === 0)? currentValue.price : currentValue.price_discount) * currentValue.count);
 }, 0) : 0
@@ -123,7 +124,10 @@ const fullPrice = (dataDB.cart) ? dataDB.cart.reduce((accumulator, currentValue)
                   </div>
                 </div>
     
-                <Link to={`/Checkout?${dataDB.listBot[0].nameShop}`}  className="cart__orderButton" style={{backgroundColor: `${dataDB.settings[0].clButtonProduct}`}}>
+                <Link 
+                to={`/Checkout?${dataDB.listBot[0].nameShop}`}  className="cart__orderButton" style={{backgroundColor: `${dataDB.settings[0].clButtonProduct}`}}
+                onClick={() =>scrollToTop()}
+                >
                   Оформити замовлення
                 </Link>
               </div>

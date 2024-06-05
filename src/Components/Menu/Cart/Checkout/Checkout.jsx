@@ -2,21 +2,25 @@ import { useContext, useState } from 'react';
 import { ReactContext } from '../../../../context/ReactContext';
 
 import './Checkout.scss'
+import { Link } from 'react-router-dom';
 
 export const Checkout = () =>{
   const { dataDB } = useContext(ReactContext);
   const [ status, setStatus ] = useState('contact')
-  const [ user, setUser ] = useState({fio: '', phone: ''})
   const [cities, setCities] = useState([]);
   const [statusSearch, setStatusSearch] = useState(false)
   const [branches, setBranches] = useState();
+  const [succsess, setSuccsess] = useState(false);
+
+  const [ user, setUser ] = useState({fio: '', phone: ''})
   const [delivery, setDelivery] = useState('nova')
+  const [oplata, setOplata] = useState('otriman')
+  const [phone, setPhone] = useState(true)
   const [adress, setAdress] = useState('')
+  const [coment, setComent] = useState('')
 
   const [selectedBranch, setSelectedBranch] = useState('');
   const [searchTerm, setSearchTerm] = useState('');
-
-  console.log(selectedBranch)
 
   const handleInputChange = async (event) => {
     setSearchTerm(event.target.value)
@@ -84,6 +88,40 @@ export const Checkout = () =>{
     setAdress(event.target.value);
   };
 
+  const handleComent = (event) => {
+    setComent(event.target.value);
+  };
+
+  const sendOrder = () => {
+    setSuccsess(true)
+    try{
+      fetch(`https://tgbazar.com.ua/order`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json;charset=utf-8'
+        },
+        body: JSON.stringify({
+          idAdmin: dataDB.listBot[0].idAdmin, 
+          cart: dataDB.cart,
+          user: user,
+          dostavka: delivery,
+          city: searchTerm,
+          viddilenya: selectedBranch,
+          adress: adress,
+          oplata: oplata,
+          phone: phone,
+          coment: coment,
+        })
+      })
+      .then((response) => {
+        return response.json();
+      })
+
+    } catch (e) {
+      return false;
+    }
+  }
+
   const fullPrice = (dataDB.cart) ? dataDB.cart.reduce((accumulator, currentValue) => {
    return accumulator + (((currentValue.price_discount === 0)? currentValue.price : currentValue.price_discount) * currentValue.count);
   }, 0) : 0
@@ -91,6 +129,29 @@ export const Checkout = () =>{
   return <> 
     { (dataDB.length === 0) ? <div>Помилка</div> : <>
       <div id={'top'} className="checkout">
+        {
+          (succsess) ? 
+          <>
+            <div className="checkout__succsess">
+              <div className="checkout__succsess--text">
+                <p>Дякуємо за замовлення</p>
+              </div>
+
+              <div className='checkout__succsess--blockIcon'>
+               <div className="checkout__succsess--icon"></div>
+              </div>
+              
+
+              <div className="checkout__succsess--blockButton">
+                <Link to={`/?${dataDB.listBot[0].nameShop}`} className="checkout__succsess--button"
+                style={{backgroundColor: `${dataDB.settings[0].clButtonProduct}`}}
+                >
+                  На головну
+                </Link>
+              </div>
+              
+            </div>
+          </> : 
         <div className="checkout__container">
           <div className="checkout__title">
             Оформлення замовлення
@@ -278,9 +339,68 @@ export const Checkout = () =>{
 
             {(status === 'oplata') ? <>
               <div className="checkout__oplata">
-                <div className="checkout__oplata--title">
-                  Оплата
+                <div className="checkout__oplata--flex">
+                  <div className="checkout__oplata--title">
+                    Оплата
+                  </div>
+
+                  <div 
+                    className="checkout__oplata--back"     
+                    style={{backgroundColor: `${dataDB.settings[0].clButtonProduct}`}}
+                    onClick={() => setStatus('dostavka')}
+                  >
+                    Назад
+                  </div>
+              </div>
+
+              <div className="checkout__oplata--main">
+                <div className="checkout__oplata--mainTitle">
+                  Оберіть спосіб оплати:
                 </div>
+                <div 
+                  className="checkout__oplata--item"
+                  onClick={() => setOplata('otriman')} 
+                  style={((oplata === 'otriman') ? {backgroundColor: `${dataDB.settings[0].clHeader}`, color: `${dataDB.settings[0].clTitle
+                  }`} :null)}
+                  >Оплата при отриманні</div>
+                <div 
+                 className="checkout__oplata--item"
+                 onClick={() => setOplata('rekvizit')} 
+                 style={((oplata === 'rekvizit') ? {backgroundColor: `${dataDB.settings[0].clHeader}`, color: `${dataDB.settings[0].clTitle
+                 }`} :null)}
+                >Перевод по реквізитам</div>
+                <div
+                  className="checkout__oplata--item"
+                  onClick={() => setOplata('karta')} 
+                  style={((oplata === 'karta') ? {backgroundColor: `${dataDB.settings[0].clHeader}`, color: `${dataDB.settings[0].clTitle
+                  }`} :null)}
+                >Перевод на карту</div>
+
+                <div className="checkout__oplata--blockPhone" onClick={() => setPhone((phone) ? false : true)}>
+                  <div className="checkout__oplata--kub">
+                   {
+                    (phone) ? 
+                    <div className="checkout__oplata--kub1"   style= {{backgroundColor: `${dataDB.settings[0].clHeader}`}}
+                    ></div> :null
+                   } 
+                  </div>
+                  <div className="checkout__oplata--phone">Передзвонити мені</div>
+                </div>
+
+                <div className="checkout__oplata--coment">
+                  Коментар
+                </div>
+                  
+                <textarea 
+                className="checkout__oplata--comentText"
+                placeholder='Залиште тут свої побажання'
+                value={coment} 
+                onChange={handleComent} 
+                >
+                 
+                </textarea>
+
+              </div>
               
               </div>
             </>:null} 
@@ -298,13 +418,19 @@ export const Checkout = () =>{
                 </div>
               </div>
   
-              <div to={`/Checkout?${dataDB.listBot[0].nameShop}`}  className="cart__orderButton checkout__enter" style={{backgroundColor: `${dataDB.settings[0].clButtonProduct}`}}>
+              <button 
+              className="cart__orderButton checkout__enter" 
+              onClick={() => sendOrder()}
+              style={{backgroundColor: `${dataDB.settings[0].clButtonProduct}`}}
+              disabled={(user.fio !== '' && user.phone !== '' && (adress !== '' || selectedBranch !== '') )? false : true}
+              >
                 Замовлення підтверджую
-              </div>
+              </button>
             </div>
   
            </div>      
         </div>
+        }
       </div>
     </>
     }
