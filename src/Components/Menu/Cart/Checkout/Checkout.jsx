@@ -120,7 +120,8 @@ export const Checkout = () =>{
           oplata: oplata,
           phone: phone,
           coment: coment,
-          idUser: tg?.initDataUnsafe?.user
+          idUser: tg?.initDataUnsafe?.user?.id,
+          username: tg?.initDataUnsafe?.user?.username
         })
       })
       .then((response) => {
