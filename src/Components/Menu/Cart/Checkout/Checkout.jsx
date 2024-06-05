@@ -111,6 +111,7 @@ export const Checkout = () =>{
         },
         body: JSON.stringify({
           idAdmin: dataDB.listBot[0].idAdmin, 
+          nameShop: dataDB.listBot[0].nameShop,
           cart: dataDB.cart,
           user: user,
           dostavka: delivery,
