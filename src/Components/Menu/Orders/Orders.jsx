@@ -19,7 +19,7 @@ export const Orders = () =>{
           headers: {
             'Content-Type': 'application/json;charset=utf-8'
           },
-          body: JSON.stringify({nameShop: dataDB.listBot[0].nameShop, idUser: tg?.initDataUnsafe?.user?.id  })
+          body: JSON.stringify({nameShop: dataDB.listBot[0].nameShop, idUser: tg?.initDataUnsafe?.user?.id })
         })
         .then((response) => {
           return response.json();
@@ -128,7 +128,39 @@ export const Orders = () =>{
                   {e.phoneUser}
                 </div>
               </div>
+              {
+                (e.telegram !== '')? 
+                <>
+                  <hr className='orders__line' />
 
+                  <div className="orders__userPhone">
+                    <div className="orders__userPhone--text subtitle">
+                      Telegram одержувача
+                    </div>
+
+                    <div className="orders__userPhone--value">
+                      {e.telegram}
+                    </div>
+                  </div>
+                </> : null
+              }
+
+              {
+                (e.insta !== '')? 
+                <>
+                  <hr className='orders__line' />
+
+                  <div className="orders__userPhone">
+                    <div className="orders__userPhone--text subtitle">
+                      Instagram одержувача
+                    </div>
+
+                    <div className="orders__userPhone--value">
+                      {e.insta}
+                    </div>
+                  </div>
+                </> : null
+              }
               <hr className='orders__line' />
 
               <div className="orders__oplata">

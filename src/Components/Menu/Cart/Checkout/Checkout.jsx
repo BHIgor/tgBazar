@@ -21,6 +21,7 @@ export const Checkout = () =>{
   const [phone, setPhone] = useState(true)
   const [adress, setAdress] = useState('')
   const [coment, setComent] = useState('')
+  const [insta, setInsta] = useState('')
 
   const [selectedBranch, setSelectedBranch] = useState('');
   const [searchTerm, setSearchTerm] = useState('');
@@ -95,6 +96,10 @@ export const Checkout = () =>{
     setComent(event.target.value);
   };
 
+  const handleInsta= (event) => {
+    setInsta(event.target.value);
+  };
+
   const sendOrder = () => {
     setSuccsess(true)
     scrollToTop()
@@ -122,7 +127,8 @@ export const Checkout = () =>{
           phone: phone,
           coment: coment,
           idUser: tg?.initDataUnsafe?.user?.id,
-          username: tg?.initDataUnsafe?.user?.username
+          username: tg?.initDataUnsafe?.user?.username,
+          insta: insta
         })
       })
       .then((response) => {
@@ -133,7 +139,7 @@ export const Checkout = () =>{
       return false;
     }
   }
-
+  console.log(insta)
   const fullPrice = (dataDB.cart) ? dataDB.cart.reduce((accumulator, currentValue) => {
    return accumulator + (((currentValue.price_discount === 0)? currentValue.price : currentValue.price_discount) * currentValue.count);
   }, 0) : 0
@@ -204,6 +210,17 @@ export const Checkout = () =>{
                     phone: event.target.value
                   }))} 
                   defaultValue={user.phone}
+                />
+
+                <div className="checkout__contact--insta">
+                  Instagram профіль якщо є
+                </div>
+
+                <input 
+                  className="checkout__contact--input checkout__contact--inputInsta" 
+                  placeholder={`Посилання необов'язкове`}
+                  onChange={handleInsta} 
+                  defaultValue={insta}
                 />
               
                 <button  
