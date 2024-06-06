@@ -32,7 +32,10 @@ export const Orders = () =>{
                     Статус замовлення
                   </div>
 
-                  <div className="orders__status--text">
+                  <div 
+                    className="orders__status--text" 
+                    style={(e.status === 'Новий') ? {color: 'red'}: (e.status === 'Виконано') ? {color: 'green'}: null}
+                  >
                     {e.status}
                   </div>
                 </div>
