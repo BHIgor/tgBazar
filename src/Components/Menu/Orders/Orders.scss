@@ -10,6 +10,28 @@
   @include flexColumn();
   @include productFont();
 
+  &__header{
+    @include flex();
+
+    &--blockimg{
+      padding: 8px;
+      border: 1px solid rgb(220, 220, 220);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    &--deleteIcon{
+      height: 22px;
+      width: 22px;
+      background-image: url(../../../images/icons/send.svg);
+
+      @include iconPosition();
+    }
+  }
+
   &__product{
     border: 1px solid rgb(195, 195, 195);
     border-radius: 10px;
@@ -22,6 +44,7 @@
 
   &__status{
     @include flexColumn();
+
   }
 
   &__infoProduct{
@@ -52,6 +75,17 @@
 
     &--value{
       font-weight: bold;
+    }
+  }
+
+  &__countProduct{
+
+    &--price{
+      font-size: 19px;
+    }
+
+    &--simvol{
+      font-size: 14px;
     }
   }
 }

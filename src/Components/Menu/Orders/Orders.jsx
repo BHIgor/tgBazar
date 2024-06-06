@@ -1,14 +1,38 @@
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 import { ReactContext } from "../../../context/ReactContext"
 
 import './Orders.scss'
+const tg = window.Telegram.WebApp;
 
 export const Orders = () =>{
-  const { dataDB } = useContext(ReactContext);
+  const { dataDB, setDataDB } = useContext(ReactContext);
 
   const allProducts = dataDB.products
   const orderProducts = dataDB.orders
   const myProduct = []
+
+  function Datas(){
+    useEffect(() => {
+      try{
+        fetch(`https://tgbazar.com.ua/products`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json;charset=utf-8'
+          },
+          body: JSON.stringify({nameShop: dataDB.listBot[0].nameShop, idUser: tg?.initDataUnsafe?.user?.id  })
+        })
+        .then((response) => {
+          return response.json();
+        })
+        .then((data) => {
+          setDataDB(data);
+        });
+      } catch (e) {
+      
+      }
+    }, [])
+  }
+  Datas()
 
   orderProducts?.forEach(e => {
     const product = allProducts.find(s => s.id === Number(e.idProduct))
@@ -26,16 +50,22 @@ export const Orders = () =>{
             const images = e.image.split(',')
           return (
             <div className="orders__product" key={e.ids}>
-              <div className="orders__status">
-                <div className="orders__status--title subtitle">
-                  Статус замовлення
+              <div className="orders__header">
+                <div className="orders__status">
+                  <div className="orders__status--title subtitle">
+                    Статус замовлення
+                  </div>
+
+                  <div 
+                    className="orders__status--text" 
+                    style={(e.status === 'Новий') ? {color: 'red'}: (e.status === 'Виконано') ? {color: 'green'}: null}
+                  >
+                    {e.status}
+                  </div>
                 </div>
 
-                <div 
-                  className="orders__status--text" 
-                  style={(e.status === 'Новий') ? {color: 'red'}: (e.status === 'Виконано') ? {color: 'green'}: null}
-                >
-                  {e.status}
+                <div className="orders__header--blockimg">
+                 <div className="orders__header--deleteIcon"></div>
                 </div>
               </div>
               
@@ -145,7 +175,23 @@ export const Orders = () =>{
                   {(e.dostavka === 'nova') ? <>{e.city} {e.viddilenya}</> : <>{e.adress}</>} 
                 </div>
               </div>
-
+              {
+                (e.coment !== '') ? 
+                <>
+                  <hr className='orders__line' />
+                    
+                  <div className="orders__adress">
+                    <div className="orders__adress--text subtitle">
+                      Коментар
+                    </div>
+    
+                    <div className="orders__adress--value">
+                      {e.coment} 
+                    </div>
+                  </div>
+                </> :null
+              }
+              
             </div>
           )})}
       </div>
