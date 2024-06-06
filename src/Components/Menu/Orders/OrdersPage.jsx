@@ -28,7 +28,7 @@ export const OrdersPage = () =>{
     { (dataDB.length === 0) ? <div>Помилка</div> : <>
       <div className='orders'>
         <div className="orders__title">
-          Ваше замовлення
+          Замовлення №{orderId}
         </div>
         {myOrder.map(e => {
           const images = e.image.split(',')
