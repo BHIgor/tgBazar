@@ -5,6 +5,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination } from 'swiper/modules';
 
 import './ProductPage.scss';
+import { Delivery } from '../../Menu/Delivery/Delivery';
 const tg = window.Telegram.WebApp;
 
 export const ProductPage = () =>{
@@ -194,7 +195,7 @@ export const ProductPage = () =>{
                     (desck === 'opis') ? <>
                     {e.description}
                     </> : (desck === 'dostavka') ? <>
-                      Доставка
+                      <Delivery />
                     </> : (desck === 'oplata') ? <>
                       Оплата
                     </> : null

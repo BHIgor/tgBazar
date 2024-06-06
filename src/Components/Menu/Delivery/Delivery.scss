@@ -1,0 +1,84 @@
+@import '../../../fonts/fonts.scss';
+@import '../../mixin/mixins.scss';
+
+.deliveryMenu{
+  font-size: 20px;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  @include productFont();
+  font-weight: bold;
+}
+
+.delivery{
+  display: flex;
+  justify-content: center;
+
+  @include productFont();
+
+  &__container{
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  &__block{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: space-between;
+
+    &--nova{
+      height: 30px;
+      width: 80px;
+  
+      background-image: url(../../../images/delivery/nova.svg);
+    }
+
+    &--rozetka{
+      height: 25px;
+      width: 25px;
+  
+      background-image: url(../../../images/delivery/rozetka.svg);
+    }
+
+    &--ukr{
+      height: 20px;
+      width: 76px;
+  
+      background-image: url(../../../images/delivery/ukr.svg);
+    }
+
+    &--meest{
+      height: 20px;
+      width: 65px;
+  
+      background-image: url(../../../images/delivery/meest.svg);
+    }
+
+    &--kurier{
+      height: 30px;
+      width: 30px;
+  
+      background-image: url(../../../images/delivery/kurier.svg);
+    }
+
+    &--sam{
+      height: 40px;
+      width: 50px;
+  
+      background-image: url(../../../images/delivery/sam.svg);
+    }
+  }
+  &__textBlock{
+    text-align: right;
+    width: 140px;
+
+  }
+
+  &__icon{
+
+    @include iconPosition();
+  }
+}

@@ -10,7 +10,6 @@ import { Menu } from './Components/Menu/Menu';
 import { About } from './Components/Menu/About/About'
 import { Cart } from './Components/Menu/Cart/Cart'
 import { Contacts } from './Components/Menu/Contacts/Contacts'
-import { Delivery } from './Components/Menu/Delivery/Delivery'
 import { Garant } from './Components/Menu/Garant/Garant'
 import { Grafik } from './Components/Menu/Grafik/Grafik'
 import { Help } from './Components/Menu/Help/Help'
@@ -24,6 +23,7 @@ import { FooterLine } from './Components/FooterLine/FooterLine';
 import { Like } from './Components/Menu/Like/Like';
 import { ProductPage } from './Components/ProductList/ProductPage/ProductPage';
 import { Checkout } from './Components/Menu/Cart/Checkout/Checkout';
+import { DeliveryMenu } from './Components/Menu/Delivery/DeliveryMenu';
 
 const search = window.location.search
 const tg = window.Telegram.WebApp;
@@ -82,7 +82,7 @@ function App() {
             <Route path='/About' element={<About/>}/>
             <Route path='/Cart' element={<Cart/>}/>
             <Route path='/Contacts' element={<Contacts/>}/>
-            <Route path='/Delivery' element={<Delivery/>}/>
+            <Route path='/Delivery' element={<DeliveryMenu/>}/>
             <Route path='/Garant' element={<Garant/>}/>
             <Route path='/Grafik' element={<Grafik/>}/>
             <Route path='/Help' element={<Help/>}/>
