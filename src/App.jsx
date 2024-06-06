@@ -17,6 +17,7 @@ import { Help } from './Components/Menu/Help/Help'
 import { Katalog } from './Components/Menu/Katalog/Katalog'
 import { Obmin } from './Components/Menu/Obmin/Obmin'
 import { Orders } from './Components/Menu/Orders/Orders'
+import { OrdersPage } from './Components/Menu/Orders/OrdersPage'
 import { Pay } from './Components/Menu/Pay/Pay'
 import { Footer } from './Components/Footer/Footer';
 import { FooterLine } from './Components/FooterLine/FooterLine';
@@ -77,6 +78,7 @@ function App() {
           <Routes>      
             <Route path='/' exact element={<Homepage/>}/>
             <Route path="/Product/:productId" element={<ProductPage />} />
+            <Route path="/OrderPage/:orderId" element={<OrdersPage />} />
             <Route path='/About' element={<About/>}/>
             <Route path='/Cart' element={<Cart/>}/>
             <Route path='/Contacts' element={<Contacts/>}/>

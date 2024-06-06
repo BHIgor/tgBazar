@@ -87,9 +87,12 @@ export const Orders = () =>{
                           </div>
                         </div>
 
-                        <div className="orders__header--blockimg">
-                        <div className="orders__header--deleteIcon"></div>
-                        </div>
+                        <a 
+                          href={`https://t.me/share/url?url=${`${dataDB.listBot[0].linkShop}?start=${e.ids}^${dataDB.listBot[0].nameShop}&text=${`Ось моє замовлення`}`}`}  
+                          className="orders__header--blockimg"
+                        >
+                          <div className="orders__header--deleteIcon"></div>
+                        </a> 
                       </div>
                       
                       <div className="orders__infoProduct">
@@ -101,7 +104,7 @@ export const Orders = () =>{
                             />
                         </div>
 
-                        <div >
+                        <div  className="orders__infoProduct--titleBlock" >
                           <Link 
                             to={`/Product/${e.idProduct}?${dataDB.listBot[0].nameShop}`}  
                             className="orders__infoProduct--title"

@@ -13,6 +13,7 @@ export const ProductPage = () =>{
 
   tg.ready()
 
+
   let { productId } = useParams();
 
   const selectedProduct = (dataDB.length === 0)? null :dataDB.products.filter(e => e.id === Number(productId))

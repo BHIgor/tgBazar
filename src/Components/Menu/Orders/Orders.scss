@@ -9,7 +9,13 @@
 .orders{
   @include flexColumn();
   @include productFont();
-
+  &__title{
+    font-size: 22px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    text-align: center;
+    font-weight: bold;
+  }
   &__empty{
     display: flex;
     flex-direction: column;
@@ -86,9 +92,13 @@
     }
 
     &--title{
-      padding-left: 15px;
+
       text-decoration: none;
       color: black;
+    }
+
+    &--titleBlock{
+      padding-left: 15px;
     }
 
    
