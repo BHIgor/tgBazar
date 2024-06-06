@@ -22,7 +22,6 @@
 
   &__status{
     @include flexColumn();
-    gap: 5px;
   }
 
   &__infoProduct{
