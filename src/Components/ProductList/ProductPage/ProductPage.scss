@@ -141,55 +141,12 @@ $padRight: 25px;
     
 
     @include productFont();
-    &--description{
 
-      top: 20px;
-      left: 0;
-      transition: all 0.2s;
-      -webkit-transition: all 0.3s ease;
-      -webkit-transition-property: all 0.2s;
-  
-    }
-
-    &--descriptionActiv{
-      transform: translateX(0%);
-    }
-    
-    &--pay{
-      position: absolute;
-      text-align: center;
-      top: 20px;
-      right:0;
-      transition: all 0.2s;
-      -webkit-transition: all 0.3s ease;
-      -webkit-transition-property: all 0.2s;
-  
-    }
-
-    &--payActiv{
-      transform: translateX(-200%);
-    }
-
-    &--dostavka{
-      position: absolute;
-      top: 20px;
-      left: 0;
-      transition: all 0.2s;
-      -webkit-transition: all 0.3s ease;
-      -webkit-transition-property: all 0.2s;
-  
-    }
-
-    &--dostavkaActiv{
-      transform: translateX(10%);
-    }
 
     &--text{
       font-size: 15px;
       padding-top: 15px;
-      position: relative;
-      overflow: hidden;
-      height: 200px;
+
      
     }
 
