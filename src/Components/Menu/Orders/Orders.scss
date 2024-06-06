@@ -10,6 +10,35 @@
   @include flexColumn();
   @include productFont();
 
+  &__empty{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    &--text{
+      @include productFont();
+    }
+
+    &--block{
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    &--blockImg{
+      display: flex;
+      justify-content: center;
+    }
+
+    &--icon{
+      height: 180px;
+      width: 180px;
+      background-image: url(../../../images/icons/sumniy.svg);      @include iconPosition();
+    
+      @include iconPosition();
+    }
+  }
+
   &__header{
     @include flex();
 
@@ -58,7 +87,11 @@
 
     &--title{
       padding-left: 15px;
+      text-decoration: none;
+      color: black;
     }
+
+   
   }
 
   &__countProduct{
