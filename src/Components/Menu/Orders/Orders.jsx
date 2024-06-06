@@ -79,7 +79,7 @@ export const Orders = () =>{
                           <div 
                             className="orders__status--text" 
                             style={
-                              (e.status === 'Новий') ?{color: 'orande'}: 
+                              (e.status === 'Новий') ?{color: 'orange'}: 
                               (e.status === 'Виконано') ? {color: 'green'}: 
                               (e.status === 'Скасовано') ?{color: 'red'}: null}
                           >
