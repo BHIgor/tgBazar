@@ -78,7 +78,10 @@ export const Orders = () =>{
 
                           <div 
                             className="orders__status--text" 
-                            style={(e.status === 'Новий') ? {color: 'red'}: (e.status === 'Виконано') ? {color: 'green'}: null}
+                            style={
+                              (e.status === 'Новий') ?{color: 'orande'}: 
+                              (e.status === 'Виконано') ? {color: 'green'}: 
+                              (e.status === 'Скасовано') ?{color: 'red'}: null}
                           >
                             {e.status}
                           </div>
@@ -98,9 +101,10 @@ export const Orders = () =>{
                             />
                         </div>
 
-                        <div className="orders__infoProduct--title">
+                        <div >
                           <Link 
                             to={`/Product/${e.idProduct}?${dataDB.listBot[0].nameShop}`}  
+                            className="orders__infoProduct--title"
                             >
                               {e.title}
                           </Link>
