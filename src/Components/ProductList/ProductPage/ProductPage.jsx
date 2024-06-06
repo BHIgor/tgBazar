@@ -193,7 +193,7 @@ export const ProductPage = () =>{
                 <div className="productPage__description--text">
                   {
                     (desck === 'opis') ? <>
-                    <div className={`productPage__description--description ${(desck === 'oplata') ? "productPage__description--descriptionActiv" : null}`}>
+                    <div className={`productPage__description--description ${(desck === 'opis') ? "productPage__description--descriptionActiv" : null}`}>
                      {e.description}
                     </div>
                     </> : (desck === 'dostavka') ? <>
