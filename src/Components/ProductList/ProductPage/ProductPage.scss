@@ -138,12 +138,59 @@ $padRight: 25px;
     margin-top: 20px;
     padding-left: $padLeft;
     padding-right: $padRight;
+    
 
     @include productFont();
+    &--description{
+
+      top: 20px;
+
+      transition: all 0.2s;
+      -webkit-transition: all 0.3s ease;
+      -webkit-transition-property: all 0.2s;
+  
+    }
+
+    &--descriptionActiv{
+      transform: translateX(0%);
+    }
+    
+    &--pay{
+      position: absolute;
+      text-align: center;
+      top: 20px;
+      right: 0;
+      left: 0;
+      transition: all 0.2s;
+      -webkit-transition: all 0.3s ease;
+      -webkit-transition-property: all 0.2s;
+  
+    }
+
+    &--payActiv{
+      transform: translateX(0%);
+    }
+
+    &--dostavka{
+      position: absolute;
+      top: 20px;
+      right: 0px;
+      transition: all 0.2s;
+      -webkit-transition: all 0.3s ease;
+      -webkit-transition-property: all 0.2s;
+  
+    }
+
+    &--dostavkaActiv{
+      transform: translateX(-135%);
+    }
 
     &--text{
       font-size: 15px;
       padding-top: 15px;
+      position: relative;
+      overflow: hidden;
+      height: 200px;
     }
 
     &--titleBlock{
