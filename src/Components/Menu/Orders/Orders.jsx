@@ -26,22 +26,16 @@ export const Orders = () =>{
             const images = e.image.split(',')
           return (
             <div className="orders__product" key={e.ids}>
-              <div className="orders__header">
-                <div className="orders__status">
-                  <div className="orders__status--title subtitle">
-                    Статус замовлення
-                  </div>
-
-                  <div 
-                    className="orders__status--text" 
-                    style={(e.status === 'Новий') ? {color: 'red'}: (e.status === 'Виконано') ? {color: 'green'}: null}
-                  >
-                    {e.status}
-                  </div>
+              <div className="orders__status">
+                <div className="orders__status--title subtitle">
+                  Статус замовлення
                 </div>
 
-                <div className="orders__header--blockimg">
-                 <div className="orders__header--deleteIcon"></div>
+                <div 
+                  className="orders__status--text" 
+                  style={(e.status === 'Новий') ? {color: 'red'}: (e.status === 'Виконано') ? {color: 'green'}: null}
+                >
+                  {e.status}
                 </div>
               </div>
               
