@@ -10,7 +10,7 @@ export const OrdersPage = () =>{
 
   let { orderId } = useParams();
 
-  const selectedOrder= (dataDB.length === 0)? null :dataDB.orders.filter(e => e.ids === Number(orderId))
+  const selectedOrder= (dataDB.length === 0)? null :dataDB.allOrders.filter(e => e.ids === Number(orderId))
   
 
   const allProducts = dataDB.products
