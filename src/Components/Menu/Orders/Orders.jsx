@@ -26,7 +26,7 @@ export const Orders = () =>{
           return response.json();
         })
         .then((data) => {
-          setDataDB(data);
+          setDataDB({ ...data, cart: dataDB.cart, allCartCount: dataDB.allCartCount});
         });
       } catch (e) {
       
