@@ -80,23 +80,41 @@
     margin-bottom: 10px;
 
     &--item{
+      
       font-size: 14px;
       border-radius: 20px;
       height: 40px;
-  
+
       @include productFont();
     }
 
     &--link{
       text-decoration: none;
+      display: flex;
+      align-items: center;
       border-radius: 20px;
       padding-left: 20px;
       padding-right: 20px;
       height: 40px;
       cursor: pointer;
-      line-height: 40px;
+ 
 
       color: black;
+    }
+  }
+
+  &__sort{
+    display: flex;
+    justify-content: end;
+    margin-bottom: 15px;
+
+
+    &--selected{
+      height: 30px;
+      text-align: center;
+      cursor: pointer;
+
+      @include productFont();
     }
   }
 }

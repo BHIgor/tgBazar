@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useLayoutEffect, useState } from 'react';
 import { Routes, Route, useNavigate} from 'react-router-dom';
 import { ReactContext } from './context/ReactContext';
 
@@ -35,7 +35,7 @@ function App() {
 
   const navigate = useNavigate();
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     try{
       fetch(`https://tgbazar.com.ua/products`, {
         method: 'POST',
@@ -54,7 +54,7 @@ function App() {
       return false;
     }
   }, [])
-  
+
   const backButton = window.Telegram.WebApp.BackButton;;
 
   if(window.location.hash.includes('#/?')){
@@ -68,6 +68,7 @@ function App() {
   });
 
   console.log(dataDB)
+
 
   return (
     <div className="app">
