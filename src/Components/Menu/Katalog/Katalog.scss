@@ -1,3 +1,33 @@
+@import '../../../fonts/fonts.scss';
+@import '../../mixin/mixins.scss';
+
 .katalog{
-  height: 100vh;
+  margin-top: 20px;
+
+  &____block{
+    width: 100%;
+  }
+
+  &__container{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 10px;
+
+  }
+
+  &__item {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 60px;
+    border: 1px solid #9a9a9a;
+    cursor: pointer;
+
+    @include productFont();
+
+    &:hover{
+      background-color: rgb(206, 206, 206);
+    }
+  }
 }
