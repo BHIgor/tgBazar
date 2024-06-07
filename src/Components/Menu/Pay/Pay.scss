@@ -1,0 +1,27 @@
+.pay{
+
+  &__block{
+    display: flex;
+    width: 300px;
+    gap: 10px;
+    align-items: center;
+
+    &--otr{
+      height: 35px;
+      width: 35px;
+      background-image: url(../../../images//pay/otr.svg);
+    }
+
+    &--rekv{
+      height: 35px;
+      width: 35px;
+      background-image: url(../../../images//pay/rekv.svg);
+    }
+
+    &--karta{
+      height: 35px;
+      width: 35px;
+      background-image: url(../../../images//pay/karta.svg);
+    }
+  }
+}

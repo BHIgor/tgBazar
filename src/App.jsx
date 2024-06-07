@@ -17,13 +17,13 @@ import { Katalog } from './Components/Menu/Katalog/Katalog'
 import { Obmin } from './Components/Menu/Obmin/Obmin'
 import { Orders } from './Components/Menu/Orders/Orders'
 import { OrdersPage } from './Components/Menu/Orders/OrdersPage'
-import { Pay } from './Components/Menu/Pay/Pay'
 import { Footer } from './Components/Footer/Footer';
 import { FooterLine } from './Components/FooterLine/FooterLine';
 import { Like } from './Components/Menu/Like/Like';
 import { ProductPage } from './Components/ProductList/ProductPage/ProductPage';
 import { Checkout } from './Components/Menu/Cart/Checkout/Checkout';
 import { DeliveryMenu } from './Components/Menu/Delivery/DeliveryMenu';
+import { PayMenu } from './Components/Menu/Pay/PayMenu';
 
 const search = window.location.search
 const tg = window.Telegram.WebApp;
@@ -90,7 +90,7 @@ function App() {
             <Route path='/Like' element={<Like/>}/>
             <Route path='/Obmin' element={<Obmin/>}/>
             <Route path='/Orders' element={<Orders/>}/>
-            <Route path='/Pay' element={<Pay/>}/>
+            <Route path='/Pay' element={<PayMenu/>}/>
             <Route path='/Checkout' element={<Checkout/>}/>
           </Routes>
         </div>

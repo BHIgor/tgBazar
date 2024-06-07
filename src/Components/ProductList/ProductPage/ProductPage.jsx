@@ -6,6 +6,7 @@ import { Pagination } from 'swiper/modules';
 
 import './ProductPage.scss';
 import { Delivery } from '../../Menu/Delivery/Delivery';
+import { Pay } from '../../Menu/Pay/Pay';
 const tg = window.Telegram.WebApp;
 
 export const ProductPage = () =>{
@@ -201,7 +202,9 @@ export const ProductPage = () =>{
                        <Delivery />
                       </div>
                     </> : (desck === 'oplata') ? <>
-                      Оплата
+                    <div className="productPage__description--dostavka" >
+                       <Pay />
+                      </div>
                     </> : null
                   }
                  
