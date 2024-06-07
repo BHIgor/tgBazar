@@ -71,7 +71,7 @@ function App() {
   return (
     <div className="app">
       <ReactContext.Provider value={{ dataDB, setDataDB }}>
-       <div className='footerTop'>
+       <div className='footerTop' style={menu ? {overflowY:'hidden'}:null}>
         <Header setMenu={setMenu}/>
         <Menu setMenu={setMenu} menu={menu}/>
   
