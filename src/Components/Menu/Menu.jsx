@@ -184,45 +184,6 @@ export const Menu = ({
                   )
                 }
                 
-                { 
-                  (dataDB.settings[0].grafik === '') ? null : (
-                    <NavLink to={`/Grafik?${dataDB.listBot[0].nameShop}`}onClick={() =>scrollToTop()} className='menu__link' style={getLinkStyle}>
-                      <li className="menu__item">
-                        <div className='menu__icon menu__icon--time'></div>
-                        <div className="menu__list">
-                          Графік роботи
-                        </div>
-                      </li>
-                    </NavLink>
-                  )
-                }
-                
-                { 
-                  (dataDB.settings[0].grafik === '') ? null : (
-                    <NavLink to={`/Grafik?${dataDB.listBot[0].nameShop}`}onClick={() =>scrollToTop()} className='menu__link' style={getLinkStyle}>
-                      <li className="menu__item">
-                        <div className='menu__icon menu__icon--time'></div>
-                        <div className="menu__list">
-                          Графік роботи
-                        </div>
-                      </li>
-                    </NavLink>
-                  )
-                }
-                
-                { 
-                  (dataDB.settings[0].grafik === '') ? null : (
-                    <NavLink to={`/Grafik?${dataDB.listBot[0].nameShop}`}onClick={() =>scrollToTop()} className='menu__link' style={getLinkStyle}>
-                      <li className="menu__item">
-                        <div className='menu__icon menu__icon--time'></div>
-                        <div className="menu__list">
-                          Графік роботи
-                        </div>
-                      </li>
-                    </NavLink>
-                  )
-                }
-                
               </ul>
           </div>       
         </aside>
