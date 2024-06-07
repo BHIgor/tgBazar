@@ -2,6 +2,7 @@ import { useContext } from 'react';
 import { ReactContext } from "../../../context/ReactContext"
 
 import './Katalog.scss'
+import { Link } from 'react-router-dom';
 
 export const Katalog = () =>{
   const { dataDB } = useContext(ReactContext);
@@ -18,19 +19,19 @@ export const Katalog = () =>{
       {
         (uniquArray[i + 1] !== undefined) ?
           <div className="katalog__container">
-            <div className="katalog__item">
+            <Link  to={`/Kategory/${uniquArray[i]}?${dataDB.listBot[0].nameShop}`} className="katalog__item">
               {uniquArray[i]}  
-            </div>
+            </Link>
 
-            <div className="katalog__item">
+            <Link to={`/Kategory/${uniquArray[i+1]}?${dataDB.listBot[0].nameShop}`}  className="katalog__item">
               {uniquArray[i + 1]}  
-            </div> 
+            </Link> 
           </div>  
         : 
         <div className="katalog__container" style={{gridTemplateColumns: '1fr'}}>
-          <div className="katalog__item">
+          <Link to={`/Kategory/${uniquArray[i]}?${dataDB.listBot[0].nameShop}`}  className="katalog__item">
             {uniquArray[i]}  
-          </div>
+          </Link>
         </div>  
       }
       
