@@ -1,6 +1,7 @@
 import { useContext } from "react"
 import { ReactContext } from "../../context/ReactContext"
 import { Link } from "react-router-dom";
+import { animateScroll as scroll } from 'react-scroll';
 
 import './Homepage.scss';
 
@@ -13,6 +14,9 @@ export const Homepage = () =>{
  const {dataDB} = useContext(ReactContext);
   tg.ready()
 
+  const scrollToTop = () => {
+    scroll.scrollToTop({duration:20});
+  };
 
   return <> 
     { (dataDB.length === 0) ? <div>Помилка</div> : <>
@@ -28,7 +32,7 @@ export const Homepage = () =>{
       <Slider/>
 
       <div className="main__center">
-        <Link to='/Katalog'className="main__katalog">
+        <Link to='/Katalog' onClick={()=> scrollToTop()} className="main__katalog">
           <div className="main__katalog--icon"></div>  
           <div  className="main__katalog--text">Каталог</div>
         </Link>
