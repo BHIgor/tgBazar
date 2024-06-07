@@ -47,6 +47,7 @@
     padding: 18px 22px;
     overflow-y: scroll;
     height: 100%;
+    margin-bottom: 30px;
 
   }
 
@@ -142,6 +143,7 @@
     line-height: 15px;
     list-style: none;
     padding: 0;
+    margin-bottom: 100px;
       
 
     @include menuFont()
