@@ -1,0 +1,54 @@
+@import '../../../fonts/fonts.scss';
+@import '../../mixin/mixins.scss';
+
+.contact{
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  @include productFont();
+
+  &__container{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+  }
+
+  &__icon{
+    height: 30px;
+    width: 30px;
+    @include iconPosition();
+
+  }
+  
+  &__block{
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    &--phoneOne{
+      background-image: url(../../../images/contacts/phoneOne.svg);
+    }
+
+    &--phoneTwo{
+      background-image: url(../../../images/contacts/phoneTwo.svg);
+    }
+
+    &--email{
+      background-image: url(../../../images/contacts/email.svg);
+    }
+
+    &--telegaContact{
+      background-image: url(../../../images/contacts/telegram.svg);
+    }
+
+    &--viberContact{
+      background-image: url(../../../images/contacts/viber.svg);
+    }
+
+    &--instaContact{
+      background-image: url(../../../images/contacts/instagram.svg);
+    }
+  }
+}
