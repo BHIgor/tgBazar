@@ -78,9 +78,9 @@ export const Menu = ({
                     </div>
                   </li>
                 </NavLink>
-
+                
                 { 
-                  (dataDB.settings[0].contacts === '') ? null : (
+                  (dataDB.settings[0].viberContact === '' && dataDB.settings[0].phoneOne === '' && dataDB.settings[0].instaContact === '' && dataDB.settings[0].phoneTwo === '' && dataDB.settings[0].email === '' && dataDB.settings[0].telegaContact === '' ) ? null : (
                     <NavLink to={`/Contacts?${dataDB.listBot[0].nameShop}`} onClick={() =>scrollToTop()} className='menu__link' style={getLinkStyle}>
                       <li className="menu__item">
                         <div className='menu__icon menu__icon--contacts'></div>
