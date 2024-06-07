@@ -148,6 +148,11 @@ export const Checkout = () =>{
     scroll.scrollToTop({duration:20});
   };
 
+  const pay = (dataDB.length === 0) ? '' : dataDB.settings[0].pay
+  const arrPay = pay.split(',')
+
+  const dostavka = (dataDB.length === 0) ? '' : dataDB.settings[0].delivery
+  const arrDostavka = dostavka.split(',')
 
   return <> 
     { (dataDB.length === 0) ? <div>Помилка</div> : <>
@@ -251,26 +256,35 @@ export const Checkout = () =>{
             
                 </div>
                
-
                 <div className="checkout__dostavka--delivery">
-                  <div 
-                    className="checkout__dostavka--item" 
-                    onClick={() => setDelivery('nova')} 
-                    style={((delivery === 'nova') ? {backgroundColor: `${dataDB.settings[0].clHeader}`, color: `${dataDB.settings[0].clTitle
-                    }`} :null)} 
-                  >
-                    Нова пошта
-                  </div>
+                {
+                  (arrDostavka.includes('Нова пошта')) ?
+                    <div 
+                      className="checkout__dostavka--item" 
+                      onClick={() => setDelivery('nova')} 
+                      style={((delivery === 'nova') ? {backgroundColor: `${dataDB.settings[0].clHeader}`, color: `${dataDB.settings[0].clTitle
+                      }`} :null)} 
+                    >
+                      Нова пошта
+                    </div>
+                  :null
+                }
 
-                  <div 
-                    className="checkout__dostavka--item" 
-                    onClick={() => setDelivery('ukr')} 
-                    style={((delivery === 'ukr') ? {backgroundColor: `${dataDB.settings[0].clHeader}`, color: `${dataDB.settings[0].clTitle
-                    }`} :null)} 
-                  >
-                    Укр пошта
-                  </div>
+                {
+                  (arrDostavka.includes('Укр пошта')) ?
+                    <div 
+                      className="checkout__dostavka--item" 
+                      onClick={() => setDelivery('ukr')} 
+                      style={((delivery === 'ukr') ? {backgroundColor: `${dataDB.settings[0].clHeader}`, color: `${dataDB.settings[0].clTitle
+                      }`} :null)} 
+                    >
+                      Укр пошта
+                    </div>
+                  :null
+                }
 
+                {
+                  (arrDostavka.includes('Meest пошта')) ?
                   <div 
                     className="checkout__dostavka--item" 
                     onClick={() => setDelivery('meest')}
@@ -279,33 +293,47 @@ export const Checkout = () =>{
                   >
                     Meest пошта
                   </div>
+                 :null
+                }
 
-                  <div 
-                    className="checkout__dostavka--item" 
-                    onClick={() => setDelivery('kurier')}
-                    style={((delivery === 'kurier') ? {backgroundColor: `${dataDB.settings[0].clHeader}`, color: `${dataDB.settings[0].clTitle
-                    }`} :null)}
-                  >
-                    Кур'єр
-                  </div>
+                {   
+                  (arrDostavka.includes(`Кур'єр`)) ?
+                    <div 
+                      className="checkout__dostavka--item" 
+                      onClick={() => setDelivery('kurier')}
+                      style={((delivery === 'kurier') ? {backgroundColor: `${dataDB.settings[0].clHeader}`, color: `${dataDB.settings[0].clTitle
+                      }`} :null)}
+                    >
+                      Кур'єр
+                    </div>
+                 :null
+                }
 
-                  <div 
-                    className="checkout__dostavka--item" 
-                    onClick={() => setDelivery('rozetka')}
-                    style={((delivery === 'rozetka') ? {backgroundColor: `${dataDB.settings[0].clHeader}`, color: `${dataDB.settings[0].clTitle
-                    }`} :null)} 
-                  >
-                    Магазини Rozetka
-                  </div>
+                {   
+                  (arrDostavka.includes(`Магазини Rozetka`)) ?
+                    <div 
+                      className="checkout__dostavka--item" 
+                      onClick={() => setDelivery('rozetka')}
+                      style={((delivery === 'rozetka') ? {backgroundColor: `${dataDB.settings[0].clHeader}`, color: `${dataDB.settings[0].clTitle
+                      }`} :null)} 
+                    >
+                      Магазини Rozetka
+                    </div>
+                  :null
+                }
 
-                  <div 
-                    className="checkout__dostavka--item" 
-                    onClick={() => setDelivery('sam')}
-                    style={((delivery === 'sam') ? {backgroundColor: `${dataDB.settings[0].clHeader}`, color: `${dataDB.settings[0].clTitle
-                    }`} :null)} 
-                  >
-                    Самовивіз
-                  </div>   
+                {   
+                  (arrDostavka.includes(`Самовивіз`)) ?
+                    <div 
+                      className="checkout__dostavka--item" 
+                      onClick={() => setDelivery('sam')}
+                      style={((delivery === 'sam') ? {backgroundColor: `${dataDB.settings[0].clHeader}`, color: `${dataDB.settings[0].clTitle
+                      }`} :null)} 
+                    >
+                      Самовивіз
+                    </div>   
+                  :null
+                }
                 </div>
 
                 <div className="checkout__dostavka--deliveryTitle">
@@ -392,24 +420,42 @@ export const Checkout = () =>{
                 <div className="checkout__oplata--mainTitle">
                   Оберіть спосіб оплати:
                 </div>
-                <div 
+                {
+                 (arrPay.includes('Оплата при отриманні')) ?
+                  <div 
+                    className="checkout__oplata--item"
+                    onClick={() => setOplata('otriman')} 
+                    style={((oplata === 'otriman') ? {backgroundColor: `${dataDB.settings[0].clHeader}`, color: `${dataDB.settings[0].clTitle
+                    }`} :null)}
+                    >Оплата при отриманні
+                  </div>
+                 :null
+                }
+
+                {
+                 (arrPay.includes('Перевод по реквізитам')) ?
+                  <div 
                   className="checkout__oplata--item"
-                  onClick={() => setOplata('otriman')} 
-                  style={((oplata === 'otriman') ? {backgroundColor: `${dataDB.settings[0].clHeader}`, color: `${dataDB.settings[0].clTitle
+                  onClick={() => setOplata('rekvizit')} 
+                  style={((oplata === 'rekvizit') ? {backgroundColor: `${dataDB.settings[0].clHeader}`, color: `${dataDB.settings[0].clTitle
                   }`} :null)}
-                  >Оплата при отриманні</div>
-                <div 
-                 className="checkout__oplata--item"
-                 onClick={() => setOplata('rekvizit')} 
-                 style={((oplata === 'rekvizit') ? {backgroundColor: `${dataDB.settings[0].clHeader}`, color: `${dataDB.settings[0].clTitle
-                 }`} :null)}
-                >Перевод по реквізитам</div>
-                <div
-                  className="checkout__oplata--item"
-                  onClick={() => setOplata('karta')} 
-                  style={((oplata === 'karta') ? {backgroundColor: `${dataDB.settings[0].clHeader}`, color: `${dataDB.settings[0].clTitle
-                  }`} :null)}
-                >Перевод на карту</div>
+                  >Перевод по реквізитам
+                  </div>
+                  :null
+                }
+
+                {
+                  (arrPay.includes('Перевод на карту')) ?
+                    <div
+                      className="checkout__oplata--item"
+                      onClick={() => setOplata('karta')} 
+                      style={((oplata === 'karta') ? {backgroundColor: `${dataDB.settings[0].clHeader}`, color: `${dataDB.settings[0].clTitle
+                      }`} :null)}
+                    >
+                      Перевод на карту
+                    </div>
+                  :null
+                }
 
                 <div className="checkout__oplata--blockPhone" onClick={() => setPhone((phone) ? false : true)}>
                   <div className="checkout__oplata--kub">
