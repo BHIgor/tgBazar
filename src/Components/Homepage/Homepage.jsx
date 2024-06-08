@@ -38,13 +38,6 @@ export const Homepage = () =>{
         </Link>
       </div>
 
-      <div className='main__titleBlock'>
-        <div className='main__title--flex'>
-          <div className="main__title--icon"></div>
-          <div className='main__title'>Топ продаж</div>
-        </div>
-      </div>
-
       <ProductList />
       
       </main>

@@ -3,6 +3,7 @@ import { ReactContext } from "../../../context/ReactContext"
 import { Link, useParams } from 'react-router-dom';
 import { Product } from '../../ProductList/Product/Product';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { animateScroll as scroll } from 'react-scroll';
 
 
 import 'swiper/css';
@@ -19,6 +20,9 @@ export const Kategory = () =>{
   const allProducts =  useMemo(() =>(dataDB.length ===0 ) ? []: dataDB.products, [dataDB.length, dataDB.products])
 
 
+  const scrollToTop = () => {
+    scroll.scrollToTop({duration:20});
+  };
 
   useEffect(() => {
     const filtered = allProducts.filter(e => e.kategory === catageryName);
@@ -28,11 +32,9 @@ export const Kategory = () =>{
 
   const uniqueCategories = new Set(allProducts.map(product => product.kategory));
   const uniquArray = Array.from(uniqueCategories);
-
-  console.log(sortedItems)
-
+  
   const sortByPrice = (order) => {
-    const sorted = sortedItems.slice().sort((a, b) => (order === 'asc' ? b.price - a.price : a.price - b.price));
+    const sorted = sortedItems.slice().sort((a, b) => (order === 'desc' ? ((b.price_discount === 0) ? b.price: b.price_discount) - ((a.price_discount === 0) ? a.price: a.price_discount) : ((a.price_discount === 0) ? a.price: a.price_discount) - ((b.price_discount === 0) ? b.price: b.price_discount)));
     setSortType(order);
     setSortedItems(sorted);
     console.log(sorted)
@@ -59,9 +61,7 @@ export const Kategory = () =>{
     { (dataDB.length === 0) ? <div>Помилка</div> : <>
       <div className="kategory">
         <div className="kategory__container">
-            <Link to={`/Katalog?${dataDB.listBot[0].nameShop}`} className="kategory__back" style={{backgroundColor: `${dataDB.settings[0].clButtonProduct}`}}>
-              Назад
-            </Link>
+
           <div className="kategory__header">
 
             <div className="kategory__title">
@@ -95,6 +95,9 @@ export const Kategory = () =>{
           </Swiper>
 
           <div className="kategory__sort">
+            <Link to={`/Katalog?${dataDB.listBot[0].nameShop}`}    onClick={() =>scrollToTop()}  className="kategory__back" style={{backgroundColor: `${dataDB.settings[0].clButtonProduct}`}}>
+              Назад
+            </Link>
            <select 
             defaultValue={sortType} 
             onChange={handleSortChange} 

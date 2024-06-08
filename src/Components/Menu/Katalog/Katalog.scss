@@ -68,22 +68,26 @@
     color: black;
     position: absolute;
     border: 1px solid black;
-    top: 18px;
-    left: 5px;
+
+    left: 10px;
 
     @include productFont();
   }
 
   &__slider{
-    width: 340px;
+    width: 300px;
     height: 50px;
     margin-bottom: 10px;
+    position: relative;
+
 
     &--item{
       
       font-size: 14px;
       border-radius: 20px;
       height: 40px;
+      width: auto !important; 
+
 
       @include productFont();
     }
@@ -107,12 +111,15 @@
     display: flex;
     justify-content: end;
     margin-bottom: 15px;
+    position: relative;
+    border-radius: 10px;
 
 
     &--selected{
       height: 30px;
       text-align: center;
       cursor: pointer;
+      border-radius: 10px;
 
       @include productFont();
     }
