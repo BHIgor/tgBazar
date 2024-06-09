@@ -24,6 +24,8 @@ export const Homepage = () =>{
 
   const hasDiscountedProducts = (dataDB.length !== 0) ? dataDB.products.some(product => product.price_discount > 0): false
 
+  const hasTop = (dataDB.length !== 0) ? dataDB.products.some(product => product.top === 'yes'): false
+
   
 
   useEffect(() => {
@@ -55,8 +57,12 @@ export const Homepage = () =>{
           <div  className="main__katalog--text">Каталог</div>
         </Link>
       </div>
-
-      <ProductList />
+      hasTop
+      { 
+        (hasTop) ?
+          <ProductList />
+          : null
+      }
 
       { 
         (hasDiscountedProducts) ?<>
