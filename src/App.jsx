@@ -1,4 +1,4 @@
-import { useLayoutEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Routes, Route, useNavigate} from 'react-router-dom';
 import { ReactContext } from './context/ReactContext';
 
@@ -35,7 +35,7 @@ function App() {
 
   const navigate = useNavigate();
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     try{
       fetch(`https://tgbazar.com.ua/products`, {
         method: 'POST',

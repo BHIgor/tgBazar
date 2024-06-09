@@ -1,0 +1,316 @@
+@import '../../../../fonts/fonts.scss';
+@import '../../../mixin/mixins.scss';
+
+$widthProduct: 150px;
+
+.productSlider{
+  display: grid;
+  justify-content: center;
+
+  &__block{
+    width: 100%;
+  }
+  
+  &__container{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr); 
+    justify-content: center;
+    column-gap: 20px;
+    row-gap: 20px;
+  }
+
+  &__page{
+    border-radius: 10px;
+    width: $widthProduct; 
+    position: relative;
+    padding-bottom: 50px;
+
+    &--blockIcon{
+      position: absolute;
+      top: 4px;
+      right: 4px;
+      cursor: pointer;
+      background-color: white;
+      border: 1px solid gray;
+      padding: 2px;
+      border-radius: 5px;
+    }
+    &--icon{
+  
+      height: 25px;
+      width: 25px;
+      background-image: url(../../../../images/like.svg);
+
+      @include iconPosition();
+    }
+    &--iconActive{
+  
+      height: 25px;
+      width: 25px;
+      background-image: url(../../../../images/icons/likeActive.svg);
+
+      @include iconPosition();
+    }
+
+    &--image{
+      display: block;
+      border-radius: 10px;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    &--title{
+      padding-top: 10px;
+      font-size: 15px;
+      text-decoration: none;
+      color: black;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      -webkit-line-clamp: 2; 
+      display: -webkit-box;
+      -webkit-box-orient: vertical; 
+      
+      @include productFont() 
+    }
+
+    &--nalRegion{
+      height: 17px;
+      border-radius: 5px;
+      padding-left: 5px;
+      margin-top: 10px;
+      margin-left: 10px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+    &--noNalBlock{
+      width: 142px;    
+      background-color: #f8ebeb;;
+    }
+
+    &--noNal{
+      font-size: 13px;
+      color: gray;
+      font-family: Roboto, sans-serif;
+      font-weight: 400;
+      font-style: normal;
+    }
+
+    &--noNayavno{
+      height: 14px;
+      width: 14px;
+      background-image: url(../../../../images/icons/noNayavno.svg);
+   
+      @include iconPosition()
+    }
+    &--nalBlock{
+      width: 112px;
+      background-color: #f1f8eb;;
+    }
+    &--nal{
+      font-size: 13px;
+      color: #57ae00;
+      font-family: Roboto, sans-serif;
+      font-weight: 400;
+      font-style: normal;
+    }
+
+    &--nayavno{
+      height: 13px;
+      width: 13px;
+      background-image: url(../../../../images/icons/nayavno.svg);
+      
+      @include iconPosition()
+      
+    }
+    
+    &--buyBlock{
+      display: flex;
+      align-items:center;
+      justify-content: center;
+      height: 40px;
+      width: 40px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    &--buy{
+      height: 35px;
+      display: flex;
+      gap: 10px;
+      justify-content: end;
+      border-radius: 20px;
+    }
+
+    &--buyIcon{
+      height: 20px;
+      width: 20px;
+      padding: 5px;
+      opacity: 0.8;
+      background-image: url(../../../../images/menu/cart-menu.svg);
+      
+      @include iconPosition();
+    
+    }
+
+    &--footer{
+      display: flex;
+      justify-content: space-between;
+      position: absolute;
+      bottom: 0;
+      width: $widthProduct;
+      align-items: center;
+
+    }
+
+    &--price{
+      position: absolute;
+      bottom: 25px;
+      font-size: 14px;
+      font-weight: bold;
+
+      padding: 3px;
+      border-radius: 20px;
+      color: gray;
+
+      @include productFont(); 
+
+      &--simvol{
+        font-size: 15px
+      }
+
+      &--procent{
+        margin-left: 5px;
+        background-color: red;
+        color: white;
+        padding: 0 2px;
+        font-size: 11px;
+        border-radius: 8px;
+        text-align: center;
+      }
+
+      &--line{
+        text-decoration: line-through;
+      }
+    }
+    
+    &--priceDiscount{
+      font-size: 20px;
+      font-weight: bold;
+      margin-top: 5px;
+      margin-left: 5px;
+      @include productFont(); 
+
+      &--simvol{
+        font-size: 15px
+      }
+    }
+
+    &--description{
+      margin-bottom: 10px;
+      margin-top: 10px;
+      text-decoration: none;
+
+
+
+      &-text{
+        padding-top: 10px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        -webkit-line-clamp: 3; 
+        display: -webkit-box;
+        -webkit-box-orient: vertical; 
+        line-height: 16px;
+        color: rgb(52, 51, 51);
+        font-size: 14px;
+
+        @include productFont() 
+      }
+    }
+
+  }
+
+  &__info{
+    margin-top: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__review{
+    font-size: 10px;
+    color: gray;
+    font-weight: 300;
+
+    @include productFont() 
+  }
+  &__stars {
+    display: flex;
+    gap: 2px;
+
+   &--star{
+      width: 16px;
+      height: 16px;
+      background-image: url(../../../../images/icons/star.svg);
+      background-repeat: no-repeat;
+      background-position: center;
+   }
+
+    &--star--1 {
+      &:nth-child(-n + 1) {
+        background-image: url(../../../../images/icons/star-active.svg);
+      }
+    }
+
+    &--star--2 {
+      &:nth-child(-n + 1),
+      &:nth-child(-n + 2) {
+        background-image: url(../../../../images/icons/star-active.svg);
+      }
+    }
+    
+    &--star--3 {
+      &:nth-child(-n + 1),
+      &:nth-child(-n + 2),
+      &:nth-child(-n + 3) {
+        background-image: url(../../../../images/icons/star-active.svg);
+      }
+    }
+
+    &--star--4 {
+      &:nth-child(-n + 1),
+      &:nth-child(-n + 2),
+      &:nth-child(-n + 3),
+      &:nth-child(-n + 4) {
+        background-image: url(../../../../images/icons/star-active.svg);
+      }
+    }
+
+    &--star--5 {
+      &:nth-child(-n + 1),
+      &:nth-child(-n + 2),
+      &:nth-child(-n + 3),
+      &:nth-child(-n + 4),
+      &:nth-child(-n + 5) {
+        background-image: url(../../../../images/icons/star-active.svg);
+      }
+    }
+   
+  }
+}
+.main {
+
+  &__sliderProduct{
+    width: 370px !important;
+    &--item{
+      height: 370px !important;
+      align-items: start !important;
+      width: 160px !important;
+    } 
+
+    &--flex{
+      display: flex;
+
+    }
+  }
+
+}
