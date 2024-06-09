@@ -43,7 +43,6 @@ export const Orders = () =>{
     }
   })
 
-  console.log(myProduct)
   return <> 
     { (dataDB.length === 0) ? <div>Помилка</div> : <>
       <div className='orders'>
