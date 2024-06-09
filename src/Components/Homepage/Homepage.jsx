@@ -57,7 +57,7 @@ export const Homepage = () =>{
           <div  className="main__katalog--text">Каталог</div>
         </Link>
       </div>
-      hasTop
+      
       { 
         (hasTop) ?
           <ProductList />

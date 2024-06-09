@@ -1,4 +1,4 @@
-import { useContext, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { ReactContext } from "../../../context/ReactContext"
 import { useParams } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -7,11 +7,13 @@ import { Pagination } from 'swiper/modules';
 import './ProductPage.scss';
 import { Delivery } from '../../Menu/Delivery/Delivery';
 import { Pay } from '../../Menu/Pay/Pay';
+import { ProductSlider } from '../Product/ProductSlider/ProductSlider';
 const tg = window.Telegram.WebApp;
 
 export const ProductPage = () =>{
   const { dataDB, setDataDB } = useContext(ReactContext);
   const [desck, setDesck] = useState('opis')
+  const [productCategory, setProductCategory ] = useState([])
 
   tg.ready()
 
@@ -66,6 +68,16 @@ export const ProductPage = () =>{
       return false;
     }
   }
+  
+  useEffect(() => {
+  
+    const thisProduct = (dataDB.length !== 0) ? dataDB.products.filter(e => e.id === Number(productId)) : []
+
+    const product =  (dataDB.length !== 0) ? dataDB.products.filter(e => e.kategory === thisProduct[0].kategory) : []
+
+    setProductCategory(product)
+  },[dataDB.products, productId,dataDB.length]);
+  
 
   return <> 
     { (dataDB.length === 0) ? <div>Помилка</div> : <>
@@ -207,8 +219,19 @@ export const ProductPage = () =>{
                       </div>
                     </> : null
                   }
-                 
-                </div>
+                </div> 
+
+                <div className="productPage__categoryBlock">
+                  <div className="productPage__categoryBlock--header">
+                    <div className="productPage__categoryBlock--icon"></div>
+                    <div className="main__discountBlock--title">
+                      Товари з категорії
+                    </div>
+                  </div>
+                </div>  
+
+                <ProductSlider products = {productCategory} />
+       
             </div>   
 
           </div>

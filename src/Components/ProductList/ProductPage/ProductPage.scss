@@ -189,12 +189,30 @@ $padRight: 25px;
       @include iconPosition();
       
     }
-
-   
   }
 
+  &__categoryBlock{
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    font-size: 21px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    margin-top: 30px;
 
+    &--header{
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      width: 370px;
+    }
 
-
+    &--icon{
+      height: 40px;
+      width: 40px;
+      background-image: url(../../../images/kategoryProduct.svg);
+      @include iconPosition();
+    }
+  }
  
 }
