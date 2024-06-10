@@ -42,7 +42,7 @@ export const Search = ( ) =>{
 
     const handleClickOutside = (event) => {
      
-      if (blockRef.current && !blockRef.current.contains(event.target) && searchResults.length > 0 && key === 0) {
+      if (blockRef.current && !blockRef.current.contains(event.target) && key === 0) {
         setIsClickedOutside(true);
       
 
@@ -62,6 +62,7 @@ export const Search = ( ) =>{
 
   const blockClass = isClickedOutside ? 'main__search--resultNone' :'main__search--result' ;
   
+  console.log(searchResults)
 
   return <> 
     { (dataDB.length === 0) ? <div>Помилка</div> : <>
@@ -90,6 +91,7 @@ export const Search = ( ) =>{
           
       <div  ref={blockRef} className={blockClass}>
         {
+
           searchResults.slice(0,5).map(e => {
             const images = e.image.split(',')
             return (
@@ -105,6 +107,7 @@ export const Search = ( ) =>{
               
             )
           })
+    
         }
       
         </div>

@@ -18,8 +18,12 @@ export const SearchResult = ( ) =>{
         <div className="searchResult--title">
           Результат пошуку
         </div>
-
-        <Product  products = {dataDB.search} />
+        {
+          dataDB.search.length > 0 ?
+          <Product  products = {dataDB.search} />
+           : <div className='searchResult--title'>Нічого не знайдено</div>
+        }
+        
       </div>
     </>
     }
