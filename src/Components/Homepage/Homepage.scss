@@ -43,15 +43,15 @@
     
     &--result{
       position: absolute;
-      background-color: rgb(239, 239, 239);
+      background-color: rgb(250, 249, 249);
       top: 36px;
-
       width: 300px;
       z-index: 4;
       border-bottom-left-radius: 10px;
       border-bottom-right-radius: 10px;
    
       @include productFont();
+
     }
 
     &--resultNone {
@@ -83,8 +83,15 @@
       align-items: center;
       gap: 10px;
       border-bottom: 1px solid rgb(206, 206, 206); 
+      border-right: 1px solid rgb(206, 206, 206); 
+      border-bottom-right-radius: 5px;
       padding: 1px;
       text-decoration: none;
+
+      &:hover{
+        background-color: rgb(211, 211, 211);
+      }
+   
     }
 
 

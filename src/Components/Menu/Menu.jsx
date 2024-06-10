@@ -91,18 +91,16 @@ export const Menu = ({
                     </NavLink>
                   )
                 }
-                { 
-                  (dataDB.settings[0].help === '') ? null : (
-                    <NavLink to={`/Help?${dataDB.listBot[0].nameShop}`} onClick={() =>scrollToTop()} className='menu__link' style={getLinkStyle}>
-                      <li className="menu__item">
-                        <div className='menu__icon menu__icon--help'></div>
-                        <div className="menu__list">
-                          Допомога
-                        </div>
-                      </li>
-                    </NavLink>
-                  )
-                }
+               
+                <NavLink to={`/Help?${dataDB.listBot[0].nameShop}`} onClick={() =>scrollToTop()} className='menu__link' style={getLinkStyle}>
+                  <li className="menu__item">
+                    <div className='menu__icon menu__icon--help'></div>
+                    <div className="menu__list">
+                      Допомога
+                    </div>
+                  </li>
+                </NavLink>
+              
 
                 <hr className='menu__lineHorizont'></hr>
                 
