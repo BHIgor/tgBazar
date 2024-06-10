@@ -3,6 +3,7 @@ import { ReactContext } from "../../../context/ReactContext"
 
 import './Katalog.scss'
 import { Link } from 'react-router-dom';
+import { Search } from '../../Homepage/Search/Search';
 
 export const Katalog = () =>{
   const { dataDB } = useContext(ReactContext);
@@ -40,6 +41,7 @@ export const Katalog = () =>{
 
   return <> 
     { (dataDB.length === 0) ? <div>Помилка</div> : <>
+      <Search/>
       <div className="titleText">Каталог</div>
       <div className='katalog'>
           {arrTag}

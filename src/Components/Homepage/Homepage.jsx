@@ -9,6 +9,7 @@ import { Slider } from "./Slider/Slider";
 import { ProductList } from '../ProductList/ProductList'
 
 import { ProductSlider } from "../ProductList/Product/ProductSlider/ProductSlider";
+import { Search } from "./Search/Search";
 
 const tg = window.Telegram.WebApp;
 
@@ -16,10 +17,6 @@ const tg = window.Telegram.WebApp;
 export const Homepage = () =>{
  const {dataDB} = useContext(ReactContext);
  const [saleProduct, setSaleProduct] = useState([]);
- const [searchQuery, setSearchQuery] = useState('');
- const [searchResults, setSearchResults] = useState([]);
-
- 
 
   tg.ready()
 
@@ -42,36 +39,11 @@ export const Homepage = () =>{
   },[dataDB]);
 
 
-  const handleSearch = (e) => {
-    const query = e.target.value;
-    setSearchQuery(query);
-    console.log(query)
-    console.log(query.trim())
-    console.log(searchQuery)
-    if (query === ' ') {
-        setSearchResults([]);
-    } else {
-        setSearchResults(dataDB.products.filter(product =>
-            product.title.toLowerCase().startsWith(query.toLowerCase()) ||
-            product.id === Number(query)
-        ));
-    }
-};
-
-  console.log(searchResults)
-
   return <> 
     { (dataDB.length === 0) ? <div>Помилка</div> : <>
       <main className="main">
-        <div className="main__search"> 
-            <div className="main__search--icon"></div>
-            <input 
-            className="main__search--input"
-            defaultValue={searchQuery}
-            onChange={handleSearch}
-            placeholder="Введіть назву або код товару ..."
-          />
-        </div>
+      
+      <Search/>
 
       <Slider/>
 

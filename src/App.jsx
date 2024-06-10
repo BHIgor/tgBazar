@@ -25,6 +25,7 @@ import { Checkout } from './Components/Menu/Cart/Checkout/Checkout';
 import { DeliveryMenu } from './Components/Menu/Delivery/DeliveryMenu';
 import { PayMenu } from './Components/Menu/Pay/PayMenu';
 import { Kategory } from './Components/Menu/Katalog/Kategory';
+import { SearchResult } from './Components/Homepage/SearchResult/SearchResult';
 
 const search = window.location.search
 const tg = window.Telegram.WebApp;
@@ -82,6 +83,7 @@ function App() {
             <Route path="/Product/:productId" element={<ProductPage />} />
             <Route path="/OrderPage/:orderId" element={<OrdersPage />} />
             <Route path="/Kategory/:catageryName" element={<Kategory />} />
+            <Route path='/SearchResult' element={<SearchResult/>}/>
             <Route path='/About' element={<About/>}/>
             <Route path='/Cart' element={<Cart/>}/>
             <Route path='/Contacts' element={<Contacts/>}/>
