@@ -41,6 +41,7 @@ export const Orders = () =>{
     if (product) {
       return myProduct.push({ ...e, ...product })
     }
+    
   })
 
   return <> 
@@ -64,7 +65,7 @@ export const Orders = () =>{
             </>
             :
             <>
-               {myProduct.map(e => {
+               {myProduct.reverse().map(e => {
                   const images = e.image.split(',')
 
                   return (
