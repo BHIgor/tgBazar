@@ -109,7 +109,7 @@ export const Checkout = () =>{
     setDataDB({...dataDB, cart: []} )
 
     try{
-      fetch(`https://tgbazar.com.ua/order`, {
+      fetch(`https://tgconstructor.com.ua/order`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json;charset=utf-8'
