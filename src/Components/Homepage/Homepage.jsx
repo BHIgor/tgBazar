@@ -5,7 +5,7 @@ import { animateScroll as scroll } from 'react-scroll';
 
 import './Homepage.scss';
 
-import { Slider } from "./Slider/Slider";
+import { Slider } from "./Slidera/Slider";
 import { ProductList } from '../ProductList/ProductList'
 
 import { ProductSlider } from "../ProductList/Product/ProductSlider/ProductSlider";
@@ -46,7 +46,7 @@ export const Homepage = () =>{
       <Search/>
 
       <Slider/>
-s
+
       <div className="main__center">
         <Link to='/Katalog' onClick={()=> scrollToTop()} className="main__katalog">
           <div className="main__katalog--icon"></div>  

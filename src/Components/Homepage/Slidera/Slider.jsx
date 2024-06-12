@@ -17,7 +17,7 @@ export const Slider = () => {
 
   return  <>
     { (dataDB.length === 0) ? <div>Помилка</div> :
-        (dataDB.settings[0].obmin === '') ? null : (
+        (dataDB.settings[0].slider === '') ? null : (
           <Swiper 
             pagination={true} 
             modules={[Autoplay, Pagination]} 
