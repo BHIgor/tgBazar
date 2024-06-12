@@ -46,7 +46,7 @@ export const Homepage = () =>{
       <Search/>
 
       <Slider/>
-
+s
       <div className="main__center">
         <Link to='/Katalog' onClick={()=> scrollToTop()} className="main__katalog">
           <div className="main__katalog--icon"></div>  
