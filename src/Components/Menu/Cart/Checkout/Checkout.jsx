@@ -139,7 +139,7 @@ export const Checkout = () =>{
       return false;
     }
   }
-  console.log(insta)
+
   const fullPrice = (dataDB.cart) ? dataDB.cart.reduce((accumulator, currentValue) => {
    return accumulator + (((currentValue.price_discount === 0)? currentValue.price : currentValue.price_discount) * currentValue.count);
   }, 0) : 0
