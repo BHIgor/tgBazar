@@ -28,9 +28,9 @@ export const Slider = () => {
             className="mySwiper"
           >
 
-            {images.map(e => {
+            {images.map((e, index) => {
                 return (
-                  <SwiperSlide key={e}><img src={e} alt='img-slider'/></SwiperSlide>
+                  <SwiperSlide key={index}><img src={e} alt='img-slider'/></SwiperSlide>
                 )
             })
             }
