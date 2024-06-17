@@ -83,7 +83,8 @@
   }
 
   &__infoProduct{
-    @include flex();
+    display: flex;
+
 
     &--image{
       height: 150px;
@@ -99,13 +100,30 @@
 
     &--titleBlock{
       padding-left: 15px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 400px;
     }
 
    
   }
-
+  &__date{
+    color: gray;
+    font-size: 15px;
+  }
+  &__details{
+    text-align: center;
+    padding: 5px;
+    width: 120px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 8px;
+    margin-left: 15px;
+  }
   &__countProduct{
-    @include flex()
+    display: flex;
+    gap: 80px;
   }
 
   &__line{
