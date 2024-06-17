@@ -47,6 +47,7 @@
 
   &__header{
     @include flex();
+    align-items: center;
 
     &--blockimg{
       padding: 8px;

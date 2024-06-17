@@ -6,6 +6,21 @@
   padding-left: 10px;
   padding-right: 10px;
 
+  &__allproduct{
+    background-color: rgb(34, 34, 34);
+
+    &:hover{
+      background-color: white;
+ 
+    }
+  }
+  &__item2{
+    color: white !important;
+
+    &:hover{
+      color: black!important;
+    }
+  }
   &____block{
     width: 100%;
   }
