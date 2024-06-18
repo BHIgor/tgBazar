@@ -11,9 +11,12 @@ export const Orders = () => {
 
   const allProducts = dataDB.products
   const orderProducts = dataDB.orders
-  const myProduct = []
+  const [myProduct, setMyProduct] = useState([])
+  const [allOrder, setAllOrder] = useState([])
+  const [currentStatus, setCurrentStatus] = useState('Новий')
 
-  function Datas() {
+
+
     useEffect(() => {
       try {
         fetch(`https://tgbazar.com.ua/products`, {
@@ -29,21 +32,30 @@ export const Orders = () => {
           .then((data) => {
             setDataDB({ ...data, cart: dataDB.cart, allCartCount: dataDB.allCartCount });
           });
+
+          const prod = []
+    
+          orderProducts?.forEach(e => {
+            const product = allProducts.find(s => s.id === Number(e.idProduct))
+      
+            if (product) {
+      
+              return prod.push({ ...e, ...product })
+            }
+      
+          })
+      
+          setMyProduct(prod.filter(e => e.status === currentStatus))
+          setAllOrder(prod)
+
       } catch (e) {
 
       }
-    }, [])
-  }
-  Datas()
+    }, [allProducts, orderProducts, currentStatus,dataDB.allCartCount,dataDB.listBot,dataDB.cart,setDataDB])
 
-  orderProducts?.forEach(e => {
-    const product = allProducts.find(s => s.id === Number(e.idProduct))
 
-    if (product) {
-      return myProduct.push({ ...e, ...product })
-    }
 
-  })
+
 
   const detailsView = (id) => {
     if (activDetails === id) {
@@ -53,7 +65,10 @@ export const Orders = () => {
     }
 
   }
-
+  const filter = (value) => {
+    setMyProduct(allOrder.filter(e => e.status === value))
+    setCurrentStatus(value)
+  }
 
   return <>
     {(dataDB.length === 0) ? <div>Помилка</div> : <>
@@ -75,7 +90,47 @@ export const Orders = () => {
               </div>
             </>
             :
-            <>
+            <> <div className="settings__title">
+              Ваші замовлення
+            </div>
+
+              <div className="settings__subtitle">
+                *Зверніть увагу на час замовлення. Якщо час замовлення співпадає з іншими замовленнями, то в такому випадку було замовлено декілька товарів в одному замовленні.
+              </div>
+
+              <div className="orders__filterFlex">
+                <button
+                  className="orders__filter orders__filter--noviy"
+                  onClick={() => filter('Новий')}
+                  disabled={(allOrder.filter(e => e.status === 'Новий').length === 0)}
+                >
+                  Новий {allOrder.filter(e => e.status === 'Новий').length}
+                </button>
+
+                <button
+                  className="orders__filter orders__filter--prinyato"
+                  onClick={() => filter('Прийнято')}
+                  disabled={(allOrder.filter(e => e.status === 'Прийнято').length === 0)}
+                >
+                  Прийнято {allOrder.filter(e => e.status === 'Прийнято').length}
+                </button>
+
+                <button
+                  className="orders__filter orders__filter--gotovo"
+                  onClick={() => filter('Виконано')}
+                  disabled={(allOrder.filter(e => e.status === 'Виконано').length === 0)}
+                >
+                  Виконано {allOrder.filter(e => e.status === 'Виконано').length}
+                </button>
+
+                <button
+                  className="orders__filter orders__filter--cancel"
+                  onClick={() => filter('Скасовано')}
+                  disabled={(allOrder.filter(e => e.status === 'Скасовано').length === 0)}
+                >
+                  Скасовано {allOrder.filter(e => e.status === 'Скасовано').length}
+                </button>
+              </div>
               {myProduct.reverse().map(e => {
                 const images = e.image.split(',')
 
@@ -91,16 +146,16 @@ export const Orders = () => {
                           className="orders__status--text"
                           style={
                             (e.status === 'Новий') ? { color: 'orange' } :
-                             (e.status === 'Прийнято') ? { color: 'black' } :
-                              (e.status === 'Виконано') ? { color: 'green' } :
-                                (e.status === 'Скасовано') ? { color: 'red' } : null}
+                              (e.status === 'Прийнято') ? { color: 'black' } :
+                                (e.status === 'Виконано') ? { color: 'green' } :
+                                  (e.status === 'Скасовано') ? { color: 'red' } : null}
                         >
                           {e.status}
                         </div>
                       </div>
 
                       <div className="orders__date">
-                        {moment(e.date).format('YYYY-MM-DD HH:mm:ss')} 
+                        {moment(e.date).format('YYYY-MM-DD HH:mm:ss')}
                       </div>
 
                       <a
