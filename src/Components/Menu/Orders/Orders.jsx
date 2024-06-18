@@ -8,15 +8,15 @@ const tg = window.Telegram.WebApp;
 export const Orders = () => {
   const { dataDB, setDataDB } = useContext(ReactContext);
   const [activDetails, setActivDetails] = useState('')
-
-  const allProducts = dataDB.products
-  const orderProducts = dataDB.orders
   const [myProduct, setMyProduct] = useState([])
   const [allOrder, setAllOrder] = useState([])
   const [currentStatus, setCurrentStatus] = useState('Новий')
 
+  const allProducts = dataDB.products
+  const orderProducts = dataDB.orders
 
 
+  function Datas() {
     useEffect(() => {
       try {
         fetch(`https://tgbazar.com.ua/products`, {
@@ -32,30 +32,31 @@ export const Orders = () => {
           .then((data) => {
             setDataDB({ ...data, cart: dataDB.cart, allCartCount: dataDB.allCartCount });
           });
-
-          const prod = []
-    
-          orderProducts?.forEach(e => {
-            const product = allProducts.find(s => s.id === Number(e.idProduct))
-      
-            if (product) {
-      
-              return prod.push({ ...e, ...product })
-            }
-      
-          })
-      
-          setMyProduct(prod.filter(e => e.status === currentStatus))
-          setAllOrder(prod)
-
       } catch (e) {
 
       }
-    }, [allProducts, orderProducts, currentStatus,dataDB.allCartCount,dataDB.listBot,dataDB.cart,setDataDB])
+    }, [])
+  }
+  Datas()
 
+  useEffect(() => {
 
+    const prod = []
 
+    orderProducts?.forEach(e => {
+      const product = allProducts.find(s => s.id === Number(e.idProduct))
 
+      if (product) {
+
+        return prod.push({ ...e, ...product })
+      }
+
+    })
+
+    setMyProduct(prod.filter(e => e.status === currentStatus))
+    setAllOrder(prod)
+
+  }, [allProducts, orderProducts, currentStatus])
 
   const detailsView = (id) => {
     if (activDetails === id) {
@@ -65,9 +66,11 @@ export const Orders = () => {
     }
 
   }
+
   const filter = (value) => {
     setMyProduct(allOrder.filter(e => e.status === value))
     setCurrentStatus(value)
+
   }
 
   return <>
@@ -131,7 +134,7 @@ export const Orders = () => {
                   Скасовано {allOrder.filter(e => e.status === 'Скасовано').length}
                 </button>
               </div>
-              {myProduct.reverse().map(e => {
+              {myProduct.map(e => {
                 const images = e.image.split(',')
 
                 return (
