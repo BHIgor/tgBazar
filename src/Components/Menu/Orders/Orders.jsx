@@ -77,7 +77,7 @@ export const Orders = () => {
     {(dataDB.length === 0) ? <div>Помилка</div> : <>
       <div className='orders'>
         {
-          (myProduct.length === 0) ?
+          (allOrder.length === 0) ?
             <>
               <div className="orders__empty">
                 <div className="orders__empty--block">
