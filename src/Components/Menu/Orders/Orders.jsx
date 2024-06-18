@@ -53,7 +53,7 @@ export const Orders = () => {
 
     })
 
-    setMyProduct(prod.filter(e => e.status === currentStatus))
+    setMyProduct((prod.filter(e => e.status === currentStatus).length === 0) ? prod:prod.filter(e => e.status === currentStatus))
     setAllOrder(prod)
 
   }, [allProducts, orderProducts, currentStatus])
@@ -134,7 +134,7 @@ export const Orders = () => {
                   Скасовано {allOrder.filter(e => e.status === 'Скасовано').length}
                 </button>
               </div>
-              {myProduct.map(e => {
+              ({myProduct.map(e => {
                 const images = e.image.split(',')
 
                 return (
