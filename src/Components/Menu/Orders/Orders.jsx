@@ -134,7 +134,7 @@ export const Orders = () => {
                   Скасовано {allOrder.filter(e => e.status === 'Скасовано').length}
                 </button>
               </div>
-              ({myProduct.map(e => {
+              {myProduct.map(e => {
                 const images = e.image.split(',')
 
                 return (
