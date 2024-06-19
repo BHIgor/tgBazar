@@ -63,6 +63,11 @@
     margin-bottom: 10px;
     text-align: center;
     font-weight: bold;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 3; 
+    display: -webkit-box;
+    -webkit-box-orient: vertical; 
   }
   &__empty{
     display: flex;
@@ -122,7 +127,6 @@
     margin: 10px;
     padding: 8px;
     gap: 10px;
-    height: 320px;
 
     @include flexColumn();
   }
