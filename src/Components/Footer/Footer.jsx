@@ -53,7 +53,7 @@ export const Footer = ({ setMenu }) =>{
           }
         </div>
         <div className='footer__ads'>
-          Розроблено за допомогою @tgbazarShop
+          Розроблено за допомогою @tgBazarShop_bot
         </div>
       </footer>
     </>
