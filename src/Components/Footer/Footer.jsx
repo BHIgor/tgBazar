@@ -52,9 +52,9 @@ export const Footer = ({ setMenu }) =>{
             </> :null
           }
         </div>
-        <div className='footer__ads'>
+        <a href='https://t.me/tgBazarShop_bot' className='footer__ads'>
           Розроблено за допомогою @tgBazarShop_bot
-        </div>
+        </a>
       </footer>
     </>
     }
