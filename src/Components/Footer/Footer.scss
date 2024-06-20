@@ -12,6 +12,7 @@
     color: white;
     text-align: center;
     text-decoration: none;
+    display: block;
 
     @include productFont();
   }
