@@ -70,7 +70,13 @@ function App() {
   });
 
   console.log(dataDB)
-
+  let idAdmin
+  let activShop
+  if(dataDB.length !== 0){
+    idAdmin = dataDB?.listBot[0]?.idAdmin
+  
+    activShop = dataDB?.admins?.filter(e => e.idUser === idAdmin)
+  }
 
   return  <> 
     { (dataDB.length === 0) ? <div>Помилка</div> : <>
@@ -78,7 +84,7 @@ function App() {
       <ReactContext.Provider value={{ dataDB, setDataDB }}>
         
           {
-            (dataDB?.admins[0]?.activ === 'no') ? <>
+            (activShop[0]?.activ === 'no') ? <>
                <NoTarif/>
             </> :
               <>
