@@ -16,6 +16,13 @@
   -webkit-transition: all 0.3s ease;
   -webkit-transition-property: all 0.2s;
 
+  &__ads{
+    color: rgb(208, 208, 208);
+    font-size: 13px;
+    text-align: center;
+    display: block;
+    margin-top: 50px;
+  }
   &__close {
     opacity: 0;
     width: 300%;
