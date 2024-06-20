@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Routes, Route, useNavigate} from 'react-router-dom';
+import { Routes, Route, useNavigate } from 'react-router-dom';
 import { ReactContext } from './context/ReactContext';
 
 import './App.scss';
@@ -26,6 +26,7 @@ import { DeliveryMenu } from './Components/Menu/Delivery/DeliveryMenu';
 import { PayMenu } from './Components/Menu/Pay/PayMenu';
 import { Kategory } from './Components/Menu/Katalog/Kategory';
 import { SearchResult } from './Components/Homepage/SearchResult/SearchResult';
+import { NoTarif } from './Components/Homepage/NoTarif/NoTarif';
 
 const search = window.location.search
 const tg = window.Telegram.WebApp;
@@ -37,20 +38,20 @@ function App() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    try{
+    try {
       fetch(`https://tgbazar.com.ua/products`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json;charset=utf-8'
         },
-        body: JSON.stringify({nameShop: search.substring(1), idUser: tg?.initDataUnsafe?.user?.id  })
+        body: JSON.stringify({ nameShop: search.substring(1), idUser: tg?.initDataUnsafe?.user?.id })
       })//tg?.initDataUnsafe?.user?.id
-      .then((response) => {
-        return response.json();
-      })
-      .then((data) => {
-        setDataDB(data);
-      });
+        .then((response) => {
+          return response.json();
+        })
+        .then((data) => {
+          setDataDB(data);
+        });
     } catch (e) {
       return false;
     }
@@ -58,7 +59,7 @@ function App() {
 
   const backButton = window.Telegram.WebApp.BackButton;;
 
-  if(window.location.hash.includes('#/?')){
+  if (window.location.hash.includes('#/?')) {
     backButton.hide();
   } else {
     backButton.show()
@@ -71,41 +72,53 @@ function App() {
   console.log(dataDB)
 
 
-  return (
+  return  <> 
+    { (dataDB.length === 0) ? <div>Помилка</div> : <>
     <div className="app">
       <ReactContext.Provider value={{ dataDB, setDataDB }}>
-       <div className='footerTop' style={menu ? {overflowY:'hidden'}:null}>
-        <Header setMenu={setMenu}/>
-        <Menu setMenu={setMenu} menu={menu}/>
-  
-          <Routes>      
-            <Route path='/' exact element={<Homepage/>}/>
-            <Route path="/Product/:productId" element={<ProductPage />} />
-            <Route path="/OrderPage/:orderId" element={<OrdersPage />} />
-            <Route path="/Kategory/:catageryName" element={<Kategory />} />
-            <Route path='/SearchResult' element={<SearchResult/>}/>
-            <Route path='/About' element={<About/>}/>
-            <Route path='/Cart' element={<Cart/>}/>
-            <Route path='/Contacts' element={<Contacts/>}/>
-            <Route path='/Delivery' element={<DeliveryMenu/>}/>
-            <Route path='/Garant' element={<Garant/>}/>
-            <Route path='/Grafik' element={<Grafik/>}/>
-            <Route path='/Help' element={<Help/>}/>
-            <Route path='/Katalog' element={<Katalog/>}/>
-            <Route path='/Like' element={<Like/>}/>
-            <Route path='/Obmin' element={<Obmin/>}/>
-            <Route path='/Orders' element={<Orders/>}/>
-            <Route path='/Pay' element={<PayMenu/>}/>
-            <Route path='/Checkout' element={<Checkout/>}/>
-          </Routes>
-        </div>
-        <Footer />
-        <FooterLine setMenu={setMenu}/>
-      
         
+          {
+            (dataDB?.admins[0]?.activ === 'no') ? <>
+               <NoTarif/>
+            </> :
+              <>
+                <div className='footerTop' style={menu ? { overflowY: 'hidden' } : null}>
+                <Header setMenu={setMenu} />
+                <Menu setMenu={setMenu} menu={menu} />
+
+                <Routes>
+                  <Route path='/' exact element={<Homepage />} />
+                  <Route path="/Product/:productId" element={<ProductPage />} />
+                  <Route path="/OrderPage/:orderId" element={<OrdersPage />} />
+                  <Route path="/Kategory/:catageryName" element={<Kategory />} />
+                  <Route path='/SearchResult' element={<SearchResult />} />
+                  <Route path='/About' element={<About />} />
+                  <Route path='/Cart' element={<Cart />} />
+                  <Route path='/Contacts' element={<Contacts />} />
+                  <Route path='/Delivery' element={<DeliveryMenu />} />
+                  <Route path='/Garant' element={<Garant />} />
+                  <Route path='/Grafik' element={<Grafik />} />
+                  <Route path='/Help' element={<Help />} />
+                  <Route path='/Katalog' element={<Katalog />} />
+                  <Route path='/Like' element={<Like />} />
+                  <Route path='/Obmin' element={<Obmin />} />
+                  <Route path='/Orders' element={<Orders />} />
+                  <Route path='/Pay' element={<PayMenu />} />
+                  <Route path='/Checkout' element={<Checkout />} />
+                </Routes>
+              </div>
+          <Footer />
+          <FooterLine setMenu={setMenu} />
+
+        </>
+        }
+
+
       </ReactContext.Provider>
     </div>
-  );
+    
+    </>
+    }
+  </>
 }
-
 export default App;
