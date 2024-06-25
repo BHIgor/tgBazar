@@ -77,7 +77,7 @@ function App() {
   
     activShop = dataDB?.admins?.filter(e => e.idUser === idAdmin)
   }
-  console.log(idAdmin)
+
   return  <> 
     { (dataDB.length === 0) ? <div>Помилка</div> : <>
     <div className="app">
