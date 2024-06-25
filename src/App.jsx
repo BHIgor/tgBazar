@@ -77,14 +77,14 @@ function App() {
   
     activShop = dataDB?.admins?.filter(e => e.idUser === idAdmin)
   }
-
+  console.log(idAdmin)
   return  <> 
     { (dataDB.length === 0) ? <div>Помилка</div> : <>
     <div className="app">
       <ReactContext.Provider value={{ dataDB, setDataDB }}>
         
           {
-            (activShop[0]?.activ === 'no' || idAdmin === undefined) ? <>
+            (activShop[0]?.activ === 'no' || activShop[0]?.activ !== 'stop') ? <>
                <NoTarif/>
             </> :
               <>
