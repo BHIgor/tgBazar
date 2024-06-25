@@ -84,7 +84,7 @@ function App() {
       <ReactContext.Provider value={{ dataDB, setDataDB }}>
         
           {
-            (activShop[0]?.activ === 'no') ? <>
+            (activShop[0]?.activ === 'no' || idAdmin === undefined) ? <>
                <NoTarif/>
             </> :
               <>
